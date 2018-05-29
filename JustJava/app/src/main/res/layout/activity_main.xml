@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/enter_your_name"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/Toppings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/name_text"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/toppings"/>
+
+        <CheckBox
+            android:id="@+id/Whipped_Cream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Toppings"
+            android:layout_marginLeft="24dp"
+            android:paddingLeft="24dp"
+            android:text="@string/whipped_cream"
+            android:textSize="16sp" />
+        <CheckBox
+            android:id="@+id/Chocolate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Whipped_Cream"
+            android:layout_marginLeft="24dp"
+            android:paddingLeft="24dp"
+            android:text="@string/chocolate"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/Hello_World"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Chocolate"
+            style="@style/MainStile"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/quantity"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Hello_World"
+            style="@style/MainStile"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:text="0"
+            android:textStyle="bold" />
+        <!--<TextView-->
+            <!--android:id="@+id/Toppings1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/textView"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginLeft="34dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:text="Toppings"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp" />-->
+
+        <!--<CheckBox-->
+            <!--android:id="@+id/Whipped_Cream1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/Toppings1"-->
+            <!--android:layout_marginLeft="24dp"-->
+            <!--android:paddingLeft="24dp"-->
+            <!--android:text="Whipped Cream"-->
+            <!--android:textSize="16sp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/Hello_World1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/Whipped_Cream1"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginLeft="34dp"-->
+            <!--android:layout_marginTop="16dp"-->
+
+            <!--android:text="QUANTITY"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/Hello_World1"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:text="0"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textStyle="bold" />-->
+        <!--<Button-->
+            <!--android:id="@+id/button31"-->
+            <!--style="@android:style/Widget.Holo.Light.Button.Small"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_below="@id/Hello_World1"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_toLeftOf="@id/textView1"-->
+            <!--android:onClick="submitIncrement"-->
+            <!--android:text="-"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat.Button"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/button41"-->
+            <!--style="@android:style/Widget.Holo.Light.Button.Small"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_below="@id/Hello_World1"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_toRightOf="@id/textView1"-->
+            <!--android:onClick="submitDecrement"-->
+            <!--android:text="+"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat.Button"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/textView1"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginLeft="52dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:text="ORDER SUMMARY"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textStyle="bold|italic" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView3"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/textView2"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginLeft="60dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:text="$0"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textStyle="bold" />-->
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            style="@style/MainStile"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="16dp"
+            android:onClick="submitOrder"
+            android:text="@string/order"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+
+        <Button
+            android:id="@+id/button3"
+            style="@android:style/Widget.Holo.Light.Button.Small"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/Hello_World"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@id/textView"
+            android:onClick="submitIncrement"
+            android:text="-"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@android:style/Widget.Holo.Light.Button.Small"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/Hello_World"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/textView"
+            android:onClick="submitDecrement"
+            android:text="+"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+</ScrollView>

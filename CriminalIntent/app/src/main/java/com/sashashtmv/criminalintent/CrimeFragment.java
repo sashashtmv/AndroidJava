@@ -2,6 +2,7 @@ package com.sashashtmv.criminalintent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import java.util.UUID;
 
 public class CrimeFragment extends Fragment {
     private static final String ARG_CRIME_ID = "crime_id";//строковой ключ-константа для добавления аргумента в пакет аргументов фрагмента
+    private static final String DIALOG_DATE = "DialogDate";// константа для метки DatePickerFragment
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
@@ -52,7 +54,15 @@ public class CrimeFragment extends Fragment {
         mTitleField.setText(mCrime.getTitle());
         mDateButton = (Button) v.findViewById(R.id.crime_date);
         mDateButton.setText(DateFormat.getDateInstance(DateFormat.FULL).format(mCrime.getDate()));
-        mDateButton.setEnabled(false);//блокировка кнопки
+        //mDateButton.setEnabled(false);//блокировка кнопки
+        mDateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = getFragmentManager();
+                DatePickerFragment dialog = new DatePickerFragment();
+                dialog.show(manager,DIALOG_DATE);//добавили экземпляр DialogFragment in FragmentManager и вывели его на экран
+            }
+        });
         mSolvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

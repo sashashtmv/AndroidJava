@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 // Заполнение меню; элементы действий добавляются на пнаель приложения
@@ -28,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.action_share);
         shareActionProvider =
                 (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
-        setShareActionIntent("Want to join me for pizza?");
+        setShareActionIntent("Want to join me for pizza, my beautiful girl))?");
         return super.onCreateOptionsMenu(menu);
     }
+
     private void setShareActionIntent(String text) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");

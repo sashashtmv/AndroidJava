@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/bCredits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/credits" />
+
+    <Button
+        android:id="@+id/bLoans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/loans_mfis" />
+
+    <Button
+        android:id="@+id/bCards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cards"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/bCalculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/credit_calculator"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/bAnother"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/other"
+        android:textSize="24sp"/>
+
+</LinearLayout>

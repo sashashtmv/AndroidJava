@@ -8,10 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.sashashtmv.fastcredit.cards.CardLab;
 import com.sashashtmv.fastcredit.cards.CardListActivity;
+import com.sashashtmv.fastcredit.credits.BankLab;
 import com.sashashtmv.fastcredit.credits.CalculatorActivity;
 import com.sashashtmv.fastcredit.credits.CreditListActivity;
 import com.sashashtmv.fastcredit.loans.LoanListActivity;
+import com.sashashtmv.fastcredit.loans.Loaner;
+import com.sashashtmv.fastcredit.loans.LoanerLab;
+import com.sashashtmv.fastcredit.other.Other;
+import com.sashashtmv.fastcredit.other.OtherLab;
 import com.sashashtmv.fastcredit.other.OtherListActivity;
 
 
@@ -21,6 +27,11 @@ public class ServicesFragment extends Fragment {
     private Button bCards;
     private Button bCalculator;
     private Button bOther;
+
+    private CardLab mCardLab = CardLab.get();
+    private BankLab mBankLab = BankLab.get();
+    private LoanerLab mLoaner = LoanerLab.get();
+    private OtherLab mOther = OtherLab.get();
 
     public static ServicesFragment newInstance() {
         ServicesFragment fragment = new ServicesFragment();
@@ -53,37 +64,45 @@ public class ServicesFragment extends Fragment {
         bCredits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = CreditListActivity.newIntent(getActivity());//запуск активности из фрагмента
-                startActivity(intent);
+                if(mBankLab.getBanks() != null) {
+                    Intent intent = CreditListActivity.newIntent(getActivity());//запуск активности из фрагмента
+                    startActivity(intent);
+                }
             }
         });
         bLoans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = LoanListActivity.newIntent(getActivity());//запуск активности из фрагмента
-                startActivity(intent);
+                if(mLoaner.getLoans()!= null) {
+                    Intent intent = LoanListActivity.newIntent(getActivity());//запуск активности из фрагмента
+                    startActivity(intent);
+                }
             }
         });
         bCards.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = CardListActivity.newIntent(getActivity());//запуск активности из фрагмента
-                startActivity(intent);
+                if(mCardLab.getCards() != null) {
+                    Intent intent = CardListActivity.newIntent(getActivity());//запуск активности из фрагмента
+                    startActivity(intent);
+                }
             }
         });
         bCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = CalculatorActivity.newIntent(getActivity());//запуск активности из фрагмента
-                startActivity(intent);
+                    Intent intent = CalculatorActivity.newIntent(getActivity());//запуск активности из фрагмента
+                    startActivity(intent);
             }
         });
 
         bOther.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(mOther.getOthers() != null) {
                 Intent intent = OtherListActivity.newIntent(getActivity());//запуск активности из фрагмента
                 startActivity(intent);
+                }
             }
         });
         // Inflate the layout for this fragment

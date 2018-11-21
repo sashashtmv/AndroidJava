@@ -22,7 +22,8 @@ public class CalculatorFragment extends Fragment {
     private EditText etNumber_of_months;
     private Button bClick;
     private Button bReset;
-    private TextView twMonthly_payment;
+    private TextView etMonthly_payment;
+    private TextView etTotal_sum;
     private EditText etInterest_rate;
 
     public static CalculatorFragment newInstance() {
@@ -45,8 +46,9 @@ public class CalculatorFragment extends Fragment {
         etNumber_of_months = v.findViewById(R.id.etNumber_of_months);
         bClick = v.findViewById(R.id.bClick);
         bReset = v.findViewById(R.id.bReset);
-        twMonthly_payment = v.findViewById(R.id.twMonthly_payment);
-        etInterest_rate = v.findViewById(R.id.twInterest_rate);
+        etMonthly_payment = v.findViewById(R.id.etMonthly_payment);
+        etInterest_rate = v.findViewById(R.id.etInterest_rate);
+        etTotal_sum = v.findViewById(R.id.etTotal_sum);
 
 
         bClick.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +65,8 @@ public class CalculatorFragment extends Fragment {
                 }
 
                 double result = sum / month + (sum * rate / 12 / 100);
-                twMonthly_payment.setText(Math.round(result * 100.0) / 100.0 + "");
+                etMonthly_payment.setText(Math.round(result * 100.0) / 100.0 + "");
+                etTotal_sum.setText(Math.round((sum * (rate / 100 +1))*100.0) / 100.0 + "");
                 etInterest_rate.setText(rate + "%");
 
             }
@@ -72,10 +75,11 @@ public class CalculatorFragment extends Fragment {
         bReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                twMonthly_payment.setText("");
+                etMonthly_payment.setText("");
                 etInterest_rate.setText("");
                 etCredit_amount.setText("");
                 etNumber_of_months.setText("");
+                etTotal_sum.setText("");
             }
         });
 

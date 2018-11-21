@@ -25,7 +25,7 @@ public class CrimeFragment extends Fragment {
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
 
-    // метод для создания пакета аргументов, создания фрагмента и добавления к нему аргументов
+    // метод для создания пакета аргументов, создания фрагмента и добавления к нему аргументов.
     public  static CrimeFragment newInstance(UUID crimeId){
         Bundle args = new Bundle();
         args.putSerializable(ARG_CRIME_ID, crimeId);

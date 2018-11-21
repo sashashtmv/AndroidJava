@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sashashtmv.fastcredit.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class CardListFragment extends Fragment {
     }
 
     private void updateUI() {
-        CardLab cardLab = CardLab.get(getActivity());
+        CardLab cardLab = CardLab.get();
         List<Card> crimes = cardLab.getCards();
         mAdapter = new CardAdapter(crimes);
         mLoansRecyclerView.setAdapter(mAdapter);
@@ -80,6 +81,7 @@ public class CardListFragment extends Fragment {
 //            mTerm = itemView.findViewById(R.id.twTerm);
             mTitle = itemView.findViewById(R.id.twTitle);
             mDescription = itemView.findViewById(R.id.twDescription);
+            mIcon = itemView.findViewById(R.id.icon_card);
 
             itemView.setOnClickListener(this);
         }
@@ -88,12 +90,14 @@ public class CardListFragment extends Fragment {
             mCard = card;
             mDescription.setText(mCard.getDescription());
             mTitle.setText(mCard.getTitle());
+            mIcon.setImageResource(R.drawable.moneyman);
+            Picasso.with(getContext()).load("http://drawall.ru/" + card.getAdressPicture()).into(mIcon);
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            Uri address = CardLab.get(getActivity()).getCards().get(position).getAdress();
+            Uri address = CardLab.get().getCards().get(position).getAdressBank();
             Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
             startActivity(openlinkIntent);
             //TODO

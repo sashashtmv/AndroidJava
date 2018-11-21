@@ -1,22 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
 
+    android:orientation="vertical">
 
-
-    <Spinner
-        android:id="@+id/spinner_countries"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:layout_marginTop="40dp"
-        android:textAlignment="center"
-        android:text = "@string/choice_country"
-        android:entries="@array/countries" />
+        android:alpha="1"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="@string/name_app"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginLeft="70dp"-->
+            <!--android:gravity="right"-->
+            <!--android:text="@string/choice_country"-->
+            <!--android:textColor="@android:color/holo_blue_dark"-->
+            <!--android:textSize="26sp" />-->
+
+        <Spinner
+            android:id="@+id/spinner_countries"
+            style="@style/spinner_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:entries="@array/countries"
+            android:gravity="center_horizontal" />
+    </LinearLayout>
+</LinearLayout>
 
 
 </LinearLayout>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SplashFragment"
+    tools:context="com.sashashtmv.myReminderEveryDay.fragment.SplashFragment"
+    android:id="@+id/container_splash"
     android:background="@color/white">
 
     <ImageView

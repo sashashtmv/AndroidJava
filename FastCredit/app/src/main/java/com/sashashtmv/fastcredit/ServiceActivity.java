@@ -35,7 +35,7 @@ public class ServiceActivity extends SingleFragmentActivity {
     }
     @Override
     protected Fragment createFragment() {
-        return ServicesFragment.newInstance();
+        return new ServicesFragment();
     }
 
 //    private class ParseTask extends AsyncTask<Void, Void, String> {

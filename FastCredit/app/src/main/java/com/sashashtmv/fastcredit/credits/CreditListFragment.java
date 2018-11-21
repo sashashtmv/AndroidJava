@@ -1,21 +1,31 @@
 package com.sashashtmv.fastcredit.credits;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sashashtmv.fastcredit.R;
+import com.squareup.picasso.Picasso;
 
+import java.io.InputStream;
+import java.io.Serializable;
+import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.UUID;
 
@@ -58,10 +68,11 @@ public class CreditListFragment extends Fragment {
         updateUI();
 
         return view;
+
     }
 
     private void updateUI() {
-        BankLab bankLab = BankLab.get(getActivity());
+        BankLab bankLab = BankLab.get();
         List<Bank> crimes = bankLab.getBanks();
         mAdapter = new BankAdapter(crimes);
         mCreditsRecyclerView.setAdapter(mAdapter);
@@ -70,37 +81,37 @@ public class CreditListFragment extends Fragment {
     private class BankHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private Bank mBank;
         private ImageView mIcon;
-        private TextView mSum;
-        private TextView mRate;
-        private TextView mTerm;
-        private TextView mValueSum;
-        private TextView mValueRate;
-        private TextView mValueTerm;
+        private TextView mApply;
+        private TextView mTitle;
+        private TextView mDescription;
+
 
         public BankHolder(View itemView) {
             super(itemView);
-//            mIcon = itemView.findViewById(R.id.icon_bank);
-//            mSum = itemView.findViewById(R.id.twSum);
-//            mRate = itemView.findViewById(R.id.twRate);
-//            mTerm = itemView.findViewById(R.id.twTerm);
-            mValueSum = itemView.findViewById(R.id.twValue_sum);
-            mValueRate = itemView.findViewById(R.id.twValue_rate);
-            mValueTerm = itemView.findViewById(R.id.twValue_term);
-
+            mTitle = itemView.findViewById(R.id.twTitle);
+            mDescription = itemView.findViewById(R.id.twDescription);
+            mIcon = itemView.findViewById(R.id.icon_bank);
             itemView.setOnClickListener(this);
         }
 
         public void bindBank(Bank bank) {
             mBank = bank;
-            mValueSum.setText(mBank.getSum());
-            mValueRate.setText(mBank.getRate());
-            mValueTerm.setText(mBank.getTerm());
+            mTitle.setText(mBank.getTitle());
+            mDescription.setText(mBank.getDescription());
+            mIcon.setImageResource(R.drawable.moneyman);
+            Picasso.with(getContext()).load("http://drawall.ru/" + bank.getAdressPicture()).into(mIcon);
+            //Picasso.with(getContext()).load("http://tut13.ru/" + bank.getAdressPicture()).into(mIcon);
+            //mIcon.setImageBitmap(mBank.getIcon());
+            //mIcon.setImageURI(mBank.getAdressPicture());
+            //new DownloadImageTask(mIcon).execute("http://java.sogeti.nl/JavaBlog/wp-content/uploads/2009/04/android_icon_256.png");
+            //Toast.makeText(getContext(),mBank.getAdressPicture().toString(), Toast.LENGTH_LONG).show();
+
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            Uri address = BankLab.get(getActivity()).getBanks().get(position).getAdress();
+            Uri address = BankLab.get().getBanks().get(position).getAdressBank();
             Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
             startActivity(openlinkIntent);
             //TODO
@@ -113,7 +124,9 @@ public class CreditListFragment extends Fragment {
     private class BankAdapter extends RecyclerView.Adapter<BankHolder> {
         private List<Bank> mBanks;
 
+
         public BankAdapter(List<Bank> banks) {
+
             mBanks = banks;
         }
 
@@ -136,6 +149,58 @@ public class CreditListFragment extends Fragment {
             return mBanks.size();
         }
     }
+
+//
+//
+//    @Override
+//    public void onSaveInstanceState(final Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putSerializable("list", (Serializable) mAdapter);
+//        outState.putSerializable("recicl", (Serializable)mCreditsRecyclerView);
+//    }
+//
+//    @Override
+//    public void onActivityCreated(Bundle savedInstanceState) {
+//        super.onActivityCreated(savedInstanceState);
+//
+//        if (savedInstanceState != null) {
+//            //probably orientation change
+//            mAdapter = (BankAdapter) savedInstanceState.getSerializable("list");
+//            mCreditsRecyclerView = (RecyclerView)savedInstanceState.getSerializable("recicl");
+//        } else {
+//            if (mAdapter != null && mCreditsRecyclerView!=null) {
+//                //returning from backstack, data is fine, do nothing
+//            } else {
+//                //newly created, compute data
+////                mAdapter = new BankAdapter();
+//            }
+//        }
+//    }
+
+//    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+//        ImageView bmImage;
+//
+//        public DownloadImageTask(ImageView bmImage) {
+//            this.bmImage = bmImage;
+//        }
+//
+//        protected Bitmap doInBackground(String... urls) {
+//            String urldisplay = urls[0];
+//            Bitmap mIcon11 = null;
+//            try {
+//                InputStream in = new java.net.URL(urldisplay).openStream();
+//                mIcon11 = BitmapFactory.decodeStream(in);
+//            } catch (Exception e) {
+//                Log.e("Ошибка передачи изображ", e.getMessage());
+//                e.printStackTrace();
+//            }
+//            return mIcon11;
+//        }
+//
+//        protected void onPostExecute(Bitmap result) {
+//            bmImage.setImageBitmap(result);
+//        }
+//    }
 
 
 //    @Override

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">кредитные карты</string>
+    <string name="view_button_text">VIEW</string>
+
+    <string name="permission_denied_dialog_title">PERMISSION REQUIRED </string>
+    <string name="permission_denied_dialog_message">You have rejected access to the phone storage for this app.\n\nPlease turn on this permission at Settings.</string>
+    <string name="permission_denied_dialog_p_button">OPEN SETTINGS</string>
+    <string name="permission_denied_dialog_n_button">CLOSE</string>
+
+    <string name="install_button_title">INSTALL</string>
+    
+    <string name="button_text">ОФОРМИТЬ КАРТУ</string>
+    <string name="button_text1">ПРОВЕРИТЬ КРЕДИТНУЮ ИСТОРИЮ</string>
+
+</resources>

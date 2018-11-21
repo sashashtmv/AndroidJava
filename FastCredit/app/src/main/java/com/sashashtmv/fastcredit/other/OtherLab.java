@@ -17,22 +17,16 @@ public class OtherLab {
 
 
     // метод создания только одного объекта - singleton
-    public  static OtherLab get(Context context){
+    public  static OtherLab get(){
         if(sOtherLab == null){
-            sOtherLab = new OtherLab(context);
+            sOtherLab = new OtherLab(sOthers);
         }
         return sOtherLab;
     }
 
-    private OtherLab(Context context) {
-        sOthers = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            Other other = new Other();
-            other.setTitle("Title");
-            other.setDescription("Description");
-            other.setAdress(Uri.parse("http://google.com/search?q="));
-            sOthers.add(other);
-        }
+    public OtherLab(List<Other> others) {
+        sOthers = others;
+
     }
 
     public Other getOther(UUID id){

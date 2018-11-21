@@ -1,5 +1,6 @@
 package com.sashashtmv.fastcredit.cards;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.widget.ImageView;
 
@@ -7,17 +8,18 @@ import java.util.UUID;
 
 public class Card {
     private UUID mId;
-    private ImageView mIcon;
     private String mTitle;
     private String mDescription;
-    private Uri adress;
+    private Uri adressBank;
+    private Uri adressPicture;
+    private Bitmap mIcon;
 
-    public Uri getAdress() {
-        return adress;
+    public Uri getAdressBank() {
+        return adressBank;
     }
 
-    public void setAdress(Uri adress) {
-        this.adress = adress;
+    public void setAdressBank(Uri adressBank) {
+        this.adressBank = adressBank;
     }
 
     public Card() {
@@ -28,12 +30,12 @@ public class Card {
         return mId;
     }
 
-    public ImageView getIcon() {
-        return mIcon;
+    public Uri getAdressPicture() {
+        return adressPicture;
     }
 
-    public void setIcon(ImageView icon) {
-        mIcon = icon;
+    public void setAdressPicture(Uri adressPicture) {
+        this.adressPicture = adressPicture;
     }
 
     public String getTitle() {

@@ -13,32 +13,39 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textSize="24dp"
         android:hint="@string/title"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp" />
 
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <TextView
         android:id="@+id/twDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textSize="14dp"
-
         android:hint="@string/description"
-        android:textColor="@android:color/background_dark" />
+
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp" />
 
     <ImageView
         android:id="@+id/icon_card"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        android:src="@mipmap/ic_launcher_round" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:paddingTop="20dp"
+
+        android:src="@drawable/oneclickmoney" />
+</RelativeLayout>
 
     <TextView
         android:id="@+id/twCard"
@@ -46,10 +53,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
+        android:background="@drawable/border_button"
         android:gravity="center"
         android:text="@string/issue_a_card"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp" />
 
 
 

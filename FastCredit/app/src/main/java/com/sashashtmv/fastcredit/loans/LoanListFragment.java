@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.sashashtmv.fastcredit.R;
 import com.sashashtmv.fastcredit.credits.BankLab;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -60,7 +61,7 @@ public class LoanListFragment extends Fragment {
     }
 
     private void updateUI() {
-        LoanerLab loanerLab = LoanerLab.get(getActivity());
+        LoanerLab loanerLab = LoanerLab.get();
         List<Loaner> crimes = loanerLab.getLoans();
         mAdapter = new LoanerAdapter(crimes);
         mLoansRecyclerView.setAdapter(mAdapter);
@@ -81,6 +82,7 @@ public class LoanListFragment extends Fragment {
 //            mTerm = itemView.findViewById(R.id.twTerm);
             mTitle = itemView.findViewById(R.id.twTitle);
             mDescription = itemView.findViewById(R.id.twDescription);
+            mIcon = itemView.findViewById(R.id.icon_loan);
 
             itemView.setOnClickListener(this);
         }
@@ -89,12 +91,14 @@ public class LoanListFragment extends Fragment {
             mLoaner = loaner;
             mDescription.setText(mLoaner.getDescription());
             mTitle.setText(mLoaner.getTitle());
+            mIcon.setImageResource(R.drawable.moneyman);
+            Picasso.with(getContext()).load("http://drawall.ru/" + loaner.getAdressPicture()).into(mIcon);
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            Uri address = LoanerLab.get(getActivity()).getLoans().get(position).getAdress();
+            Uri address = LoanerLab.get().getLoans().get(position).getAdressLoaner();
             Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
             startActivity(openlinkIntent);
             //TODO

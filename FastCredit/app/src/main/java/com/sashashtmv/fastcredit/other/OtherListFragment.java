@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sashashtmv.fastcredit.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class OtherListFragment extends Fragment {
     }
 
     private void updateUI() {
-        OtherLab otherLab = OtherLab.get(getActivity());
+        OtherLab otherLab = OtherLab.get();
         List<Other> crimes = otherLab.getOthers();
         mAdapter = new OtherAdapter(crimes);
         mOthersRecyclerView.setAdapter(mAdapter);
@@ -80,6 +81,7 @@ public class OtherListFragment extends Fragment {
 //            mTerm = itemView.findViewById(R.id.twTerm);
             mTitle = itemView.findViewById(R.id.twTitle);
             mDescription = itemView.findViewById(R.id.twDescription);
+            mIcon = itemView.findViewById(R.id.icon_other);
 
             itemView.setOnClickListener(this);
         }
@@ -88,12 +90,13 @@ public class OtherListFragment extends Fragment {
             mOther = other;
             mDescription.setText(mOther.getDescription());
             mTitle.setText(mOther.getTitle());
+            Picasso.with(getContext()).load("http://drawall.ru/" + other.getAdressPicture()).into(mIcon);
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            Uri address = OtherLab.get(getActivity()).getOthers().get(position).getAdress();
+            Uri address = OtherLab.get().getOthers().get(position).getAdressOther();
             Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
             startActivity(openlinkIntent);
             //TODO

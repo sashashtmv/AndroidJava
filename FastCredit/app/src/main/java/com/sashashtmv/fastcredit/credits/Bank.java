@@ -1,5 +1,6 @@
 package com.sashashtmv.fastcredit.credits;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.widget.ImageView;
 
@@ -7,20 +8,35 @@ import java.util.UUID;
 
 public class Bank {
     private UUID mId;
-    private Uri adress;
+    private String mTitle;
+    private String mDescription;
+    private Uri adressBank;
+    private Uri adressPicture;
+    private Bitmap mIcon;
 
-    public Uri getAdress() {
-        return adress;
+    public Bitmap getIcon() {
+        return mIcon;
     }
 
-    public void setAdress(Uri adress) {
-        this.adress = adress;
+    public void setIcon(Bitmap icon) {
+        mIcon = icon;
     }
 
-    private ImageView mIcon;
-    private String mSum;
-    private String mRate;
-    private String mTerm;
+    public Uri getAdressPicture() {
+        return adressPicture;
+    }
+
+    public void setAdressPicture(Uri adressPicture) {
+        this.adressPicture = adressPicture;
+    }
+
+    public Uri getAdressBank() {
+        return adressBank;
+    }
+
+    public void setAdressBank(Uri adressBank) {
+        this.adressBank = adressBank;
+    }
 
     public Bank() {
         mId = UUID.randomUUID();
@@ -30,36 +46,20 @@ public class Bank {
         return mId;
     }
 
-    public ImageView getIcon() {
-        return mIcon;
+    public String getTitle() {
+        return mTitle;
     }
 
-    public void setIcon(ImageView icon) {
-        mIcon = icon;
+    public void setTitle(String title) {
+        mTitle = title;
     }
 
-    public String getSum() {
-        return mSum;
+    public String getDescription() {
+        return mDescription;
     }
 
-    public void setSum(String sum) {
-        mSum = sum;
-    }
-
-    public String getRate() {
-        return mRate;
-    }
-
-    public void setRate(String rate) {
-        mRate = rate;
-    }
-
-    public String getTerm() {
-        return mTerm;
-    }
-
-    public void setTerm(String term) {
-        mTerm = term;
+    public void setDescription(String description) {
+        mDescription = description;
     }
 }
 

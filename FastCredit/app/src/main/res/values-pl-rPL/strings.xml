@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FastCredit</string>
+    <string-array name="countries" formatted="false" translatable="false">
+        <item>""</item>
+        <!--<item>Afghanistan</item>-->
+        <!--/<item>Albania</item>-->
+        <!--<item>Algeria</item>-->
+        <!--<item>American Samoa</item>-->
+        <!--<item>Andorra</item>-->
+        <!--<item>Angola</item>-->
+        <!--<item>Antigua and Barbuda</item>-->
+        <item>Argentyna</item>
+        <item>Armenia</item>
+        <!--<item>Aruba</item>-->
+        <item>Australia</item>
+        <!--<item>Austria</item>-->
+        <!--<item>Azerbaijan</item>-->
+        <!--<item>Bahamas</item>-->
+        <!--<item>Bahrain</item>-->
+        <!--<item>Bangladesh</item>-->
+        <!--<item>Barbados</item>-->
+        <!--<item>Belarus</item>-->
+        <!--<item>Belgium</item>-->
+        <!--<item>Belize</item>-->
+        <!--<item>Benin</item>-->
+        <!--<item>Bermuda</item>-->
+        <!--<item>Bhutan</item>-->
+        <!--<item>Bolivia</item>-->
+        <!--<item>Bosnia and Herzegovina</item>-->
+        <!--<item>Botswana</item>-->
+        <!--<item>Brazil</item>-->
+        <!--<item>British Virgin Islands</item>-->
+        <!--<item>Brunei</item>-->
+        <item>Bułgaria</item>
+        <!--<item>Burkina Faso</item>-->
+        <!--<item>Burundi</item>-->
+        <!--<item>Cambodia</item>-->
+        <!--<item>Cameroon</item>-->
+        <item>Kanada</item>
+        <!--<item>Canary Islands</item>-->
+        <!--<item>Cape Verde</item>-->
+        <!--<item>Cayman Islands</item>-->
+        <!--<item>Central African Republic</item>-->
+        <!--<item>Ceuta and Melilla</item>-->
+        <!--<item>Chad</item>-->
+        <!--<item>Chile</item>-->
+        <!--<item>China</item>-->
+        <item>Kolumbia</item>
+        <!--<item>Comoros</item>-->
+        <!--<item>Congo [DRC]</item>-->
+        <!--<item>Congo [Republic]</item>-->
+        <!--<item>Costa Rica</item>-->
+        <item>Chorwacja</item>
+        <!--<item>Cuba</item>-->
+        <!--<item>Curaçao</item>-->
+        <!--<item>Cyprus</item>-->
+        <item>Czechosłowacja</item>
+        <!--<item>Côte d’Ivoire</item>-->
+        <item>Dania</item>
+        <!--<item>Djibouti</item>-->
+        <!--<item>Dominica</item>-->
+        <item>Republika Dominikańska</item>
+        <!--<item>Ecuador</item>-->
+        <!--<item>Egypt</item>-->
+        <!--<item>El Salvador</item>-->
+        <!--<item>Equatorial Guinea</item>-->
+        <!--<item>Eritrea</item>-->
+        <item>Estonia</item>
+        <!--<item>Ethiopia</item>-->
+        <!--<item>Europe</item>-->
+        <!--<item>Faroe Islands</item>-->
+        <!--<item>Fiji</item>-->
+        <item>Finlandia</item>
+        <!--<item>France</item>-->
+        <!--<item>French Guiana</item>-->
+        <!--<item>French Polynesia</item>-->
+        <!--<item>Gabon</item>-->
+        <!--<item>Gambia</item>-->
+        <item>Gruzja</item>
+        <item>Niemcy</item>
+        <!--<item>Ghana</item>-->
+        <!--<item>Gibraltar</item>-->
+        <!--<item>Greece</item>-->
+        <!--<item>Greenland</item>-->
+        <!--<item>Grenada</item>-->
+        <!--<item>Guadeloupe</item>-->
+        <!--<item>Guam</item>-->
+        <!--<item>Guatemala</item>-->
+        <!--<item>Guernsey</item>-->
+        <!--<item>Guinea</item>-->
+        <!--<item>Guinea-Bissau</item>-->
+        <!--<item>Guyana</item>-->
+        <!--<item>Haiti</item>-->
+        <!--<item>Honduras</item>-->
+        <!--<item>Hong Kong</item>-->
+        <item>Węgry</item>
+        <!--<item>Iceland</item>-->
+        <!--<item>India</item>-->
+        <item>Indonezja</item>
+        <!--<item>Iran</item>-->
+        <!--<item>Iraq</item>-->
+        <!--<item>Ireland</item>-->
+        <!--<item>Isle of Man</item>-->
+        <!--<item>Israel</item>-->
+        <!--<item>Italy</item>-->
+        <!--<item>Jamaica</item>-->
+        <!--<item>Japan</item>-->
+        <!--<item>Jersey</item>-->
+        <!--<item>Jordan</item>-->
+        <item>Kazachstan</item>
+        <!--<item>Kenya</item>-->
+        <!--<item>Kiribati</item>-->
+        <!--<item>Kuwait</item>-->
+        <!--<item>Kyrgyzstan</item>-->
+        <!--<item>Laos</item>-->
+        <!--<item>Latin America</item>-->
+        <item>Łotwa</item>
+        <!--<item>Lebanon</item>-->
+        <!--<item>Lesotho</item>-->
+        <!--<item>Liberia</item>-->
+        <!--<item>Libya</item>-->
+        <!--<item>Liechtenstein</item>-->
+        <item>Litwa</item>
+        <!--<item>Luxembourg</item>-->
+        <!--<item>Macau</item>-->
+        <!--<item>Macedonia [FYROM]</item>-->
+        <!--<item>Madagascar</item>-->
+        <!--<item>Malawi</item>-->
+        <!--<item>Malaysia</item>-->
+        <!--<item>Mali</item>-->
+        <!--<item>Malta</item>-->
+        <!--<item>Marshall Islands</item>-->
+        <!--<item>Martinique</item>-->
+        <!--<item>Mauritania</item>-->
+        <!--<item>Mauritius</item>-->
+        <!--<item>Mayotte</item>-->
+        <item>Meksyk</item>
+        <!--<item>Micronesia</item>-->
+        <item>Mołdawia</item>
+        <!--<item>Monaco</item>-->
+        <!--<item>Mongolia</item>-->
+        <!--<item>Montenegro</item>-->
+        <!--<item>Morocco</item>-->
+        <!--<item>Mozambique</item>-->
+        <!--<item>Myanmar [Burma]</item>-->
+        <!--<item>Namibia</item>-->
+        <!--<item>Nepal</item>-->
+        <!--<item>Netherlands</item>-->
+        <!--<item>New Caledonia</item>-->
+        <!--<item>New Zealand</item>-->
+        <!--<item>Nicaragua</item>-->
+        <!--<item>Niger</item>-->
+        <!--<item>Nigeria</item>-->
+        <!--<item>North Korea</item>-->
+        <!--<item>Northern Mariana Islands</item>-->
+        <item>Norwegia</item>
+        <!--<item>Oman</item>-->
+        <!--<item>Pakistan</item>-->
+        <!--<item>Palau</item>-->
+        <!--<item>Palestine</item>-->
+        <item>Panama</item>
+        <!--<item>Papua New Guinea</item>-->
+        <!--<item>Paraguay</item>-->
+        <!--<item>Peru</item>-->
+        <!--<item>Philippines</item>-->
+        <item>Polska</item>
+        <!--<item>Portugal</item>-->
+        <!--<item>Puerto Rico</item>-->
+        <!--<item>Qatar</item>-->
+        <!--<item>Romania</item>-->
+        <item>Rumunia</item>
+        <item>Rosja</item>
+        <!--<item>Rwanda</item>-->
+        <!--<item>Réunion</item>-->
+        <!--<item>Saint Barthélemy</item>-->
+        <!--<item>Saint Kitts and Nevis</item>-->
+        <!--<item>Saint Lucia</item>-->
+        <!--<item>Saint Martin</item>-->
+        <!--<item>Saint Vincent and the Grenadines</item>-->
+        <!--<item>Samoa</item>-->
+        <!--<item>San Marino</item>-->
+        <!--<item>Saudi Arabia</item>-->
+        <!--<item>Senegal</item>-->
+        <!--<item>Serbia</item>-->
+        <!--<item>Seychelles</item>-->
+        <!--<item>Sierra Leone</item>-->
+        <!--<item>Singapore</item>-->
+        <!--<item>Sint Maarten</item>-->
+        <!--<item>Slovakia</item>-->
+        <!--<item>Slovenia</item>-->
+        <!--<item>Solomon Islands</item>-->
+        <!--<item>Somalia</item>-->
+        <!--<item>South Africa</item>-->
+        <!--<item>South Korea</item>-->
+        <!--<item>South Sudan</item>-->
+        <!--<item>Spain</item>-->
+        <!--<item>Sri Lanka</item>-->
+        <!--<item>Sudan</item>-->
+        <!--<item>Suriname</item>-->
+        <!--<item>Swaziland</item>-->
+        <item>Szwecja</item>
+        <!--<item>Switzerland</item>-->
+        <!--<item>Syria</item>-->
+        <!--<item>São Tomé and Príncipe</item>-->
+        <!--<item>Taiwan</item>-->
+        <!--<item>Tanzania</item>-->
+        <!--<item>Thailand</item>-->
+        <!--<item>Timor-Leste</item>-->
+        <!--<item>Togo</item>-->
+        <!--<item>Tonga</item>-->
+        <!--<item>Trinidad and Tobago</item>-->
+        <!--<item>Tunisia</item>-->
+        <!--<item>Turkey</item>-->
+        <!--<item>Turks and Caicos Islands</item>-->
+        <!--<item>U.S. Outlying Islands</item>-->
+        <!--<item>U.S. Virgin Islands</item>-->
+        <!--<item>Uganda</item>-->
+        <item>Ukraina</item>
+        <!--<item>United Arab Emirates</item>-->
+        <item>Anglia</item>
+        <item>USA</item>
+        <!--<item>Uruguay</item>-->
+        <!--<item>Uzbekistan</item>-->
+        <!--<item>Vanuatu</item>-->
+        <!--<item>Venezuela</item>-->
+        <!--<item>Vietnam</item>-->
+        <!--<item>Western Sahara</item>-->
+        <!--<item>Yemen</item>-->
+        <!--<item>Zambia</item>-->
+        <!--<item>Zimbabwe</item>-->
+        <!--<item>Åland Islands</item>-->
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">Title</string>
+    <string name="interest_rate">Interest description</string>
+    <string name="value_sum">Value title</string>
+    <string name="value_rate">Value rate</string>
+    <string name="value_term">Value term</string>
+    <string name="description">Description</string>
+    <string name="choice_country">Wybór kraju</string>
+    <string name="loans_mfis">Chwilówki</string>
+    <string name="credits">Kredyty</string>
+    <string name="maps">Karty kredytowe</string>
+    <string name="number_of_months">Liczba miesięcy</string>
+    <string name="credit_amount">Kwota pożyczki</string>
+    <string name="result">Wynik</string>
+    <string name="monthly_payment">Miesięczna płatność</string>
+    <string name="cards">Karty</string>
+    <string name="sum">Kwota pożyczki</string>
+    <string name="rate">Stopa procentowa</string>
+    <string name="term">Okres kredytowania</string>
+    <string name="apply_for_a_loan">Uzyskaj chwilówki</string>
+    <string name="credit_calculator">Kalkulator kredytowy</string>
+    <string name="other">Inne</string>
+    <string name="reset">Zresetuj</string>
+    <string name="issue_a_card">Zdobądź kartę</string>
+    <string name="more">Przeczytaj więcej</string>
+    <string name="nul">0</string>
+    <string name="total_sum">Łączna kwota</string>
+    <string name="apply_for_a_credit">Uzyskaj pożyczkę</string>
+    <string name="name_app">Chwilówki, pożyczki i finanse</string>
+
+    <string name="facebook_app_id">490875534767639</string>
+</resources>

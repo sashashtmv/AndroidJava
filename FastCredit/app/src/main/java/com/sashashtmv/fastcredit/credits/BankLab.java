@@ -18,24 +18,26 @@ public class BankLab {
 
 
     // метод создания только одного объекта - singleton
-    public  static BankLab get(Context context){
+    public  static BankLab get(){
         if(sBankLab == null){
-            sBankLab = new BankLab(context);
+            sBankLab = new BankLab(sBanks);
         }
         return sBankLab;
     }
 
-    private BankLab(Context context) {
-        sBanks = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            Bank bank = new Bank();
-            bank.setSum("from 5000 to 50000");
-            bank.setRate("from 12%");
-            bank.setTerm("from 3 months to 12 months");
-            bank.setAdress(Uri.parse("http://google.com/search?q=кредиты онлайн"));
-            sBanks.add(bank);
-        }
+    public BankLab(List<Bank> banks) {
+        sBanks = banks;
     }
+    //    private BankLab(Context context) {
+//        sBanks = new ArrayList<>();
+//        for (int i = 0; i < 20; i++) {
+//            Bank bank = new Bank();
+//            bank.setTitle("Webbankir");
+//            bank.setDescription("Short application. All new customers from 10%");
+//            bank.setAdressBank(Uri.parse("http://google.com/search?q=кредиты онлайн"));
+//            sBanks.add(bank);
+//        }
+//    }
 
     public  Bank getBank(UUID id){
         for(Bank bank : sBanks){

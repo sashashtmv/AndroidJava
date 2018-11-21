@@ -50,7 +50,7 @@ public class CrimeListFragment extends Fragment {
         }
     }
     // передаём во ViewHolder три виджета, формирующих представление элемента списка
-    private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private Crime mCrime;
         private TextView mTitleTextView;
         private TextView mDateTextView;

@@ -7,17 +7,17 @@ import java.util.UUID;
 
 public class Other {
     private UUID mId;
-    private ImageView mIcon;
     private String mTitle;
     private String mDescription;
-    private Uri adress;
+    private Uri adressOther;
+    private Uri adressPicture;
 
-    public Uri getAdress() {
-        return adress;
+    public Uri getAdressOther() {
+        return adressOther;
     }
 
-    public void setAdress(Uri adress) {
-        this.adress = adress;
+    public void setAdressOther(Uri adressOther) {
+        this.adressOther = adressOther;
     }
 
     public Other() {
@@ -28,12 +28,12 @@ public class Other {
         return mId;
     }
 
-    public ImageView getIcon() {
-        return mIcon;
+    public Uri getAdressPicture() {
+        return adressPicture;
     }
 
-    public void setIcon(ImageView icon) {
-        mIcon = icon;
+    public void setAdressPicture(Uri adressPicture) {
+        this.adressPicture = adressPicture;
     }
 
     public String getTitle() {

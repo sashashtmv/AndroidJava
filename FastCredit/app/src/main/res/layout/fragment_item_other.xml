@@ -13,11 +13,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textSize="24dp"
         android:hint="@string/title"
+        android:textSize="20sp"
         android:textColor="@android:color/background_dark" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/twDescription"
@@ -25,9 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textSize="14dp"
+        android:textSize="14sp"
 
         android:hint="@string/description"
         android:textColor="@android:color/background_dark" />
@@ -35,10 +37,14 @@
     <ImageView
         android:id="@+id/icon_other"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:paddingTop="20dp"
         android:src="@mipmap/ic_launcher_round" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/twMore"
@@ -46,10 +52,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/more"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:background="@drawable/border_button"
+        android:textSize="14sp"/>
 
 
 

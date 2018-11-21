@@ -7,17 +7,25 @@ import java.util.UUID;
 
 public class Loaner {
     private UUID mId;
-    private ImageView mIcon;
     private String mTitle;
     private String mDescription;
-    private Uri adress;
+    private Uri adressLoaner;
+    private Uri adressPicture;
 
-    public Uri getAdress() {
-        return adress;
+    public Uri getAdressLoaner() {
+        return adressLoaner;
     }
 
-    public void setAdress(Uri adress) {
-        this.adress = adress;
+    public void setAdressLoaner(Uri adressLoaner) {
+        this.adressLoaner = adressLoaner;
+    }
+
+    public Uri getAdressPicture() {
+        return adressPicture;
+    }
+
+    public void setAdressPicture(Uri adressPicture) {
+        this.adressPicture = adressPicture;
     }
 
     public Loaner() {
@@ -28,13 +36,7 @@ public class Loaner {
         return mId;
     }
 
-    public ImageView getIcon() {
-        return mIcon;
-    }
 
-    public void setIcon(ImageView icon) {
-        mIcon = icon;
-    }
 
     public String getTitle() {
         return mTitle;

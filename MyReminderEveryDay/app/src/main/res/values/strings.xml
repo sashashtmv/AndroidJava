@@ -15,4 +15,7 @@
     <string name="hint_title">Title</string>
     <string name="hint_date">Date</string>
     <string name="hint_time">Time</string>
+    <string name="Ok">Ok</string>
+    <string name="Cancel">Cancel</string>
+    <string name="dialog_error_empty_title">Please, enter the title</string>
 </resources>

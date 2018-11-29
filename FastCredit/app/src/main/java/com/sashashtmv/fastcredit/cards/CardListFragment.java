@@ -27,27 +27,6 @@ public class CardListFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
 
-
-//    public CreditListFragment() {
-//    }
-
-//    public static CreditListFragment newInstance() {
-//        CreditListFragment fragment = new CreditListFragment();
-//        Bundle args = new Bundle();
-//        args.putInt(ARG_COLUMN_COUNT, columnCount);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
-
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//        if (getArguments() != null) {
-//            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-//        }
-//    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list_card, container, false);
@@ -75,10 +54,7 @@ public class CardListFragment extends Fragment {
 
         public CardHolder(View itemView) {
             super(itemView);
-//            mIcon = itemView.findViewById(R.id.icon_bank);
-//            mSum = itemView.findViewById(R.id.twSum);
-//            mRate = itemView.findViewById(R.id.twRate);
-//            mTerm = itemView.findViewById(R.id.twTerm);
+
             mTitle = itemView.findViewById(R.id.twTitle);
             mDescription = itemView.findViewById(R.id.twDescription);
             mIcon = itemView.findViewById(R.id.icon_card);
@@ -100,11 +76,7 @@ public class CardListFragment extends Fragment {
             Uri address = CardLab.get().getCards().get(position).getAdressBank();
             Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
             startActivity(openlinkIntent);
-            //TODO
-//            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());//запуск активности из фрагмента
-//            startActivity(intent);
         }
-
     }
 
     private class CardAdapter extends RecyclerView.Adapter<CardHolder> {
@@ -133,6 +105,4 @@ public class CardListFragment extends Fragment {
             return mCards.size();
         }
     }
-
-
 }

@@ -38,27 +38,6 @@ public class CreditListFragment extends Fragment {
     // TODO: Customize parameters
     private UUID mUUID;
 
-
-//    public CreditListFragment() {
-//    }
-
-//    public static CreditListFragment newInstance() {
-//        CreditListFragment fragment = new CreditListFragment();
-//        Bundle args = new Bundle();
-//        args.putInt(ARG_COLUMN_COUNT, columnCount);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
-
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//        if (getArguments() != null) {
-//            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-//        }
-//    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list_credit, container, false);
@@ -100,11 +79,6 @@ public class CreditListFragment extends Fragment {
             mDescription.setText(mBank.getDescription());
             mIcon.setImageResource(R.drawable.moneyman);
             Picasso.with(getContext()).load("http://drawall.ru/" + bank.getAdressPicture()).into(mIcon);
-            //Picasso.with(getContext()).load("http://tut13.ru/" + bank.getAdressPicture()).into(mIcon);
-            //mIcon.setImageBitmap(mBank.getIcon());
-            //mIcon.setImageURI(mBank.getAdressPicture());
-            //new DownloadImageTask(mIcon).execute("http://java.sogeti.nl/JavaBlog/wp-content/uploads/2009/04/android_icon_256.png");
-            //Toast.makeText(getContext(),mBank.getAdressPicture().toString(), Toast.LENGTH_LONG).show();
 
         }
 
@@ -114,9 +88,7 @@ public class CreditListFragment extends Fragment {
             Uri address = BankLab.get().getBanks().get(position).getAdressBank();
             Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
             startActivity(openlinkIntent);
-            //TODO
-//            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());//запуск активности из фрагмента
-//            startActivity(intent);
+
         }
 
     }

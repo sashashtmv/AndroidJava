@@ -59,10 +59,6 @@ public class CountriesFragment extends Fragment {
 
     public static CountriesFragment newInstance() {
         CountriesFragment fragment = new CountriesFragment();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-//        fragment.setArguments(args);
         return fragment;
     }
 
@@ -70,10 +66,6 @@ public class CountriesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
     }
     AsyncTask parser;
 
@@ -106,7 +98,7 @@ public class CountriesFragment extends Fragment {
             }
         }
         View v = inflater.inflate(R.layout.fragment_countries, container, false);
-        //final TextView selection = (TextView) v.findViewById(R.id.text_view);
+
         // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
         if(res[1] == null){
             res = mas;
@@ -115,8 +107,6 @@ public class CountriesFragment extends Fragment {
         final List<String> countries = buff;
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, res);
         // Определяем разметку для использования при выборе элемента
-//        CustomAdepterForSpinner adapter = new CustomAdepterForSpinner(this.getContext(),
-//                android.R.layout.simple_spinner_item, mas);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner_countries);
         // Применяем адаптер к элементу spinner
@@ -129,11 +119,8 @@ public class CountriesFragment extends Fragment {
                 ((TextView) parent.getChildAt(0)).setTextSize(24);
                 if (position > 0) {
                     String country = countries.get(position);
-                    //if(parser != null) { parser.cancel(true);}
 
                     parser = new ParseTask(country).execute();
-                    //Toast.makeText(getContext(),item + position, Toast.LENGTH_LONG).show();
-                   // Toast.makeText(getContext(), Locale.getDefault().getCountry(), Toast.LENGTH_LONG).show();
                     Intent intent = ServiceActivity.newIntent(getActivity());//запуск активности из фрагмента
                     startActivity(intent);
                 }
@@ -223,7 +210,6 @@ public class CountriesFragment extends Fragment {
 
                 banks = dJO.getJSONArray("banks");
                 if (banks!= null) {
-                    // Toast.makeText(getContext(),strJson, Toast.LENGTH_LONG).show();
 
                     for (int i = 0; i < banks.length(); i++) {
                         JSONObject bank = banks.getJSONObject(i);
@@ -297,6 +283,5 @@ public class CountriesFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        //parser.cancel(true);
     }
 }

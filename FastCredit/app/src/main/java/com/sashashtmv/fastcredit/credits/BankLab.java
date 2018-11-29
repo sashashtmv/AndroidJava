@@ -15,8 +15,6 @@ public class BankLab {
         return sBanks;
     }
 
-
-
     // метод создания только одного объекта - singleton
     public  static BankLab get(){
         if(sBankLab == null){
@@ -28,16 +26,6 @@ public class BankLab {
     public BankLab(List<Bank> banks) {
         sBanks = banks;
     }
-    //    private BankLab(Context context) {
-//        sBanks = new ArrayList<>();
-//        for (int i = 0; i < 20; i++) {
-//            Bank bank = new Bank();
-//            bank.setTitle("Webbankir");
-//            bank.setDescription("Short application. All new customers from 10%");
-//            bank.setAdressBank(Uri.parse("http://google.com/search?q=кредиты онлайн"));
-//            sBanks.add(bank);
-//        }
-//    }
 
     public  Bank getBank(UUID id){
         for(Bank bank : sBanks){

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_data"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".fragments.DataFragment">
+
+    <android.support.design.widget.CoordinatorLayout
+
+        android:id="@+id/coordinator_information"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/toolbar_fon" />
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:id="@+id/name_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/name_company"
+                android:textColor="@color/Black"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_company"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_call"
+                    android:layout_width="90dp"
+                    android:layout_height="61dp"
+                    android:src="@drawable/call" />
+
+                <LinearLayout
+                    android:id="@+id/tx_telephone_numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_044_585_43_63"
+                        android:textColor="@color/Black"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_050_457_79_77"
+                        android:textColor="@color/Black"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_093_322_99_77"
+                        android:textColor="@color/Black"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_067_332_79_77"
+                        android:textColor="@color/Black"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_brend"
+                    android:layout_width="134dp"
+                    android:layout_height="87dp"
+                    android:src="@drawable/brend" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contacts"
+                android:layout_marginLeft="24dp"
+                android:autoLink="all"
+                android:text="www.oasiswater.com.ua"
+                android:textColor="@color/Black"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/stock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/link"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tx_stock"
+                    android:layout_width="110dp"
+                    android:layout_height="61dp"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/stock"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="30dp" />
+
+                <LinearLayout
+                    android:id="@+id/offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/title_stock"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description_stock"
+                        android:textColor="@color/Black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/stock_image"
+                android:layout_width="388dp"
+                android:layout_height="108dp"
+                android:layout_below="@+id/stock"
+                android:src="@drawable/stock" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/description_offer"
+                android:textColor="@color/Black"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

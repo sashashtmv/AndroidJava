@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">WaterOrder</string>
+    <string name="water_1">Water #1</string>
+    <string name="water_2">Water#2</string>
+    <string name="water_3">Water#3</string>
+    <string name="pompa">Помпа механическая</string>
+    <string name="count_water">Вода - 0 бутыля</string>
+    <string name="tara_return">Тара к возврату - 0 бутыля</string>
+    <string name="total">Итого: 0 грн</string>
+    <string name="next">Далее</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="call">call</string>
+    <string name="water_order">Доставка воды</string>
+    <string name="information">Информация</string>
+    <string name="address_delivery">Адрес доставки:</string>
+    <string name="date_delivery">Дата доставки:</string>
+    <string name="time_delivery">Время доставки:</string>
+    <string name="order">Заказать</string>
+    <string name="make_order">Сделать заказ с помощью:</string>
+
+    <string name="number_of_customer">Персональный номер клиента</string>
+    <string name="name">Имя</string>
+    <string name="necessarily">Обязательно</string>
+    <string name="last_name">Фамилия</string>
+    <string name="company">Компания</string>
+    <string name="message">На этот номер будут приходить уведомления об обработке заказа</string>
+    <string name="street">Улица</string>
+    <string name="house">Дом</string>
+    <string name="ok">OK</string>
+    <string name="telephone">Телефон</string>
+    <string name="personal_data_customer">Данные клиента</string>
+    <string name="customer_number">Номер клиента</string>
+    <string name="contact_person">Контактное лицо</string>
+    <string name="toast">Заполните все поля</string>
+    <string name="name_company">Компания "ОАЗИС"</string>
+    <string name="_044_585_43_63">044-585-43-63</string>
+    <string name="_050_457_79_77">050-457-79-77</string>
+    <string name="_093_322_99_77">093-322-99-77</string>
+    <string name="_067_332_79_77">067-332-79-77</string>
+    <string name="title_stock">Добрый сосед</string>
+    <string name="description_stock">Если по Вашей рекомендации к ОАЗИСУ присоединился Ваш друг, коллега или родственник, то вы оба получаете по одному бутылю воды ОАЗИС в подарок* (1 бутыль воды для себя и 1 бутыль воды для друга)</string>
+    <string name="description_offer">*под подарком подразумевается возможность приобрести бутыль воды 18,9л за 1грн. Доставляется Вам и Вашему другу после второго платного заказа клиента, который присоединился.</string>
+    <string name="stock">Акция!</string>
+
+
+</resources>

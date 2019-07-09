@@ -29,7 +29,7 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/border_button"
-        android:text="@string/address_delivery"
+        android:text="@string/input_address"
         android:textColor="@color/White" />
 
     <Button
@@ -44,7 +44,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/border_button"
-        android:text="@string/number_of_customer"
+        android:text="@string/personal_data_customer"
         android:textColor="@color/White"/>
 
 </RelativeLayout>

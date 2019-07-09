@@ -10,7 +10,7 @@
     android:id="@+id/fragment_start">
 <android.support.design.widget.CoordinatorLayout
 
-    android:id="@+id/coordinator"
+    android:id="@+id/coordinator_start"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -22,10 +22,29 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_fragment"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/toolbar_fon"/>
+            android:background="@drawable/toolbar_fon">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginRight="24dp"
+                android:text="@string/water_order"
+                android:textColor="@color/Blue"
+                android:textSize="16sp"
+                android:textStyle="normal|bold|italic" />
+
+            <ImageView
+                android:id="@+id/iv_brand"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+
+                android:src="@drawable/brend" />
+        </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
 
@@ -65,8 +84,8 @@
 
             <Button
                 android:id="@+id/bt_minus1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/minus" />
 
@@ -128,8 +147,8 @@
 
             <Button
                 android:id="@+id/bt_minus2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/minus" />
 
@@ -191,8 +210,8 @@
 
             <Button
                 android:id="@+id/bt_minus3"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/minus" />
 
@@ -254,8 +273,8 @@
 
             <Button
                 android:id="@+id/bt_minus_pompa"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/minus" />
 
@@ -309,6 +328,14 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/count_water"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/line" />
+
         <LinearLayout
             android:id="@+id/tara"
             android:layout_width="match_parent"
@@ -316,35 +343,63 @@
 
             android:layout_below="@+id/count_water">
 
-            <Button
-                android:id="@+id/bt_left"
-                android:layout_width="27dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/left" />
 
             <TextView
-                android:id="@+id/tv_tara"
+                android:id="@+id/tv_tara_return"
                 android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="60dp"
                 android:layout_marginRight="16dp"
-                android:gravity="center"
+                android:gravity="left"
                 android:text="@string/tara_return" />
 
-            <Button
-                android:id="@+id/bt_right"
-                android:layout_width="27dp"
+            <RadioButton
+                android:id="@+id/rb_tara_return"
+                android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="16dp"
-                android:background="@drawable/right" />
+                android:checked="true" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buy_tara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/tara">
+
+
+            <TextView
+                android:id="@+id/tv_buy_tara"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="16dp"
+                android:gravity="left"
+                android:text="@string/buy_tara" />
+
+            <RadioButton
+                android:id="@+id/rb_buy_tara"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="16dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buy_tara"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/line" />
 
         <LinearLayout
             android:id="@+id/sum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tara">
+            android:layout_below="@+id/buy_tara">
 
             <TextView
                 android:id="@+id/tv_count_sum"
@@ -358,24 +413,14 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/sum"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:src="@drawable/line" />
-
         <Button
             android:id="@+id/bt_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sum"
-            android:layout_marginStart="8dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/border_button"
             android:text="@string/next"
             android:textColor="@color/White" />

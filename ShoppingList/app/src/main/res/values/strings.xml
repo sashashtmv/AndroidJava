@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ShoppingList</string>
+    <string name="mainactivity">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="don_t_show_splash">Don\'t show splash</string>
+    <string name="current_task">Current</string>
+    <string name="done_task">Done</string>
+    <string name="done_tasks">Done Tasks</string>
+    <string name="current_tasks">Current Tasks</string>
+    <string name="date">Date</string>
+    <string name="title">Title</string>
+    <string name="adding_task">Adding task</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_date">Date</string>
+    <string name="hint_time">Time</string>
+    <string name="Ok">Ok</string>
+    <string name="Cancel">Cancel</string>
+    <string name="dialog_error_empty_title">Please, enter the title</string>
+    <string name="dialog_removing_message">Are you sure want to delete this task?</string>
+    <string name="removed">Remove</string>
+    <string name="need">Хочу купить</string>
+    <string name="purchased">Куплено</string>
+    <string name="add_purchase">Добавить покупку</string>
+    <string name="input_purchase">Введите покупку</string>
+    <string name="purchased_purchases">Покупки</string>
+    <string name="select_all">Выделить все</string>
+</resources>

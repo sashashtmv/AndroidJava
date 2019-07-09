@@ -1,18 +1,23 @@
 <resources>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">kGVBHw2PG0UcPjHQG8H5Z3baKgUbu3biLSmpG2oz</string>
+    <string name="back4app_client_key">Onw7nbrYaf88opIuNQLnFDSZdXbMpxEIQbAcd5Fk</string>
+
     <string name="app_name">WaterOrder</string>
-    <string name="water_1">Water #1</string>
-    <string name="water_2">Water#2</string>
-    <string name="water_3">Water#3</string>
+    <string name="water_1">«Аquacity»</string>
+    <string name="water_2">«Источник здоровья»</string>
+    <string name="water_3">«Н2ВiO»</string>
     <string name="pompa">Помпа механическая</string>
-    <string name="count_water">Вода - 0 бутыля</string>
-    <string name="tara_return">Тара к возврату - 0 бутыля</string>
+    <string name="count_water">Количество воды - 0 бутыля</string>
+    <string name="tara_return">Тара на обмен</string>
     <string name="total">Итого: 0 грн</string>
     <string name="next">Далее</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="call">call</string>
-    <string name="water_order">Доставка воды</string>
+    <string name="water_order">Доставка воды\n в г. Запорожье</string>
     <string name="information">Информация</string>
     <string name="address_delivery">Адрес доставки:</string>
     <string name="date_delivery">Дата доставки:</string>
@@ -20,7 +25,7 @@
     <string name="order">Заказать</string>
     <string name="make_order">Сделать заказ с помощью:</string>
 
-    <string name="number_of_customer">Персональный номер клиента</string>
+
     <string name="name">Имя</string>
     <string name="necessarily">Обязательно</string>
     <string name="last_name">Фамилия</string>
@@ -34,15 +39,24 @@
     <string name="customer_number">Номер клиента</string>
     <string name="contact_person">Контактное лицо</string>
     <string name="toast">Заполните все поля</string>
-    <string name="name_company">Компания "ОАЗИС"</string>
-    <string name="_044_585_43_63">044-585-43-63</string>
-    <string name="_050_457_79_77">050-457-79-77</string>
-    <string name="_093_322_99_77">093-322-99-77</string>
-    <string name="_067_332_79_77">067-332-79-77</string>
-    <string name="title_stock">Добрый сосед</string>
-    <string name="description_stock">Если по Вашей рекомендации к ОАЗИСУ присоединился Ваш друг, коллега или родственник, то вы оба получаете по одному бутылю воды ОАЗИС в подарок* (1 бутыль воды для себя и 1 бутыль воды для друга)</string>
-    <string name="description_offer">*под подарком подразумевается возможность приобрести бутыль воды 18,9л за 1грн. Доставляется Вам и Вашему другу после второго платного заказа клиента, который присоединился.</string>
+    <string name="name_company">Компания «Аquacity»</string>
+    <string name="_044_585_43_63">061-707-0770</string>
+    <string name="_050_457_79_77">098-070-1000</string>
+    <string name="_093_322_99_77">073-070-1000</string>
+    <string name="_067_332_79_77">066-070-1000</string>
+    <string name="title_stock">АКЦИЯ 9+1</string>
+    <string name="description_stock">*Желаете заказывать по 2 бутыли? В таком случае, каждый 10-й бутыль Вам в подарок!</string>
+    <string name="description_offer">*Условия акции:
+1) Приобретите тару стоимостью 150 грн
+2) Делайте заказ по 2 бутыли одной поставкой и получайте каждый 10-й бутыль бесплатно!</string>
     <string name="stock">Акция!</string>
+    <string name="delivery_adress">Адрес доставки</string>
+    <string name="stock2">Помпа — 50%!</string>
+    <string name="description_stock2">Становитесь нашим клиентом, приобретайте бутыль стоимостью 160 грн и получите помпу Lilu Econom.</string>
+    <string name="input_address">Введите адрес</string>
+    <string name="thanks">Спасибо, Ваш заказ принят</string>
+    <string name="buy_tara">Купить тару</string>
+    <string name="flat_number">Подъезд, кв.</string>
 
 
 </resources>

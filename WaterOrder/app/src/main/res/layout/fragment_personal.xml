@@ -28,7 +28,24 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="@drawable/toolbar_fon">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/personal_data_customer"
+                    android:textColor="@color/Blue"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold|italic"/>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_brand"
+                    android:layout_marginRight="8dp"
+
+                    android:src="@drawable/brend" />
             </android.support.v7.widget.Toolbar>
+
         </android.support.design.widget.AppBarLayout>
 
         <RelativeLayout
@@ -52,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
-                    android:text="@string/customer_number"
+                    android:text="@string/delivery_adress"
                     android:textColor="@color/Black"
                     android:textSize="18sp" />
 
@@ -89,8 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:gravity="center"
-                     />
+                    android:gravity="center" />
 
             </LinearLayout>
 
@@ -99,8 +115,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/contact_person"
-                android:background="@drawable/border_field"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/border_field"
                 android:orientation="horizontal">
 
                 <TextView
@@ -148,7 +164,7 @@
                 android:background="@drawable/border_button"
                 android:text="@string/ok"
                 android:textColor="@color/White"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
 
         </RelativeLayout>

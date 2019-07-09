@@ -5,9 +5,9 @@
     tools:context = ".MainActivity">
     <item
         android:id="@+id/icon_call"
-        android:title="@string/call"
-        app:showAsAction="always"
         android:icon="@drawable/brend"
-        />
+        android:title="@string/call"
+
+        app:showAsAction="always" />
 
 </menu>

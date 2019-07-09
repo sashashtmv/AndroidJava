@@ -11,7 +11,7 @@
 
     <android.support.design.widget.CoordinatorLayout
 
-        android:id="@+id/coordinator_information"
+        android:id="@+id/coordinator_data"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
@@ -25,7 +25,25 @@
                 android:id="@+id/toolbar_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@drawable/toolbar_fon" />
+                android:background="@drawable/toolbar_fon">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/delivery_adress"
+                    android:textColor="@color/Blue"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_brand"
+                    android:layout_marginRight="8dp"
+
+                    android:src="@drawable/brend" />
+            </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
 
         <RelativeLayout
@@ -38,6 +56,7 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="2dp"
                 android:background="@drawable/border_field"
                 android:orientation="horizontal">
@@ -62,35 +81,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/last_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_below="@+id/name"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/border_field"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tx_last_name"
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/last_name"
-                    android:textColor="@color/Black"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/et_last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:backgroundTint="@android:color/transparent"
-                    android:gravity="center"
-                    android:hint="@string/necessarily" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_below="@+id/last_name"
                 android:id="@+id/name_company"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -188,6 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/street_name"
+                android:layout_marginBottom="2dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -208,6 +200,33 @@
                     android:hint="@string/necessarily" />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/flat_number"
+                android:layout_below="@+id/house_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_field"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tx_flat_number"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/flat_number"
+                    android:textColor="@color/Black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_flat_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:backgroundTint="@android:color/transparent"
+                    />
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/bt_order"
                 android:layout_width="match_parent"
@@ -215,15 +234,13 @@
 
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/border_button"
                 android:text="@string/ok"
                 android:textColor="@color/White"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
         </RelativeLayout>
 
     </android.support.design.widget.CoordinatorLayout>

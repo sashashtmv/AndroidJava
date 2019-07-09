@@ -3,36 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="56dp"
-    android:background="?android:attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true">
+    android:background="@color/gray_50"
+    >
 
-    <TextView
-        android:id="@+id/tv_task_title"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/primary_text_default_material_light"
-        android:textSize="16sp"
-        tools:ignore="PrivateResource" />
+        android:layout_height="56dp"
+        android:background="?android:attr/selectableItemBackground">
 
-    <TextView
-        android:id="@+id/tv_task_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:textColor="@color/secondary_text_default_material_light"
-        android:textSize="14sp"
-        tools:ignore="PrivateResource" />
-    
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/cvTaskPriority"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:src="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/tv_task_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/primary_text_default_material_light"
+            android:textSize="16sp"
+
+            tools:ignore="PrivateResource" />
+
+        <TextView
+            android:id="@+id/tv_task_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:gravity="right"
+            android:textColor="@color/secondary_text_default_material_light"
+            android:textSize="14sp"
+            tools:ignore="PrivateResource" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cvTaskPriority"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@color/colorPrimary" />
+    </RelativeLayout>
 </RelativeLayout>

@@ -14,7 +14,8 @@
         android:id="@+id/coordinator_information"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        tools:context=".MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar_layout"
@@ -22,10 +23,27 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar_fragment"
+                android:id="@+id/toolbar_fragment_information"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@drawable/toolbar_fon" />
+                android:background="@drawable/toolbar_fon">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/Blue"
+                    android:layout_marginRight="24dp"
+                    android:text="@string/information"
+                    android:textStyle="normal|bold|italic"/>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_brand"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/brend" />
+            </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
 
         <RelativeLayout
@@ -56,11 +74,11 @@
                 <TextView
                     android:id="@+id/tx_address_delivery"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="32dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                     />
+                    android:gravity="center" />
 
                 <Button
                     android:id="@+id/bt_select_address_right"
@@ -159,10 +177,8 @@
 
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
 
-                android:layout_marginEnd="24dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/border_button"

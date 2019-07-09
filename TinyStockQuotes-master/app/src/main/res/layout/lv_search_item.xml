@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    tools:ignore="MissingPrefix"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_marginRight="3dp"
+        android:background="@color/white"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="78dp">
+
+
+        <TextView
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/tvStockSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/symbol_black"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:text="APPL" />
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/tvStockName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvStockSymbol"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:gravity="left"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/company_name_gray"
+            android:textSize="15sp"
+            android:text="Apple" />
+
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:id="@+id/viewPriceIndicator"
+            android:background="@color/toolbar_orange"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"></View>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="78dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_height="78dp">
+
+        <ImageView
+            android:id="@+id/imgAddFavorite"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@color/white"
+            android:src="@drawable/img_checkmark"
+            android:padding="0dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+</LinearLayout>
+

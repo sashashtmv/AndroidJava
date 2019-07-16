@@ -155,7 +155,7 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
@@ -175,21 +175,21 @@
                         android:layout_alignBottom="@+id/iv_liter1"
                         android:layout_margin="1dp"
                         android:gravity="center"
-                        android:text="H"
+                        android:text=""
                         android:textColor="@color/White" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -204,21 +204,21 @@
                         android:layout_alignBottom="@+id/iv_liter2"
                         android:layout_margin="1dp"
                         android:gravity="center"
-                        android:text="E"
+                        android:text=""
                         android:textColor="@color/White" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -233,21 +233,21 @@
                         android:layout_alignBottom="@+id/iv_liter3"
                         android:layout_margin="1dp"
                         android:gravity="center"
-                        android:text="L"
+                        android:text=""
                         android:textColor="@color/White" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -262,21 +262,21 @@
                         android:layout_alignBottom="@+id/iv_liter4"
                         android:layout_margin="1dp"
                         android:gravity="center"
-                        android:text="L"
+                        android:text=""
                         android:textColor="@color/White" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -291,21 +291,21 @@
                         android:layout_alignBottom="@+id/iv_liter5"
                         android:layout_margin="1dp"
                         android:gravity="center"
-                        android:text="O"
+                        android:text=""
                         android:textColor="@color/White" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -327,14 +327,14 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -356,14 +356,14 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -385,14 +385,14 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -414,14 +414,14 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="2dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_liter10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+
                         android:adjustViewBounds="true"
                         android:src="@drawable/square"
                         android:visibility="gone" />
@@ -452,17 +452,16 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+
                 android:adjustViewBounds="true">
 
                 <ImageView
                     android:id="@+id/iv_letter_box1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/square_box"
-                    android:visibility="gone" />
+                     />
 
                 <TextView
                     android:id="@+id/tv_letter1"
@@ -475,6 +474,7 @@
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:text=""
+                    android:textSize="18sp"
                     android:textColor="@color/Black" />
             </RelativeLayout>
 
@@ -491,7 +491,7 @@
                     android:layout_marginLeft="8dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/square_box"
-                    android:visibility="gone" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_letter2"
@@ -504,6 +504,7 @@
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:text=""
+                    android:textSize="18sp"
                     android:textColor="@color/Black" />
             </RelativeLayout>
 
@@ -520,7 +521,7 @@
                     android:layout_marginLeft="8dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/square_box"
-                    android:visibility="gone" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_letter3"
@@ -533,6 +534,7 @@
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:text=""
+                    android:textSize="18sp"
                     android:textColor="@color/Black" />
             </RelativeLayout>
 
@@ -549,7 +551,7 @@
                     android:layout_marginLeft="8dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/square_box"
-                    android:visibility="gone" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_letter4"
@@ -562,6 +564,7 @@
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:text=""
+                    android:textSize="18sp"
                     android:textColor="@color/Black" />
             </RelativeLayout>
 
@@ -578,7 +581,7 @@
                     android:layout_marginLeft="8dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/square_box"
-                    android:visibility="gone" />
+                     />
 
                 <TextView
                     android:id="@+id/tv_letter5"
@@ -591,6 +594,7 @@
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:text=""
+                    android:textSize="18sp"
                     android:textColor="@color/Black" />
             </RelativeLayout>
 
@@ -607,7 +611,7 @@
                     android:layout_marginLeft="8dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/square_box"
-                    android:visibility="gone" />
+                     />
 
                 <TextView
                     android:id="@+id/tv_letter6"
@@ -620,6 +624,7 @@
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:text=""
+                    android:textSize="18sp"
                     android:textColor="@color/Black" />
             </RelativeLayout>
         </LinearLayout>
@@ -635,17 +640,15 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:adjustViewBounds="true">
 
                     <ImageView
                         android:id="@+id/iv_letter_box7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/square_box"
-                        android:visibility="gone" />
+                        />
 
                     <TextView
                         android:id="@+id/tv_letter7"
@@ -658,6 +661,7 @@
                         android:layout_margin="1dp"
                         android:gravity="center"
                         android:text=""
+                        android:textSize="18sp"
                         android:textColor="@color/Black" />
                 </RelativeLayout>
 
@@ -674,7 +678,7 @@
                         android:layout_marginLeft="8dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/square_box"
-                        android:visibility="gone" />
+                         />
 
                     <TextView
                         android:id="@+id/tv_letter8"
@@ -687,6 +691,7 @@
                         android:layout_margin="1dp"
                         android:gravity="center"
                         android:text=""
+                        android:textSize="18sp"
                         android:textColor="@color/Black" />
                 </RelativeLayout>
 
@@ -703,7 +708,7 @@
                         android:layout_marginLeft="8dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/square_box"
-                        android:visibility="gone" />
+                         />
 
                     <TextView
                         android:id="@+id/tv_letter9"
@@ -716,6 +721,7 @@
                         android:layout_margin="1dp"
                         android:gravity="center"
                         android:text=""
+                        android:textSize="18sp"
                         android:textColor="@color/Black" />
                 </RelativeLayout>
 
@@ -732,7 +738,7 @@
                         android:layout_marginLeft="8dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/square_box"
-                        android:visibility="gone" />
+                         />
 
                     <TextView
                         android:id="@+id/tv_letter10"
@@ -745,6 +751,7 @@
                         android:layout_margin="1dp"
                         android:gravity="center"
                         android:text=""
+                        android:textSize="18sp"
                         android:textColor="@color/Black" />
                 </RelativeLayout>
 
@@ -761,7 +768,7 @@
                         android:layout_marginLeft="8dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/square_box"
-                        android:visibility="gone" />
+                        />
 
                     <TextView
                         android:id="@+id/tv_letter11"
@@ -774,6 +781,7 @@
                         android:layout_margin="1dp"
                         android:gravity="center"
                         android:text=""
+                        android:textSize="18sp"
                         android:textColor="@color/Black" />
                 </RelativeLayout>
 
@@ -790,7 +798,7 @@
                         android:layout_marginLeft="8dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/square_box"
-                        android:visibility="gone" />
+                         />
 
                     <TextView
                         android:id="@+id/tv_letter12"
@@ -803,6 +811,7 @@
                         android:layout_margin="1dp"
                         android:gravity="center"
                         android:text=""
+                        android:textSize="18sp"
                         android:textColor="@color/Black" />
                 </RelativeLayout>
         </LinearLayout>

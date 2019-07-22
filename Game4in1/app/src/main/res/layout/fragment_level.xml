@@ -42,6 +42,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="4dp"
                             android:text="@string/level_num"
                             android:textColor="@color/White"
                             android:textSize="20sp"
@@ -53,6 +54,7 @@
                             android:layout_height="wrap_content"
 
                             android:layout_gravity="center_vertical"
+                            android:layout_marginRight="4dp"
                             android:textColor="@color/White"
                             android:textSize="20sp"
                             android:textStyle="normal|bold|italic" />
@@ -73,6 +75,8 @@
                             android:layout_height="wrap_content"
 
                             android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:textColor="@color/White"
                             android:textSize="20sp"
                             android:textStyle="normal|bold|italic" />
@@ -81,6 +85,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:layout_marginRight="8dp"
                             android:src="@drawable/coins" />
                     </LinearLayout>
 
@@ -104,7 +109,7 @@
                     android:id="@+id/image1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="24dp"
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
                     android:adjustViewBounds="true" />
@@ -114,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginRight="24dp"
                     android:layout_weight="1"
                     android:adjustViewBounds="true" />
             </LinearLayout>
@@ -129,7 +134,7 @@
                     android:id="@+id/image3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="24dp"
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
                     android:adjustViewBounds="true" />
@@ -139,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginRight="24dp"
                     android:layout_weight="1"
                     android:adjustViewBounds="true" />
             </LinearLayout>
@@ -439,6 +444,33 @@
                         android:text=""
                         android:textColor="@color/White" />
                 </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_ask_freands"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/mybutton"
+                    android:text="@string/ask_freands" />
+
+                <Button
+                    android:id="@+id/bt_advices"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/mybutton"
+                    android:text="@string/advices" />
             </LinearLayout>
 
         <LinearLayout

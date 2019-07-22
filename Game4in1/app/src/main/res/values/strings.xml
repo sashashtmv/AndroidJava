@@ -7,4 +7,20 @@
     <string name="levels">Уровни</string>
     <string name="level_num">уровень:</string>
     <string name="brilliant_done">Отлично сработано!</string>
+    <string name="ask_freands">Спроси друзей</string>
+    <string name="advices">Советы</string>
+    <string name="coins">МОНЕТЫ</string>
+    <string name="bay_coins">Купить монеты</string>
+    <string name="_15">+15</string>
+    <string name="send_twit">Опубликовать твит</string>
+    <string name="facebook">Поделиться Facebook</string>
+    <string name="instagram">Поделиться в Instagram</string>
+    <string name="_90">90</string>
+    <string name="continues">Продолжить</string>
+    <string name="ask_your_freands">Спроси своих друзей!</string>
+    <string name="help_freands">Обратитесь за помощью, чтобы решить уровень от ваших друзей через мессенджеры ниже</string>
+    <string name="viber">Viber</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="telegram">Telegram</string>
+    <string name="facebook_messenger">Facebook Messenger</string>
 </resources>

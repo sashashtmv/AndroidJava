@@ -1,7 +1,9 @@
 package com.sashashtmv.game4in1.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,12 +24,14 @@ import android.widget.TextView;
 
 import com.sashashtmv.game4in1.MainActivity;
 import com.sashashtmv.game4in1.R;
+import com.sashashtmv.game4in1.database.DBHelper;
 import com.sashashtmv.game4in1.model.Item;
 import com.sashashtmv.game4in1.model.ModelLevel;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
@@ -40,8 +44,9 @@ import static android.content.ContentValues.TAG;
 public class LevelFragment extends Fragment {
 
     private Toolbar toolbar;
-    private ArrayList<Item> mItems;
+    private List<ModelLevel> mItems;
     private ModelLevel mItem;
+    public DBHelper mDBHelper;
 
     private ImageView mImage1;
     private ImageView mImage2;
@@ -93,6 +98,10 @@ public class LevelFragment extends Fragment {
     private int countCoins;
     private PreferenceHelper mPreferenceHelper;
     private LinearLayout coinsLayout;
+    TextView[] mas;
+    String[] letters;
+
+    //private Button mAdvice;
 
 
     private int level = 0;
@@ -107,13 +116,16 @@ public class LevelFragment extends Fragment {
 //        addTaskFromDB();
     }
     public interface callbackResult{
-        void onCreatResult( ModelLevel item);
+        void onCreatResult(ModelLevel item);
     }
     public interface callbackCoinsFragment{
         void onCreatCoinsFragment();
     }
     public interface callbackAskFreandsFragment{
         void onCreatAskFreandsFragment();
+    }
+    public interface callbackAdvicesFragment{
+        void onCreatAdvicesFragment();
     }
 
 
@@ -143,9 +155,6 @@ public class LevelFragment extends Fragment {
 
         map = new HashMap<>();
         mLetters = new ArrayList<>();
-        PreferenceHelper.getInstance().init(getActivity());
-        mPreferenceHelper = PreferenceHelper.getInstance();
-        countCoins = mPreferenceHelper.getInt("gold");
 
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         activity.getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -194,6 +203,8 @@ public class LevelFragment extends Fragment {
         mFreands = view.findViewById(R.id.bt_ask_freands);
         mAdvices = view.findViewById(R.id.bt_advices);
         coinsLayout = view.findViewById(R.id.ll_gold);
+
+
         setUi();
 
         coinsLayout.setOnClickListener(new View.OnClickListener() {
@@ -212,7 +223,7 @@ public class LevelFragment extends Fragment {
         mAdvices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mMainActivity.onCreatAdvicesFragment();
             }
         });
 
@@ -279,7 +290,7 @@ public class LevelFragment extends Fragment {
         mRandomLetter1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    sendLetter(mRandomLetter1);
+                sendLetter(mRandomLetter1);
             }
         });
         mRandomLetter2.setOnClickListener(new View.OnClickListener() {
@@ -362,18 +373,35 @@ public class LevelFragment extends Fragment {
 //            startActivity(intent);
 //            return true;
         if (id == android.R.id.home) {
+            for(int i = 0; i < 12; i++){
+                mPreferenceHelper.putString("letter" + i, "");
+            }
             getActivity().onBackPressed();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public String check() {
+    public void check() {
         String word = "";
         for(int i = 0; i < mLetters.size(); i++){
             word += mLetters.get(i).getText().toString();
         }
-        return word;
+        if (mItem.getWord().toUpperCase().equals(word)) {
+            mItem.setStatus(ModelLevel.STATUS_DONE);
+            int position = mItems.indexOf(mItem);
+            ModelLevel level = (ModelLevel) mItems.get(position + 1);
+            if (level.getStatus() == ModelLevel.STATUS_NOT_AVALABLE) {
+
+                mDBHelper.update().status(level.getTimeStamp(), ModelLevel.STATUS_AVALABLE);
+            }
+            mDBHelper.update().status(mItem.getTimeStamp(), ModelLevel.STATUS_DONE);
+            for(int i = 0; i < 12; i++){
+                mPreferenceHelper.putString("letter" + i, "");
+            }
+            mMainActivity.onCreatResult(mItem);
+        }
+
     }
 
     public  void sendLetter( TextView randomLetter){
@@ -387,11 +415,30 @@ public class LevelFragment extends Fragment {
             }
             //sendLetter(mRandomLetter1);
         }
-            if (mItem.getWord().toUpperCase().equals(check())) {
-                //ToDo
-                mMainActivity.onCreatResult(mItem);
-                Log.i(TAG, "onClick: check - " + check());
+        check();
+//            if (mItem.getWord().toUpperCase().equals(check())) {
+//                //ToDo
+//                mItem.setStatus(ModelLevel.STATUS_DONE);
+//                int position = mItems.indexOf(mItem);
+//                ModelLevel level = (ModelLevel)mItems.get(position+1);
+//                if(level.getStatus() == ModelLevel.STATUS_NOT_AVALABLE) {
+//
+//                mDBHelper.update().status(level.getTimeStamp(), ModelLevel.STATUS_AVALABLE);
+//                }
+//                mDBHelper.update().status(mItem.getTimeStamp(), ModelLevel.STATUS_DONE);
+//                mMainActivity.onCreatResult(mItem);
+//                Log.i(TAG, "onClick: check - " + check());
+//            }
+    }
+    public  void showLetter(){
+        for(int i = 0; i < mItem.getWord().length(); i++){
+            String temp = mItem.getWord().charAt(i)+"";
+            if(mLetters.get(i).getText().toString().equals("")){
+                mPreferenceHelper.putString("letter"+i, temp);
+                check();
+                break;
             }
+        }
     }
 
     public void returnLetter(TextView returnText){
@@ -411,15 +458,17 @@ public class LevelFragment extends Fragment {
     }
 
     public void setUi() {
-        mImage1.setImageBitmap(mItem.getBitmap1());
-        mImage2.setImageBitmap(mItem.getBitmap2());
-        mImage3.setImageBitmap(mItem.getBitmap3());
-        mImage4.setImageBitmap(mItem.getBitmap4());
+        mImage1.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mItem.getBitmap1(), "drawable", getActivity().getPackageName())));
+        mImage2.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mItem.getBitmap2(), "drawable", getActivity().getPackageName())));
+        mImage3.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mItem.getBitmap3(), "drawable", getActivity().getPackageName())));
+        mImage4.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mItem.getBitmap4(), "drawable", getActivity().getPackageName())));
+        countCoins = mPreferenceHelper.getInt("gold");
         mLevelNumber.setText(" " + level);
         mCountGold.setText("" + countCoins);
-        TextView[] mas = {mRandomLetter1, mRandomLetter2, mRandomLetter3, mRandomLetter4, mRandomLetter5, mRandomLetter6, mRandomLetter7,
+        mas = new TextView[]{mRandomLetter1, mRandomLetter2, mRandomLetter3, mRandomLetter4, mRandomLetter5, mRandomLetter6, mRandomLetter7,
                 mRandomLetter8, mRandomLetter9, mRandomLetter10, mRandomLetter11, mRandomLetter12};
-        String[] letters = {"Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Я", "Ч", "С", "М", "Т", "Ь", "Б", "Ю"};
+        letters = new String[]{"Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Я", "Ч", "С", "М", "Т", "Ь", "Б", "Ю"};
+//      наполнение буквами искомого слова в рандомном порядке нижнего бокса с буквами
         for (int i = 0; i < mItem.getWord().length(); i++) {
             int random = new Random().nextInt((11 - 0) + 1) + 0;
             Log.i(TAG, "setUi: random number - " + random);
@@ -436,7 +485,7 @@ public class LevelFragment extends Fragment {
                 }
             }
         }
-
+//      наполнение рандомными буквами нижнего бокса с буквами
         for (int i = 0; i < mas.length; i++) {
             int random = new Random().nextInt((29 - 0) + 1) + 0;
             if (mas[i].getText().toString().equals("")) {
@@ -574,16 +623,44 @@ public class LevelFragment extends Fragment {
             mLetters.add(mTextView9);
             mLetters.add(mTextView10);
         }
+        //перебор для открытия буквы за золото
+        for (int i = 0; i < mItem.getWord().length(); i++) {
+            String preference = mPreferenceHelper.getString("letter" + i);
+            if (preference != null | preference.length() > 0) {
+                mLetters.get(i).setText(preference.toUpperCase());
+                for (int j = 0; j < mas.length; j++) {
+                    if (mas[j].getText().toString().equals(preference.toUpperCase())) {
+                        mas[j].setText("");
+                    }
+                }
+                check();
+            }
+        }
 
     }
 
-    public void updateLevels(ArrayList<Item> items, ModelLevel item) {
+    public void updateLevels(List<ModelLevel> items, ModelLevel item, DBHelper dbHelper) {
         mItems = items;
         mItem = item;
+        mDBHelper = dbHelper;
         if (items.size() > 0) {
             level = items.indexOf(item) + 1;
             Log.i(TAG, "updateLevels: level - " + level);
         }
         //mLevelNumber.setText("" + level);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        for(int i = 0; i < 12; i++){
+            PreferenceHelper.getInstance().init(getActivity());
+            mPreferenceHelper = PreferenceHelper.getInstance();
+            mPreferenceHelper.putString("letter" + i, "");
+        }
+    }
+
+    public ModelLevel getItem() {
+        return mItem;
     }
 }

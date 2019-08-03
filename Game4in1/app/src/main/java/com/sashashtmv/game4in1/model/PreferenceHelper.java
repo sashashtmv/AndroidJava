@@ -2,9 +2,7 @@ package com.sashashtmv.game4in1.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
-import static android.support.constraint.Constraints.TAG;
 
 public class PreferenceHelper {
     private static PreferenceHelper instance;
@@ -21,7 +19,7 @@ public class PreferenceHelper {
             instance = new PreferenceHelper();
 //            instance.putInt("gold", 0);
         }
-    return instance;
+        return instance;
     }
 
     public void init(Context context){
@@ -29,7 +27,7 @@ public class PreferenceHelper {
         this.mContext = context;
         this.mSharedPreferences = context.getSharedPreferences("preferences", Context.MODE_PRIVATE);
     }
-// передаем количество золота в файл SharedPreferences
+    // передаем количество золота в файл SharedPreferences
     public void putInt(String key, int value){
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putInt(key, value);
@@ -37,5 +35,14 @@ public class PreferenceHelper {
     }
     public int getInt(String key){
         return mSharedPreferences.getInt(key, 0);
+    }
+
+    public void putString(String key, String value) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+    public String getString(String key){
+        return mSharedPreferences.getString(key, "");
     }
 }

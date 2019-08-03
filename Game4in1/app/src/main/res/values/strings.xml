@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Game4in1</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Settings</string>
+    <string name="action_new">Settings</string>
+    <string name="logo_desc">App logo</string>
+    <string name="country_name">Nigeria</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logotip">Ваш логотип</string>
     <string name="levels">Уровни</string>
@@ -23,4 +27,8 @@
     <string name="whatsapp">WhatsApp</string>
     <string name="telegram">Telegram</string>
     <string name="facebook_messenger">Facebook Messenger</string>
+    <string name="help">Подсказка</string>
+    <string name="show_letter">Показать букву</string>
+    <string name="_300">300</string>
+    <string name="full_solve">Решить полностью</string>
 </resources>

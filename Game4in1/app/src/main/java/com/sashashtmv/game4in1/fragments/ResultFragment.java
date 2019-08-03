@@ -1,6 +1,9 @@
 package com.sashashtmv.game4in1.fragments;
 
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
@@ -8,11 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sashashtmv.game4in1.R;
 import com.sashashtmv.game4in1.model.ModelLevel;
+import com.sashashtmv.game4in1.model.PreferenceHelper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,13 +25,15 @@ import com.sashashtmv.game4in1.model.ModelLevel;
 public class ResultFragment extends Fragment {
 
 
-private ModelLevel mModelLevel;
-private TextView mWord;
-private ImageView mImage1;
-private ImageView mImage2;
-private ImageView mImage3;
-private ImageView mImage4;
-
+    private ModelLevel mModelLevel;
+    private TextView mWord;
+    private ImageView mImage1;
+    private ImageView mImage2;
+    private ImageView mImage3;
+    private ImageView mImage4;
+    private Button mContinues;
+    private PreferenceHelper mPreferenceHelper;
+    private int countCoins;
 
 
     public ResultFragment() {
@@ -57,13 +64,32 @@ private ImageView mImage4;
         mImage2 = view.findViewById(R.id.image2);
         mImage3 = view.findViewById(R.id.image3);
         mImage4 = view.findViewById(R.id.image4);
+        mContinues = view.findViewById(R.id.bt_continues);
+
+        PreferenceHelper.getInstance().init(getActivity());
+        mPreferenceHelper = PreferenceHelper.getInstance();
+        countCoins = mPreferenceHelper.getInt("gold");
 
         mWord.setText(mModelLevel.getWord().toUpperCase());
-        mImage1.setImageBitmap(mModelLevel.getBitmap1());
-        mImage2.setImageBitmap(mModelLevel.getBitmap2());
-        mImage3.setImageBitmap(mModelLevel.getBitmap3());
-        mImage4.setImageBitmap(mModelLevel.getBitmap4());
-        // Inflate the layout for this fragment
+        mImage1.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mModelLevel.getBitmap1(), "drawable", getActivity().getPackageName())));
+        mImage2.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mModelLevel.getBitmap2(), "drawable", getActivity().getPackageName())));
+        mImage3.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mModelLevel.getBitmap3(), "drawable", getActivity().getPackageName())));
+        mImage4.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mModelLevel.getBitmap4(), "drawable", getActivity().getPackageName())));
+
+
+        mContinues.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countCoins += 90;
+                mPreferenceHelper.putInt("gold", countCoins);
+                FragmentManager fragmentManager = getActivity().getFragmentManager();
+                Fragment fragment = getFragmentManager().findFragmentByTag("start fragment");
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content_frame, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
         return view;
     }
 

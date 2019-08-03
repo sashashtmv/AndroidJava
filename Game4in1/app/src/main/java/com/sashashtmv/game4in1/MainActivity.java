@@ -4,30 +4,38 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
 
 import static android.support.constraint.Constraints.TAG;
 import android.widget.Toast;
 
 import com.sashashtmv.game4in1.adapter.AdapterForLevels;
+import com.sashashtmv.game4in1.database.DBHelper;
+import com.sashashtmv.game4in1.fragments.AdvicesFragment;
 import com.sashashtmv.game4in1.fragments.AskFreandsFragment;
 import com.sashashtmv.game4in1.fragments.CoinsFragment;
 import com.sashashtmv.game4in1.fragments.LevelFragment;
 import com.sashashtmv.game4in1.fragments.ResultFragment;
+import com.sashashtmv.game4in1.fragments.SplashFragment;
 import com.sashashtmv.game4in1.fragments.StartFragment;
 import com.sashashtmv.game4in1.model.Item;
 import com.sashashtmv.game4in1.model.ModelLevel;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity  implements StartFragment.callback, LevelFragment.callbackResult, LevelFragment.callbackCoinsFragment, LevelFragment.callbackAskFreandsFragment {
+public class MainActivity extends AppCompatActivity implements StartFragment.callback, LevelFragment.callbackResult,
+        LevelFragment.callbackCoinsFragment, LevelFragment.callbackAskFreandsFragment, LevelFragment.callbackAdvicesFragment {
 
+    private GridLayoutManager lLayout;
     FragmentManager mFragmentManager;
     StartFragment startFragment;
-    ArrayList<Item> mItems;
+    List<ModelLevel> mItems;
     private int countCoins;
     private PreferenceHelper mPreferenceHelper;
+    public DBHelper mDBHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,22 +44,37 @@ public class MainActivity extends AppCompatActivity  implements StartFragment.ca
         PreferenceHelper.getInstance().init(this);
         mPreferenceHelper = PreferenceHelper.getInstance();
         countCoins = mPreferenceHelper.getInt("gold");
-        if(countCoins == 0){
+        if (countCoins == 0) {
             mPreferenceHelper.putInt("gold", 100);
         }
         Log.i(TAG, "init: context - " + countCoins);
 
         mFragmentManager = getFragmentManager();
-        startFragment = StartFragment.newInstance();
-        mFragmentManager.beginTransaction()
-                .replace(R.id.content_frame, startFragment)
-                .addToBackStack(null)
-                .commit();
+        runStartFragment();
+        runSplash();
+
     }
 
+    public void runSplash() {
+        SplashFragment splashFragment = SplashFragment.newInstance();
+        mFragmentManager.beginTransaction()
+                .replace(R.id.content_frame, splashFragment, "dd")
+                .addToBackStack(null)
+                .commit();
 
-    @Override
-    public void onCreatLevel(ArrayList<Item> items, ModelLevel item) {
+    }
+
+    public void runStartFragment() {
+        StartFragment startFragment = StartFragment.newInstance();
+        //StartFragment startFragment = new StartFragment();
+        mFragmentManager.beginTransaction()
+                .replace(R.id.content_frame, startFragment, "start fragment")
+                .addToBackStack(null)
+                .commit();
+
+    }
+
+    public void onCreatLevel(List<ModelLevel> items, ModelLevel item, DBHelper DBHelper) {
 
         Fragment level = LevelFragment.newInstance();
         mFragmentManager.beginTransaction()
@@ -59,9 +82,11 @@ public class MainActivity extends AppCompatActivity  implements StartFragment.ca
                 .addToBackStack(null)
                 .commit();
         mItems = items;
-        if(level != null) {
+        mDBHelper = DBHelper;
+
+        if (level != null) {
             //Toast.makeText(this, customer.getTelephoneNumber(), Toast.LENGTH_LONG).show();
-            ((LevelFragment) level).updateLevels(mItems, item);
+            ((LevelFragment) level).updateLevels(mItems, item, mDBHelper);
             //((InformationFragment) information).updateOrder(mOrder);
         }
 
@@ -75,7 +100,7 @@ public class MainActivity extends AppCompatActivity  implements StartFragment.ca
                 .addToBackStack(null)
                 .commit();
         //mItems = items;
-        if(result != null) {
+        if (result != null) {
             //Toast.makeText(this, customer.getTelephoneNumber(), Toast.LENGTH_LONG).show();
             ((ResultFragment) result).updateResult(item);
             //((InformationFragment) information).updateOrder(mOrder);
@@ -90,7 +115,7 @@ public class MainActivity extends AppCompatActivity  implements StartFragment.ca
                 .addToBackStack(null)
                 .commit();
         //mItems = items;
-        if(coinsFragment != null) {
+        if (coinsFragment != null) {
             //Toast.makeText(this, customer.getTelephoneNumber(), Toast.LENGTH_LONG).show();
             ((CoinsFragment) coinsFragment).updateCoins(countCoins);
             //((InformationFragment) information).updateOrder(mOrder);
@@ -105,4 +130,14 @@ public class MainActivity extends AppCompatActivity  implements StartFragment.ca
                 .addToBackStack(null)
                 .commit();
     }
+
+    @Override
+    public void onCreatAdvicesFragment() {
+        Fragment advicesFragment = AdvicesFragment.newInstance();
+        mFragmentManager.beginTransaction()
+                .replace(R.id.content_frame, advicesFragment, "adviceFragment")
+                .addToBackStack(null)
+                .commit();
+    }
+
 }

@@ -3,68 +3,91 @@ package com.sashashtmv.game4in1.model;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
 
+import java.io.ByteArrayOutputStream;
+
 public class ModelLevel implements Item {
 
     public static final int STATUS_AVALABLE = 0;
     public static final int STATUS_NOT_AVALABLE = 1;
     public static final int STATUS_DONE = 2;
 
-    private String word;
-    private Bitmap mBitmap1;
-    private Bitmap mBitmap2;
-    private Bitmap mBitmap3;
-    private Bitmap mBitmap4;
+    private String mWord;
+    private String mBitmap1;
+    private String mBitmap2;
+    private String mBitmap3;
+    private String mBitmap4;
+    private int mStatus;
+    private long mTimeStamp;
 
-    public ModelLevel(String word, Bitmap bitmap1, Bitmap bitmap2, Bitmap bitmap3, Bitmap bitmap4) {
-        this.word = word;
+    public ModelLevel(String word, String bitmap1, String bitmap2, String bitmap3, String bitmap4, int status, long timeStamp) {
+        mWord = word;
         mBitmap1 = bitmap1;
         mBitmap2 = bitmap2;
         mBitmap3 = bitmap3;
         mBitmap4 = bitmap4;
+        mStatus = status;
+        mTimeStamp = timeStamp;
     }
 
+
     public String getWord() {
-        return word;
+        return mWord;
+    }
+
+    public int getStatus() {
+        return mStatus;
+    }
+
+    public void setStatus(int status) {
+        mStatus = status;
     }
 
     public void setWord(String word) {
-        this.word = word;
+        mWord = word;
     }
 
-    public Bitmap getBitmap1() {
-        return mBitmap1;
-    }
 
-    public void setBitmap1(Bitmap bitmap1) {
+    public void setBitmap1(String bitmap1) {
         mBitmap1 = bitmap1;
     }
 
-    public Bitmap getBitmap2() {
+    public String getBitmap1() {
+        return mBitmap1;
+    }
+    public String getBitmap2() {
         return mBitmap2;
     }
-
-    public void setBitmap2(Bitmap bitmap2) {
-        mBitmap2 = bitmap2;
-    }
-
-    public Bitmap getBitmap3() {
+    public String getBitmap3() {
         return mBitmap3;
     }
 
-    public void setBitmap3(Bitmap bitmap3) {
+    public String getBitmap4() {
+        return mBitmap4;
+    }
+    public void setBitmap2(String bitmap2) {
+        mBitmap2 = bitmap2;
+    }
+
+
+    public void setBitmap3(String bitmap3) {
         mBitmap3 = bitmap3;
     }
 
-    public Bitmap getBitmap4() {
-        return mBitmap4;
-    }
 
-    public void setBitmap4(Bitmap bitmap4) {
+    public void setBitmap4(String bitmap4) {
         mBitmap4 = bitmap4;
     }
 
     @Override
     public boolean isTask() {
         return true;
+    }
+
+    public long getTimeStamp() {
+        return mTimeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        mTimeStamp = timeStamp;
     }
 }

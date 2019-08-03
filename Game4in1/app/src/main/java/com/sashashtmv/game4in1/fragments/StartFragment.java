@@ -4,32 +4,32 @@ package com.sashashtmv.game4in1.fragments;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
-//import android.support.annotation.RequiresApi;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
+
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
-
 
 import com.sashashtmv.game4in1.MainActivity;
 import com.sashashtmv.game4in1.R;
 import com.sashashtmv.game4in1.adapter.AdapterForLevels;
-import com.sashashtmv.game4in1.adapter.GridSpacingItemDecoration;
+
+import com.sashashtmv.game4in1.database.DBHelper;
 import com.sashashtmv.game4in1.model.Item;
 import com.sashashtmv.game4in1.model.ModelLevel;
+import com.sashashtmv.game4in1.model.PreferenceHelper;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
@@ -43,36 +43,34 @@ public class StartFragment extends Fragment implements AdapterForLevels.ItemList
 
     protected RecyclerView mRecyclerView;
     protected GridLayoutManager mLayoutManager;
-    protected AdapterForLevels mAdapter;
-    private ArrayList<Item> items;
+    private GridLayoutManager lLayout;
+
+    private List<ModelLevel> items;
 
     public MainActivity mMainActivity;
+    private PreferenceHelper mPreferenceHelper;
+    public DBHelper mDBHelper;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if(getActivity() != null){
-            mMainActivity = (MainActivity)getActivity();
+        if (getActivity() != null) {
+            mMainActivity = (MainActivity) getActivity();
         }
-//        addTaskFromDB();
     }
 
     public StartFragment() {
         // Required empty public constructor
     }
 
-    public interface callback{
-        void onCreatLevel(ArrayList<Item> items, ModelLevel item);
+    public interface callback {
+        void onCreatLevel(List<ModelLevel> items, ModelLevel item, DBHelper DBHelper);
     }
+
     public static StartFragment newInstance() {
         StartFragment fragment = new StartFragment();
         Bundle args = new Bundle();
-//        args.putInt(ARG_PARAM1, fragment.total);
-//        args.putInt(ARG_PARAM2, fragment.pompa);
-//        args.putInt(ARG_PARAM3, fragment.tara);
-//        args.putInt(ARG_PARAM4, fragment.count1);
-//        args.putInt(ARG_PARAM5, fragment.count2);
-//        args.putInt(ARG_PARAM6, fragment.count3);
+
         fragment.setArguments(args);
 
         return fragment;
@@ -88,72 +86,88 @@ public class StartFragment extends Fragment implements AdapterForLevels.ItemList
         setHasOptionsMenu(true);
         toolbar = view.findViewById(R.id.toolbar_fragment); //находишь тулбар
         //toolbar.setNavigationIcon(R.drawable.ic_launcher_background); //помещаешь иконку слева
-        AppCompatActivity activity = (AppCompatActivity)getActivity();
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
         activity.getSupportActionBar().setTitle("");
 
         //mFragmentManager = activity.getFragmentManager();
 
-        int spanCount = 4; // 3 columns
-        int spacing = 40; // 50px
-        boolean includeEdge = true;
-        mLayoutManager = new GridLayoutManager(getActivity(), spanCount, GridLayoutManager.VERTICAL, false);
-        mRecyclerView = view.findViewById(R.id.rvLevels);
-        //mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
-        mRecyclerView.setLayoutManager(mLayoutManager);
+//        int spanCount = 4; // 3 columns
+//        int spacing = 40; // 50px
+//        boolean includeEdge = true;
+//        mLayoutManager = new GridLayoutManager(getActivity(), spanCount);
+//        mRecyclerView = view.findViewById(R.id.rvLevels);
+//        mRecyclerView.setHasFixedSize(true);
+//        mRecyclerView.setLayoutManager(mLayoutManager);
+//
+//        mAdapter = new AdapterForLevels(getActivity(), this);
+//        items = getItems();
+//        mAdapter.addItems(items);
+//        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
+//
+//        mRecyclerView.setAdapter(mAdapter);
+
+        PreferenceHelper.getInstance().init(getActivity());
+        mPreferenceHelper = PreferenceHelper.getInstance();
+        mDBHelper = new DBHelper(getActivity());
 
         items = getItems();
-        mAdapter = new AdapterForLevels(this, this);
-        mAdapter.addItems(items);
-        mRecyclerView.setAdapter(mAdapter);
+        lLayout = new GridLayoutManager(getActivity(), 4);
+
+        RecyclerView rView = (RecyclerView) view.findViewById(R.id.rvLevels);
+        rView.setHasFixedSize(true);
+        rView.setLayoutManager(lLayout);
+
+        AdapterForLevels rcAdapter = new AdapterForLevels(getActivity(), items, this);
+        rView.setAdapter(rcAdapter);
         return view;
     }
 
-    private ArrayList<Item> getItems() {
-        ArrayList<Item> items = new ArrayList<>();
-        String[] mas = {"хлеб", "диван", "Дерево", "ручка", "колесо", "стол", "ветер", "топливо", "мясо", "провод", "бутылка", "песок", "подушка", "бабочка",
+    private List<ModelLevel> getItems() {
+        String[] mas = {"хлеб", "диван", "дерево", "ручка", "колесо", "стол", "ветер", "топливо", "мясо", "провод", "бутылка", "песок", "подушка", "бабочка",
                 "знание", "шланг"};
-        for(int i = 0; i < mas.length; i++) {
-            Bitmap image1 = null;
-            Bitmap image2 = null;
-            Bitmap image3 = null;
-            Bitmap image4 = null;
-            for(int j = 1; j < 5; j++) {
-                String name = "image" + (i+1) + "_" + j;
-                Log.i(TAG, "getItems:  - " +  getActivity().getPackageName());
-                try {
-                    if (j == 1) {
-                        image1 = BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(name, "drawable", getActivity().getPackageName()));
-                       // Bitmap.createScaledBitmap(image1, 100, 100, false);
+        List<ModelLevel> modelLevels = mDBHelper.query().getLevels();
+        //mDBHelper.getWritableDatabase().delete("levels_table", null, null);
+        if(modelLevels.size() < 1) {
+            for (int i = 0; i < mas.length; i++) {
+                String image1 = "";
+                String image2 = "";
+                String image3 = "";
+                String image4 = "";
+                for (int j = 1; j < 5; j++) {
+                    String name = "image" + (i + 1) + "_" + j;
+                    try {
+                        if (j == 1) {
+                            image1 = name;
+                        }
+                        if (j == 2) {
+                            image2 = name;
+                        }
+                        if (j == 3) {
+                            image3 = name;
+                        }
+                        if (j == 4) {
+                            image4 = name;
+                        }
+                    } catch (Exception e) {
                     }
-                    if (j == 2) {
-                        image2 = BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(name, "drawable", getActivity().getPackageName()));
-                        //Bitmap.createScaledBitmap(image2, 100, 100, false);
-                    }
-                    if (j == 3) {
-                        image3 = BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(name, "drawable", getActivity().getPackageName()));
-                        //Bitmap.createScaledBitmap(image3, 100, 100, false);
-                    }
-                    if (j == 4) {
-                        image4 = BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(name, "drawable", getActivity().getPackageName()));
-                       // Bitmap.createScaledBitmap(image4, 100, 100, false);
-                    }
-                }catch (Exception e){
-
+                }
+                if(i == 0){
+                    mDBHelper.saveLevel(new ModelLevel(mas[i], image1, image2, image3, image4, ModelLevel.STATUS_AVALABLE, new Date().getTime()));
+                }else {
+                    mDBHelper.saveLevel(new ModelLevel(mas[i], image1, image2, image3, image4, ModelLevel.STATUS_NOT_AVALABLE, new Date().getTime()));
                 }
             }
-                items.add(new ModelLevel(mas[i], image1, image2, image3, image4));
         }
-        return items;
+        //mDBHelper.update().status(modelLevels.get(0).getTimeStamp(), ModelLevel.STATUS_AVALABLE);
+
+        return mDBHelper.query().getLevels();
     }
 
     @Override
     public void onItemClick(ModelLevel item) {
-        mMainActivity.onCreatLevel(items, item);
+        mMainActivity.onCreatLevel(items, item, mDBHelper);
         Toast.makeText(getActivity(), item.getWord() + " is clicked", Toast.LENGTH_SHORT).show();
 
     }
-
-
 }

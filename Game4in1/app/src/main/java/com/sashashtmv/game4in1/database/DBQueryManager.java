@@ -57,6 +57,7 @@ public class DBQueryManager {
                 modelLevels.add(modelLevel);
             }while (c.moveToNext());
         }
+        c.close();
         return modelLevels;
     }
 

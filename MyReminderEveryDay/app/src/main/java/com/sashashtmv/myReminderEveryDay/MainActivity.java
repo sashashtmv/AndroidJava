@@ -18,8 +18,10 @@ import android.widget.Toast;
 
 
 import com.sashashtmv.myReminderEveryDay.adapter.TabAdapter;
+import com.sashashtmv.myReminderEveryDay.alarm.AlarmHelper;
 import com.sashashtmv.myReminderEveryDay.database.DBHelper;
 import com.sashashtmv.myReminderEveryDay.dialog.AddingTaskDialogFragment;
+import com.sashashtmv.myReminderEveryDay.dialog.EditTaskDialogFragment;
 import com.sashashtmv.myReminderEveryDay.fragment.CurrentTaskFragment;
 import com.sashashtmv.myReminderEveryDay.fragment.DoneTaskFragment;
 import com.sashashtmv.myReminderEveryDay.fragment.SplashFragment;
@@ -27,7 +29,7 @@ import com.sashashtmv.myReminderEveryDay.fragment.TaskFragment;
 import com.sashashtmv.myReminderEveryDay.model.ModelTask;
 
 public class MainActivity extends AppCompatActivity implements AddingTaskDialogFragment.AddingTaskListener, CurrentTaskFragment.OnTaskDoneListener,
-        DoneTaskFragment.OnTaskRestoreListener{
+        DoneTaskFragment.OnTaskRestoreListener, EditTaskDialogFragment.EditingTaskListener {
     FragmentManager mFragmentManager;
 
     PreferenceHelper mPreferenceHelper;
@@ -46,12 +48,25 @@ public class MainActivity extends AppCompatActivity implements AddingTaskDialogF
 
         PreferenceHelper.getInstance().init(getApplicationContext());
         mPreferenceHelper = PreferenceHelper.getInstance();
+        AlarmHelper.getInstance().init(getApplicationContext());
 
         mDBHelper = new DBHelper(getApplicationContext());
         mFragmentManager = getFragmentManager();
         runSplash();
 
         setUI();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MyApplication.activityResumed();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MyApplication.activityPaused();
     }
 
     @Override
@@ -67,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements AddingTaskDialogF
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.action_splash){
+        if (id == R.id.action_splash) {
             //меняем флаг пункта меню на противоположный
             item.setChecked(!item.isChecked());
             mPreferenceHelper.putBoolean(PreferenceHelper.SPLASH_IS_INVISIBLE, item.isChecked());
@@ -76,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements AddingTaskDialogF
         return super.onOptionsItemSelected(item);
     }
 
-    public void runSplash(){
+    public void runSplash() {
         //реализуем зависимость события показа сплешскрина от значения состояния флага, сохраненного в префернсехелпер
-        if(!mPreferenceHelper.getBoolean(PreferenceHelper.SPLASH_IS_INVISIBLE)) {
+        if (!mPreferenceHelper.getBoolean(PreferenceHelper.SPLASH_IS_INVISIBLE)) {
             SplashFragment splashFragment = new SplashFragment();
 
             mFragmentManager.beginTransaction()
@@ -88,9 +103,9 @@ public class MainActivity extends AppCompatActivity implements AddingTaskDialogF
         }
     }
 
-    private void setUI(){
+    private void setUI() {
         Toolbar toolbar = findViewById(R.id.toolbar);
-        if(toolbar != null){
+        if (toolbar != null) {
             toolbar.setTitleTextColor(getResources().getColor(R.color.white));
             setSupportActionBar(toolbar);
         }
@@ -128,8 +143,8 @@ public class MainActivity extends AppCompatActivity implements AddingTaskDialogF
             }
         });
 
-        mCurrentTaskFragment = (CurrentTaskFragment)mTabAdapter.getItem(TabAdapter.CURRENT_TASK_FRAGMENT_POSITION);
-        mDoneTaskFragment = (DoneTaskFragment)mTabAdapter.getItem(TabAdapter.DONE_TASK_FRAGMENT_POSITION);
+        mCurrentTaskFragment = (CurrentTaskFragment) mTabAdapter.getItem(TabAdapter.CURRENT_TASK_FRAGMENT_POSITION);
+        mDoneTaskFragment = (DoneTaskFragment) mTabAdapter.getItem(TabAdapter.DONE_TASK_FRAGMENT_POSITION);
 
         mSearchView = findViewById(R.id.search_view);
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -145,15 +160,15 @@ public class MainActivity extends AppCompatActivity implements AddingTaskDialogF
                 return false;
             }
         });
-            //вешаем слушателя на fab
-            FloatingActionButton fab = findViewById(R.id.float_button);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    DialogFragment addingTaskDialogFragment = new AddingTaskDialogFragment();
-                    addingTaskDialogFragment.show(mFragmentManager, "AddingTaskDialogFragment");
-                }
-            });
+        //вешаем слушателя на fab
+        FloatingActionButton fab = findViewById(R.id.float_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment addingTaskDialogFragment = new AddingTaskDialogFragment();
+                addingTaskDialogFragment.show(mFragmentManager, "AddingTaskDialogFragment");
+            }
+        });
     }
 
     @Override
@@ -175,5 +190,11 @@ public class MainActivity extends AppCompatActivity implements AddingTaskDialogF
     @Override
     public void onTaskRestore(ModelTask task) {
         mCurrentTaskFragment.addTask(task, false);
+    }
+
+    @Override
+    public void onTaskEditor(ModelTask updatedTask) {
+        mCurrentTaskFragment.updateTask(updatedTask);
+        mDBHelper.update().task(updatedTask);
     }
 }

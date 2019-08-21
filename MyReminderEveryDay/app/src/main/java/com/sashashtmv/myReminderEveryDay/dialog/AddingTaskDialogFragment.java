@@ -21,6 +21,7 @@ import android.widget.TimePicker;
 
 import com.sashashtmv.myReminderEveryDay.R;
 import com.sashashtmv.myReminderEveryDay.Utils;
+import com.sashashtmv.myReminderEveryDay.alarm.AlarmHelper;
 import com.sashashtmv.myReminderEveryDay.model.ModelTask;
 
 import java.util.Calendar;
@@ -94,15 +95,15 @@ public class AddingTaskDialogFragment extends DialogFragment {
         //возвращает текущее время
         final Calendar calendar = Calendar.getInstance();
         // добавим к времени календаря час, чтобы он срабатывал через час, если указана только дата, без времени при создании задачи
-        //calendar.set(Calendar.HOUR_OF_DAY,calendar.get(Calendar.HOUR_OF_DAY) + 1);
+        calendar.set(Calendar.HOUR_OF_DAY,calendar.get(Calendar.HOUR_OF_DAY) + 1);
 
         etDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //чтоб не возникал эффект накладывания анимации компонента floatingLabel на устанавливаемый текст добавляем символ пробела в поле ввода
-//                if(etDate.length() == 0){
-//                    etDate.setText(" ");
-//                }
+                if(etDate.length() == 0){
+                    etDate.setText(" ");
+                }
                 DialogFragment datePickerFragment = new DatePickerFragment(){
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -113,10 +114,10 @@ public class AddingTaskDialogFragment extends DialogFragment {
                     }
 
                     //чтоб при нажатии кнопки cancel текст не устанавливался
-//                    @Override
-//                    public void onCancel(DialogInterface dialog) {
-//                        etDate.setText(null);
-//                    }
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+                        etDate.setText(null);
+                    }
                 };
                 //реализуем отображение диалога
                 datePickerFragment.show(getFragmentManager(), "DatePickerFragment");
@@ -126,9 +127,9 @@ public class AddingTaskDialogFragment extends DialogFragment {
         etTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(etTime.length() == 0){
-//                    etTime.setText(" ");
-//                }
+                if(etTime.length() == 0){
+                    etTime.setText(" ");
+                }
                 DialogFragment timePickerFragment = new TimePickerFragment(){
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -153,8 +154,11 @@ public class AddingTaskDialogFragment extends DialogFragment {
             public void onClick(DialogInterface dialog, int which) {
                 //слушателю кнопки сохранения присваиваем объекту Таск заголовок из соответствующего поля ввода текста
                 modelTask.setTitle(etTitle.getText().toString());
+                modelTask.setStatus(ModelTask.STATUS_CURRENT);
                 if(etDate.length() != 0 || etTime.length() != 0){
                     modelTask.setDate(calendar.getTimeInMillis());
+                    AlarmHelper alarmHelper = AlarmHelper.getInstance();
+                    alarmHelper.setAlarm(modelTask);
                 }
                 modelTask.setStatus(ModelTask.STATUS_CURRENT);
                 mAddingTaskListener.onTaskAdded(modelTask);

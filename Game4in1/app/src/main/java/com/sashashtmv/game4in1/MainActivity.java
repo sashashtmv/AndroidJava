@@ -2,15 +2,19 @@ package com.sashashtmv.game4in1;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
 
 import static android.support.constraint.Constraints.TAG;
+
 import android.widget.Toast;
 
 import com.sashashtmv.game4in1.adapter.AdapterForLevels;
+import com.sashashtmv.game4in1.alarm.AlarmHelper;
 import com.sashashtmv.game4in1.database.DBHelper;
 import com.sashashtmv.game4in1.fragments.AdvicesFragment;
 import com.sashashtmv.game4in1.fragments.AskFreandsFragment;
@@ -21,6 +25,7 @@ import com.sashashtmv.game4in1.fragments.SplashFragment;
 import com.sashashtmv.game4in1.fragments.StartFragment;
 import com.sashashtmv.game4in1.model.Item;
 import com.sashashtmv.game4in1.model.ModelLevel;
+import com.sashashtmv.game4in1.model.MyApplication;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
 
 import java.util.ArrayList;
@@ -36,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
     private int countCoins;
     private PreferenceHelper mPreferenceHelper;
     public DBHelper mDBHelper;
+    public AlarmHelper mAlarmHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +49,84 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
         setContentView(R.layout.activity_main);
         PreferenceHelper.getInstance().init(this);
         mPreferenceHelper = PreferenceHelper.getInstance();
+        mPreferenceHelper.putString("From", "");
+//        AlarmHelper.getInstance().init(getApplicationContext());
+//        mAlarmHelper = AlarmHelper.getInstance();
         countCoins = mPreferenceHelper.getInt("gold");
         if (countCoins == 0) {
             mPreferenceHelper.putInt("gold", 100);
         }
         Log.i(TAG, "init: context - " + countCoins);
-
+        Log.i(TAG, "init: run - " + "oncreated");
         mFragmentManager = getFragmentManager();
+
+
         runStartFragment();
         runSplash();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPreferenceHelper.putString("From", "");
+        Log.i(TAG, "onDestroy: run - " + "destroed");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String type = mPreferenceHelper.getString("From");
+
+        Log.i(TAG, "onResume: run - " + type);
+        if (type.length() > 0) {
+            if (mDBHelper == null) {
+                mDBHelper = new DBHelper(this);
+            }
+            switch (type) {
+                case "notifyFrag":
+                    mPreferenceHelper.putString("From", "");
+                    List<ModelLevel> levels = mDBHelper.query().getLevels();
+                    ModelLevel level = null;
+                    for (ModelLevel modelLevel : levels) {
+                        if (modelLevel.getStatus() == ModelLevel.STATUS_AVALABLE) {
+                            level = modelLevel;
+                            break;
+                        }
+                    }
+                    Fragment fragment = LevelFragment.newInstance();
+                    mFragmentManager.beginTransaction().
+                            replace(R.id.content_frame, fragment).addToBackStack(null).commit();
+
+                    ((LevelFragment) fragment).updateLevels(levels, level, mDBHelper);
+                    break;
+            }
+        }
+        MyApplication.activityResumed();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MyApplication.activityPaused();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        AlarmHelper.getInstance().init(getApplicationContext());
+        mAlarmHelper = AlarmHelper.getInstance();
+        if (mDBHelper == null) {
+            mDBHelper = new DBHelper(this);
+        }
+        for (ModelLevel level : mDBHelper.query().getLevels()) {
+            if (level.getStatus() == ModelLevel.STATUS_AVALABLE) {
+                Log.i(TAG, "onDestroy: run " + " - stoped");
+                mPreferenceHelper.putString("From", "notifyFrag");
+                mAlarmHelper.setAlarm(level);
+                break;
+            }
+        }
 
     }
 

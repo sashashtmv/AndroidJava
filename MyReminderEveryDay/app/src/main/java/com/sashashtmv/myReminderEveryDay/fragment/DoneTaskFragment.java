@@ -67,6 +67,9 @@ public class DoneTaskFragment extends TaskFragment {
 
     @Override
     public void moveTask(ModelTask task) {
+        if(task.getDate() != 0){
+            mAlarmHelper.setAlarm(task);
+        }
         mOnTaskRestoreListener.onTaskRestore(task);
     }
 
@@ -81,6 +84,28 @@ public class DoneTaskFragment extends TaskFragment {
 
         for (int i = 0; i < tasks.size(); i++) {
             addTask(tasks.get(i),false);
+        }
+    }
+
+    @Override
+    public void addTask(ModelTask newTask, boolean safeToDB) {
+        int position = -1;
+        //чтобы элементы добавлялись в определённой последовательности
+        for(int i = 0; i < mAdapter.getItemCount(); i++){
+            if(mAdapter.getItem(i).isTask()){
+                ModelTask task = (ModelTask) mAdapter.getItem(i);
+                if(newTask.getDate() < task.getDate()){
+                    position = i;
+                    break;
+                }
+            }
+        }
+        if(position != -1){
+            mAdapter.addItem(position, newTask);
+        }else mAdapter.addItem(newTask);
+
+        if(safeToDB){
+            mMainActivity.mDBHelper.saveTask(newTask);
         }
     }
 }

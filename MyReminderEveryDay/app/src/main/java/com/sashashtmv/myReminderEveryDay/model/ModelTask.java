@@ -22,12 +22,21 @@ public class ModelTask implements Item {
     private int priority;
     private int status;
     private long timeStamp;
+    private int dateStatus;
+
 
     public ModelTask() {
         this.status = -1;
         this.timeStamp = new Date().getTime();
     }
 
+    public int getDateStatus() {
+        return dateStatus;
+    }
+
+    public void setDateStatus(int dateStatus) {
+        this.dateStatus = dateStatus;
+    }
     public int getPriority() {
         return priority;
     }

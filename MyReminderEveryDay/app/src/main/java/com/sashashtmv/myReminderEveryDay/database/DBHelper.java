@@ -61,7 +61,7 @@ public class DBHelper extends SQLiteOpenHelper {
         getWritableDatabase().insert(TASKS_TABLE, null, newValues);
     }
 
-    public DBQueryManager query(){
+    public  DBQueryManager query(){
         return mDBQueryManager;
     }
 

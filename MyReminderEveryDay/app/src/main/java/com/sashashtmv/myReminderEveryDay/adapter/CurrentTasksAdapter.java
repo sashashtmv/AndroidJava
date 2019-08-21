@@ -16,7 +16,10 @@ import com.sashashtmv.myReminderEveryDay.R;
 import com.sashashtmv.myReminderEveryDay.Utils;
 import com.sashashtmv.myReminderEveryDay.fragment.CurrentTaskFragment;
 import com.sashashtmv.myReminderEveryDay.model.Item;
+import com.sashashtmv.myReminderEveryDay.model.ModelSeparator;
 import com.sashashtmv.myReminderEveryDay.model.ModelTask;
+
+import java.util.Calendar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -41,7 +44,11 @@ public class CurrentTasksAdapter extends TaskAdapter {
                 CircleImageView priority = v.findViewById(R.id.cvTaskPriority);
 
                 return new TaskViewHolder(v,title,date, priority);
-
+            case TYPE_SEPARATOR:
+                View separator = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.model_separator,parent,false);
+                TextView type = separator.findViewById(R.id.tvSeparatorName);
+                return  new SeparatorViewHolder(separator,type);
             default:
                 return null;
         }
@@ -52,6 +59,7 @@ public class CurrentTasksAdapter extends TaskAdapter {
 
         Item item = mItemList.get(position);
 
+            final Resources resources = holder.itemView.getResources();
         if(item.isTask()){
             holder.itemView.setEnabled(true);
             //активируем возможность нажатия Таска
@@ -59,7 +67,6 @@ public class CurrentTasksAdapter extends TaskAdapter {
             final TaskViewHolder taskViewHolder = (TaskViewHolder)holder;
 
             final View itemView = taskViewHolder.itemView;
-            final Resources resources = itemView.getResources();
 
             taskViewHolder.title.setText(task.getTitle());
             if(task.getDate() != 0){
@@ -72,12 +79,26 @@ public class CurrentTasksAdapter extends TaskAdapter {
             itemView.setVisibility(View.VISIBLE);
             taskViewHolder.priority.setEnabled(true);
 
+            //подсветим просроченные задачи, у них будет меняться фоновый цвет
+            if(task.getDate() != 0 && task.getDate() < Calendar.getInstance().getTimeInMillis()){
+                itemView.setBackgroundColor(resources.getColor(R.color.gray_200));
+            }else {
+                itemView.setBackgroundColor(resources.getColor(R.color.gray_50));
+            }
+
             //установим основной цвет текста для заголовка задачи
             taskViewHolder.title.setTextColor(resources.getColor(R.color.primary_text_default_material_light));
             taskViewHolder.date.setTextColor(resources.getColor(R.color.secondary_text_default_material_light));
             taskViewHolder.priority.setColorFilter(resources.getColor(task.getPriorityColor()));
             taskViewHolder.priority.setImageResource(R.drawable.ic_checkbox_blank_circle);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //диалог редактирования задачи будет вызываться по клику на задаче в списке
+                    getTaskFragment().showTaskEditDialog(task);
+                }
+            });
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
@@ -175,6 +196,10 @@ public class CurrentTasksAdapter extends TaskAdapter {
                     flipIn.start();
                 }
             });
+        }else {
+            ModelSeparator separator = (ModelSeparator)item;
+            SeparatorViewHolder separatorViewHolder = (SeparatorViewHolder)holder;
+            separatorViewHolder.type.setText(resources.getString(separator.getType()));
         }
     }
 

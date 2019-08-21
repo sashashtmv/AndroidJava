@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.app.DialogFragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -15,6 +16,8 @@ import com.sashashtmv.myReminderEveryDay.MainActivity;
 
 import com.sashashtmv.myReminderEveryDay.R;
 import com.sashashtmv.myReminderEveryDay.adapter.TaskAdapter;
+import com.sashashtmv.myReminderEveryDay.alarm.AlarmHelper;
+import com.sashashtmv.myReminderEveryDay.dialog.EditTaskDialogFragment;
 import com.sashashtmv.myReminderEveryDay.model.Item;
 import com.sashashtmv.myReminderEveryDay.model.ModelTask;
 
@@ -25,6 +28,7 @@ public abstract class TaskFragment extends Fragment {
     protected TaskAdapter mAdapter;
 
     public MainActivity mMainActivity;
+    public AlarmHelper mAlarmHelper;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -32,29 +36,14 @@ public abstract class TaskFragment extends Fragment {
         if(getActivity() != null){
             mMainActivity = (MainActivity)getActivity();
         }
+        mAlarmHelper = AlarmHelper.getInstance();
         addTaskFromDB();
     }
 
-    public void addTask(ModelTask newTask, boolean safeToDB){
-        int position = -1;
-        //чтобы элементы добавлялись в определённой последовательности
-        for(int i = 0; i < mAdapter.getItemCount(); i++){
-            if(mAdapter.getItem(i).isTask()){
-                ModelTask task = (ModelTask) mAdapter.getItem(i);
-                if(newTask.getDate() < task.getDate()){
-                    position = i;
-                    break;
-                }
-            }
-        }
-        if(position != -1){
-            mAdapter.addItem(position, newTask);
-        }else mAdapter.addItem(newTask);
+    public abstract void addTask(ModelTask newTask, boolean safeToDB);
 
-        if(safeToDB){
-            mMainActivity.mDBHelper.saveTask(newTask);
-        }
-
+    public void updateTask(ModelTask task){
+        mAdapter.updateTask(task);
     }
 
     //реализация вызова диалога удаления задачи
@@ -94,6 +83,7 @@ public abstract class TaskFragment extends Fragment {
                         public void onViewDetachedFromWindow(View v) {
                             //если у нас не было нажатия на кнопку отмена удаления в снекбаре, то наша задача окнчательно удаляется из базы данных
                             if(isRemoved[0]){
+                                mAlarmHelper.removeAlarm(timeStamp);
                                 mMainActivity.mDBHelper.removeTask(timeStamp);
                             }
                         }
@@ -116,6 +106,11 @@ public abstract class TaskFragment extends Fragment {
         }
     }
 
+    //метод вызова диалога
+    public void  showTaskEditDialog(ModelTask task){
+        DialogFragment editingTaskDialog = EditTaskDialogFragment.newInstance(task);
+        editingTaskDialog.show(getActivity().getFragmentManager(), "EditTaskDialogFragment");
+    }
     public abstract void addTaskFromDB();
     public abstract void moveTask(ModelTask task);
     public abstract void findTask(String title);

@@ -38,6 +38,7 @@ public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.Leve
 
 
     public AdapterForLevels(Context context, List<ModelLevel> itemList, ItemListener listener) {
+        //setHasStableIds(true);
         this.mItemList = itemList;
         this.mListener = listener;
         this.context = context;
@@ -47,17 +48,19 @@ public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.Leve
     @Override
     public LevelViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 
-        switch (viewType) {
-            case TYPE_TASK:
-                View v = LayoutInflater.from(viewGroup.getContext())
-                        .inflate(R.layout.item_level_list, null);
-
-                return new LevelViewHolder(v);
-
-            default:
-                return null;
+//        switch (viewType) {
+//            case TYPE_TASK:
+//                View v = LayoutInflater.from(viewGroup.getContext())
+//                        .inflate(R.layout.item_level_list, null);
+//
+//                return new LevelViewHolder(v);
+//
+//            default:
+                return new LevelViewHolder(LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.item_level_list, null));
+//                return null;
         }
-    }
+//    }
 
     @Override
     public void onBindViewHolder(@NonNull LevelViewHolder viewHolder, int position) {
@@ -80,6 +83,15 @@ public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.Leve
     @Override
     public int getItemCount() {
         return mItemList.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 
     public class LevelViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -137,7 +149,7 @@ public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.Leve
             if (item != null && AdapterForLevels.mListener != null && item.getStatus() == ModelLevel.STATUS_AVALABLE || item.getStatus() == ModelLevel.STATUS_DONE) {
                 AdapterForLevels.mListener.onItemClick(item);
             }
-            Toast.makeText(view.getContext(), "Clicked Country Position = " + getPosition(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(view.getContext(), "Clicked Country Position = " + getPosition(), Toast.LENGTH_SHORT).show();
         }
     }
 

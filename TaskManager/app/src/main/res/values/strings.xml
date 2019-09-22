@@ -1,7 +1,37 @@
 <resources>
     <string name="app_name">TaskManager</string>
+    <string name="mainactivity">MainActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tasks_reminder">Tasks Manager</string>
+    <string name="tasks_for_day">Tasks for day</string>
+    <string name="tasks_for_week">Tasks for week</string>
+    <string name="tasks_for_month">Tasks for month</string>
+    <string name="tasks_for_year">Tasks for year</string>
+    <string name="tasks_for_5_years">Tasks for 5 years</string>
+    <string name="rules_for_using">Rules for using</string>
+    <string name="separator_overdue">Overdue</string>
+    <string name="separator_today">Current</string>
+    <string name="separator_tomorrow">Tomorrow</string>
+    <string name="separator_future">Future</string>
+    <string name="separator">Separator</string>
+    <string name="don_t_show_splash">Don\'t show splash</string>
+    <string name="current_task">Current</string>
+    <string name="done_task">Done</string>
+    <string name="done_tasks">Done Tasks</string>
+    <string name="current_tasks">Current Tasks</string>
+    <string name="date">Date</string>
+    <string name="title">Title</string>
+    <string name="adding_task">Adding task</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_date">Date</string>
+    <string name="hint_time">Time</string>
+    <string name="Ok">Ok</string>
+    <string name="Cancel">Cancel</string>
+    <string name="dialog_error_empty_title">Please, enter the title</string>
+    <string name="dialog_removing_message">Are you sure want to delete this task?</string>
+    <string name="dialog_editing_title">Editing Task</string>
+    <string name="removed">Remove</string>
+    <string name="rules"> 1. \n2. \n3.</string>
 </resources>

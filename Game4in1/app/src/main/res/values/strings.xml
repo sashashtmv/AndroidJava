@@ -9,17 +9,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logotip">Ваш логотип</string>
     <string name="levels">Уровни</string>
-    <string name="level_num">уровень:</string>
+    <string name="level_num">Уровень:</string>
     <string name="brilliant_done">Отлично сработано!</string>
     <string name="ask_freands">Спроси друзей</string>
-    <string name="advices">Советы</string>
+    <string name="advices">Подсказки</string>
     <string name="coins">МОНЕТЫ</string>
     <string name="bay_coins">Купить монеты</string>
     <string name="_15">+15</string>
     <string name="send_twit">Опубликовать твит</string>
     <string name="facebook">Поделиться Facebook</string>
     <string name="instagram">Поделиться в Instagram</string>
-    <string name="_90">90</string>
+    <string name="_90">50</string>
     <string name="continues">Продолжить</string>
     <string name="ask_your_freands">Спроси своих друзей!</string>
     <string name="help_freands">Обратитесь за помощью, чтобы решить уровень от ваших друзей через мессенджеры ниже</string>
@@ -31,4 +31,6 @@
     <string name="show_letter">Показать букву</string>
     <string name="_300">300</string>
     <string name="full_solve">Решить полностью</string>
+    <string name="_30">60</string>
+    <string name="_50">+20</string>
 </resources>

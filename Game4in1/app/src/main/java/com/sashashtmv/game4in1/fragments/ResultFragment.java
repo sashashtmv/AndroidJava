@@ -80,8 +80,8 @@ public class ResultFragment extends Fragment {
         mContinues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                countCoins += 90;
-                mPreferenceHelper.putInt("gold", countCoins);
+//                countCoins += 50;
+//                mPreferenceHelper.putInt("gold", countCoins);
                 FragmentManager fragmentManager = getActivity().getFragmentManager();
                 Fragment fragment = getFragmentManager().findFragmentByTag("start fragment");
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

@@ -6,13 +6,26 @@
     tools:context=".fragments.SplashFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/tasks_reminder"
-        android:textColor="@color/colorAccent"
-        android:textSize="28dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="306dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/splash" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/tasks_reminder"
+            android:textColor="@color/colorAccent"
+            android:textSize="36sp" />
+
+    </LinearLayout>
 </FrameLayout>

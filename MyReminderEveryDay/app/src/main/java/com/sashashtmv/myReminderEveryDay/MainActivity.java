@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements AddingTaskDialogF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Ads.showBanner(this);
         PreferenceHelper.getInstance().init(getApplicationContext());
         mPreferenceHelper = PreferenceHelper.getInstance();
         AlarmHelper.getInstance().init(getApplicationContext());

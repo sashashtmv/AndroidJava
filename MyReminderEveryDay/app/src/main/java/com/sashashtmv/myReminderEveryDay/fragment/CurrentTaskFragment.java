@@ -74,6 +74,15 @@ public class CurrentTaskFragment extends TaskFragment {
     }
 
     @Override
+    public void checkAdapter() {
+        if(mAdapter == null){
+            mAdapter = new CurrentTasksAdapter(this);
+
+            addTaskFromDB();
+        }
+    }
+
+    @Override
     public void moveTask(ModelTask task) {
         mAlarmHelper.removeAlarm(task.getTimeStamp());
         mOnTaskDoneListener.onTaskDone(task);
@@ -148,7 +157,7 @@ public class CurrentTaskFragment extends TaskFragment {
                     if(task.getDateStatus() == newTask.getDateStatus()){
                         position -= 1;
                     }
-                }else  if(position - 2 <+ 0 && newTask.getDate() == 0){
+                }else  if(position - 2 < 0 && newTask.getDate() == 0){
                     position -= 1;
                 }
             }

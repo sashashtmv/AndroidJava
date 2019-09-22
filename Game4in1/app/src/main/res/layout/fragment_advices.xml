@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:text="@string/help"
+        android:text="@string/advices"
         android:textColor="@color/White"
         android:textSize="26sp"
         android:textStyle="bold|italic" />
@@ -52,16 +52,18 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="50dp"
-            android:text="@string/_90"
+            android:text="@string/_30"
             android:textColor="@color/White"
             android:textSize="24sp"
             android:textStyle="bold|italic" />
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_alignParentRight="true"
-            android:src="@drawable/coins" />
+            android:src="@drawable/gold" />
 
     </RelativeLayout>
     <TextView
@@ -103,10 +105,12 @@
             android:textStyle="bold|italic" />
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_alignParentRight="true"
-            android:src="@drawable/coins" />
+            android:src="@drawable/gold" />
 
     </RelativeLayout>
     <TextView

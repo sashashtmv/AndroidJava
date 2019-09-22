@@ -15,10 +15,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:text="@string/brilliant_done"
         android:textColor="@color/White"
-        android:textSize="26dp" />
+        android:textSize="26sp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,10 +74,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text=""
         android:textColor="@color/White"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -86,7 +86,6 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/round_outline"
         android:orientation="horizontal">
-
         <TextView
 
             android:layout_width="wrap_content"
@@ -94,26 +93,35 @@
             android:layout_gravity="center"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="8dp"
-            android:text="@string/_90"
-            android:textSize="24dp"
-            android:textColor="@color/White"/>
+            android:text="@string/_50"
+            android:textSize="24sp"
+            android:textColor="@color/Gold"/>
+
+
 
         <ImageView
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/coins" />
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/gold" />
     </LinearLayout>
 
     <Button
         android:id="@+id/bt_continues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/round_outline"
         android:text="@string/continues"
-        android:textSize="24dp" />
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textSize="24sp"
+        android:textColor="@color/White"/>
 </LinearLayout>

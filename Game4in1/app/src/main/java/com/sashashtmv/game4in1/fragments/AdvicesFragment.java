@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.sashashtmv.game4in1.MainActivity;
 import com.sashashtmv.game4in1.R;
@@ -40,8 +41,6 @@ public class AdvicesFragment extends android.app.Fragment {
         }
     }
 
-
-
     public AdvicesFragment() {
         // Required empty public constructor
     }
@@ -62,11 +61,10 @@ public class AdvicesFragment extends android.app.Fragment {
         mOneLetter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(countCoins > 90) {
-                    mPreferenceHelper.putInt("gold", countCoins - 90);
+                if(countCoins > 60) {
+                    mPreferenceHelper.putInt("gold", countCoins - 60);
                     mLevelFragment.showLetter();
                 }
-                //mLevelFragment.showLetter();
                 getActivity().onBackPressed();
             }
         });
@@ -74,11 +72,11 @@ public class AdvicesFragment extends android.app.Fragment {
         mAllWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(countCoins > 390) {
-                    mPreferenceHelper.putInt("gold", countCoins - 390);
+                if(countCoins > 300) {
+                    mPreferenceHelper.putInt("gold", countCoins - 300);
                     mMainActivity.onCreatResult(mLevelFragment.getItem());
-                }
-                getActivity().onBackPressed();
+                }else Toast.makeText(getActivity(), "У Вас недостаточно золота", Toast.LENGTH_SHORT).show();
+                //getActivity().onBackPressed();
             }
         });
         // Inflate the layout for this fragment

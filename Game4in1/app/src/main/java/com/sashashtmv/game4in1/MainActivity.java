@@ -3,6 +3,7 @@ package com.sashashtmv.game4in1;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ import com.sashashtmv.game4in1.model.ModelLevel;
 import com.sashashtmv.game4in1.model.MyApplication;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,9 +52,10 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
         PreferenceHelper.getInstance().init(this);
         mPreferenceHelper = PreferenceHelper.getInstance();
         mPreferenceHelper.putString("From", "");
-//        AlarmHelper.getInstance().init(getApplicationContext());
-//        mAlarmHelper = AlarmHelper.getInstance();
+        AlarmHelper.getInstance().init(getApplicationContext());
+        mAlarmHelper = AlarmHelper.getInstance();
         countCoins = mPreferenceHelper.getInt("gold");
+
         if (countCoins == 0) {
             mPreferenceHelper.putInt("gold", 100);
         }
@@ -76,32 +79,53 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
     @Override
     protected void onResume() {
         super.onResume();
-        String type = mPreferenceHelper.getString("From");
-
-        Log.i(TAG, "onResume: run - " + type);
-        if (type.length() > 0) {
-            if (mDBHelper == null) {
-                mDBHelper = new DBHelper(this);
-            }
-            switch (type) {
-                case "notifyFrag":
-                    mPreferenceHelper.putString("From", "");
-                    List<ModelLevel> levels = mDBHelper.query().getLevels();
-                    ModelLevel level = null;
-                    for (ModelLevel modelLevel : levels) {
-                        if (modelLevel.getStatus() == ModelLevel.STATUS_AVALABLE) {
-                            level = modelLevel;
-                            break;
-                        }
-                    }
-                    Fragment fragment = LevelFragment.newInstance();
-                    mFragmentManager.beginTransaction().
-                            replace(R.id.content_frame, fragment).addToBackStack(null).commit();
-
-                    ((LevelFragment) fragment).updateLevels(levels, level, mDBHelper);
-                    break;
-            }
-        }
+        getIntent().replaceExtras(new Bundle());
+        getIntent().setAction("");
+        getIntent().setData(null);
+        getIntent().setFlags(0);
+//        if(getIntent().getFlags() == (Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY)) {
+//            //app is launched from recent apps after it was closed
+//            normalLaunch();
+//        } else {
+//            String intentAction = getIntent().getAction();
+//            String scheme = getIntent().getScheme();
+//            //app is launched via other means
+//            // URL intent scheme, Intent action etc
+//            if("https".equalsIgnoreCase(scheme)) {
+//                // URL intent for browser
+//            } else if("com.example.bb".equalsIgnoreCase(intentAction)) {
+//                // App launched via package name
+//            } else {
+//                // App was launched via Click on App Icon, or other means
+//                normalLaunch();
+//            }
+//        }
+//        String type = mPreferenceHelper.getString("From");
+//
+//        Log.i(TAG, "onResume: run - " + type);
+//        if (type.length() > 0) {
+//            if (mDBHelper == null) {
+//                mDBHelper = new DBHelper(this);
+//            }
+//            switch (type) {
+//                case "notifyFrag":
+//                    mPreferenceHelper.putString("From", "");
+//                    List<ModelLevel> levels = mDBHelper.query().getLevels();
+//                    ModelLevel level = null;
+//                    for (ModelLevel modelLevel : levels) {
+//                        if (modelLevel.getStatus() == ModelLevel.STATUS_AVALABLE) {
+//                            level = modelLevel;
+//                            break;
+//                        }
+//                    }
+//                    Fragment fragment = LevelFragment.newInstance();
+//                    mFragmentManager.beginTransaction().
+//                            replace(R.id.content_frame, fragment).addToBackStack(null).commit();
+//
+//                    ((LevelFragment) fragment).updateLevels(levels, level, mDBHelper);
+//                    break;
+//            }
+//        }
         MyApplication.activityResumed();
     }
 
@@ -154,15 +178,16 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
         Fragment level = LevelFragment.newInstance();
         mFragmentManager.beginTransaction()
                 .replace(R.id.content_frame, level, "level")
+//                .disallowAddToBackStack()
                 .addToBackStack(null)
                 .commit();
         mItems = items;
         mDBHelper = DBHelper;
 
         if (level != null) {
-            //Toast.makeText(this, customer.getTelephoneNumber(), Toast.LENGTH_LONG).show();
             ((LevelFragment) level).updateLevels(mItems, item, mDBHelper);
-            //((InformationFragment) information).updateOrder(mOrder);
+            Log.e("mItems=", mItems.toString() + " item - " + item);
+
         }
 
     }
@@ -176,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
                 .commit();
         //mItems = items;
         if (result != null) {
-            //Toast.makeText(this, customer.getTelephoneNumber(), Toast.LENGTH_LONG).show();
             ((ResultFragment) result).updateResult(item);
             //((InformationFragment) information).updateOrder(mOrder);
         }

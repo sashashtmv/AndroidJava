@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sashashtmv.myReminderEveryDay.R;
+import com.sashashtmv.myReminderEveryDay.adapter.CurrentTasksAdapter;
 import com.sashashtmv.myReminderEveryDay.adapter.DoneTaskAdapter;
 import com.sashashtmv.myReminderEveryDay.database.DBHelper;
 import com.sashashtmv.myReminderEveryDay.model.ModelTask;
@@ -106,6 +107,14 @@ public class DoneTaskFragment extends TaskFragment {
 
         if(safeToDB){
             mMainActivity.mDBHelper.saveTask(newTask);
+        }
+    }
+    @Override
+    public void checkAdapter() {
+        if(mAdapter == null){
+            mAdapter = new DoneTaskAdapter(this);
+
+            addTaskFromDB();
         }
     }
 }

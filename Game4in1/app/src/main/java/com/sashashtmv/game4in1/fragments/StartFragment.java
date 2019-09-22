@@ -125,39 +125,41 @@ public class StartFragment extends Fragment implements AdapterForLevels.ItemList
 
     private List<ModelLevel> getItems() {
         String[] mas = {"хлеб", "диван", "дерево", "ручка", "колесо", "стол", "ветер", "топливо", "мясо", "провод", "бутылка", "песок", "подушка", "бабочка",
-                "знание", "шланг"};
+                "знание", "шланг", "игра", "электричество", "остров", "мысли", "рассказ", "стратегия", "велосипед", "испытание", "время", "фрукты",
+                "уют", "двигатель", "полет", "урожай", "прибор", "рука", "макияж", "гнев", "симметрия", "писатель", "сестра", "складка", "религия",
+                "горшок", "дно", "жидкость", "половина", "реклама", "сахар", "белый", "офис", "ломтик", "номер", "баланс"};
         List<ModelLevel> modelLevels = mDBHelper.query().getLevels();
         //mDBHelper.getWritableDatabase().delete("levels_table", null, null);
-        if(modelLevels.size() < 1) {
-            for (int i = 0; i < mas.length; i++) {
-                String image1 = "";
-                String image2 = "";
-                String image3 = "";
-                String image4 = "";
-                for (int j = 1; j < 5; j++) {
-                    String name = "image" + (i + 1) + "_" + j;
-                    try {
-                        if (j == 1) {
-                            image1 = name;
-                        }
-                        if (j == 2) {
-                            image2 = name;
-                        }
-                        if (j == 3) {
-                            image3 = name;
-                        }
-                        if (j == 4) {
-                            image4 = name;
-                        }
-                    } catch (Exception e) {
+        if(modelLevels.size() < mas.length) {
+        for (int i = modelLevels.size(); i < mas.length; i++) {
+            String image1 = "";
+            String image2 = "";
+            String image3 = "";
+            String image4 = "";
+            for (int j = 1; j < 5; j++) {
+                String name = "image" + (i + 1) + "_" + j;
+                try {
+                    if (j == 1) {
+                        image1 = name;
                     }
-                }
-                if(i == 0){
-                    mDBHelper.saveLevel(new ModelLevel(mas[i], image1, image2, image3, image4, ModelLevel.STATUS_AVALABLE, new Date().getTime()));
-                }else {
-                    mDBHelper.saveLevel(new ModelLevel(mas[i], image1, image2, image3, image4, ModelLevel.STATUS_NOT_AVALABLE, new Date().getTime()));
+                    if (j == 2) {
+                        image2 = name;
+                    }
+                    if (j == 3) {
+                        image3 = name;
+                    }
+                    if (j == 4) {
+                        image4 = name;
+                    }
+                } catch (Exception e) {
                 }
             }
+            if (i == 0) {
+                mDBHelper.saveLevel(new ModelLevel(mas[i], image1, image2, image3, image4, ModelLevel.STATUS_AVALABLE, new Date().getTime()));
+            } else {
+                mDBHelper.saveLevel(new ModelLevel(mas[i], image1, image2, image3, image4, ModelLevel.STATUS_NOT_AVALABLE, new Date().getTime()));
+            }
+        }
         }
         //mDBHelper.update().status(modelLevels.get(0).getTimeStamp(), ModelLevel.STATUS_AVALABLE);
 
@@ -167,7 +169,7 @@ public class StartFragment extends Fragment implements AdapterForLevels.ItemList
     @Override
     public void onItemClick(ModelLevel item) {
         mMainActivity.onCreatLevel(items, item, mDBHelper);
-        Toast.makeText(getActivity(), item.getWord() + " is clicked", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), item.getWord() + " is clicked", Toast.LENGTH_SHORT).show();
 
     }
 }

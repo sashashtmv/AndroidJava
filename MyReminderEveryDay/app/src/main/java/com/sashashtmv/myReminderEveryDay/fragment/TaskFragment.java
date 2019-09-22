@@ -112,6 +112,7 @@ public abstract class TaskFragment extends Fragment {
         editingTaskDialog.show(getActivity().getFragmentManager(), "EditTaskDialogFragment");
     }
     public abstract void addTaskFromDB();
+    public abstract void checkAdapter();
     public abstract void moveTask(ModelTask task);
     public abstract void findTask(String title);
 }

@@ -11,7 +11,7 @@ import com.sashashtmv.game4in1.model.ModelLevel;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 3;
+    public static final int DATABASE_VERSION = 4;
     public static final String DATABASE_NAME = "my_levels_database";
     public static final String LEVELS_TABLE = "levels_table";
 

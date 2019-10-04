@@ -20,7 +20,6 @@ gen-external-apklibs
 .mtj.tmp/
 /local.properties
 /.idea/
-.DS_Store
 /build
 /captures
 /out/

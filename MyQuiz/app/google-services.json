@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "920040839763",
+    "firebase_url": "https://appquiz-fef58.firebaseio.com",
+    "project_id": "appquiz-fef58",
+    "storage_bucket": "appquiz-fef58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920040839763:android:9395603a704783ae3d44a6",
+        "android_client_info": {
+          "package_name": "com.sashashtmv.myquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920040839763-8jhk67osu79j4ca1dnbvef6kc1m0fmve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCGFXO2q_LPJ4A5M58qXe4y_uwaPGYxlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920040839763-8jhk67osu79j4ca1dnbvef6kc1m0fmve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

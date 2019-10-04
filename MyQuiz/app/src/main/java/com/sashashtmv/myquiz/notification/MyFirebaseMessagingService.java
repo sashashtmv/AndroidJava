@@ -1,22 +1,22 @@
-package info.fandroid.quizapp.quizapplication.notification;
+package com.sashashtmv.myquiz.notification;
 
 import android.content.Intent;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import com.sashashtmv.myquiz.constants.AppConstants;
+import com.sashashtmv.myquiz.data.sqlite.NotificationDbController;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import info.fandroid.quizapp.quizapplication.constants.AppConstants;
-import info.fandroid.quizapp.quizapplication.data.sqlite.NotificationDbController;
 
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
-
+    //срабатывает по приходу уведомления и передает данные уведомления в метод sendNotification, который сохраняет его в базу
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
@@ -47,6 +47,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     }
 
+    //создает и отправляет широковещательное сообщение об уведомлении
     private void broadcastNewNotification() {
         Intent intent = new Intent(AppConstants.NEW_NOTI);
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);

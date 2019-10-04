@@ -1,4 +1,4 @@
-package com.sashashtmv.myquiz.fragments;
+package com.sashashtmv.game4in1.fragments;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,8 +14,7 @@ import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
-import com.sashashtmv.myquiz.R;
-import com.sashashtmv.myquiz.constants.AppConstants;
+import com.sashashtmv.game4in1.R;
 
 
 public class SettingsFragment extends PreferenceFragment implements

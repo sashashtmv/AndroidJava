@@ -1,13 +1,13 @@
-package info.fandroid.quizapp.quizapplication.activity;
+package com.sashashtmv.myquiz.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import info.fandroid.quizapp.quizapplication.R;
-import info.fandroid.quizapp.quizapplication.fragments.SettingsFragment;
-import info.fandroid.quizapp.quizapplication.utilities.ActivityUtilities;
+import com.sashashtmv.myquiz.R;
+import com.sashashtmv.myquiz.fragments.SettingsFragment;
+import com.sashashtmv.myquiz.utilities.ActivityUtilities;
 
-
+//будет вызывать фрагмент настроек и отображать его
 public class SettingsActivity extends BaseActivity {
 
     @Override

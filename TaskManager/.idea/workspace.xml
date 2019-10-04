@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="78023aef-3d65-477b-b193-dc5bd2fb66fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/ic_launcher-web.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/gold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image17_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image17_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image17_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image17_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image18_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image18_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image18_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image18_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image19_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image19_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image19_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image19_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image20_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image20_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image20_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image20_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image21_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image21_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image21_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image21_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image22_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image22_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image22_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image22_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image23_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image23_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image23_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image23_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image24_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image24_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image24_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image24_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image25_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image25_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image25_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image25_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image26_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image26_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image26_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image26_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image27_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image27_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image27_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image27_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image28_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image28_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image28_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image28_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image29_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image29_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image29_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image29_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image30_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image30_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image30_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image30_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image31_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image31_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image31_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image31_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image32_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image32_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image32_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image32_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image33_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image33_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image33_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image33_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image34_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image34_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image34_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image34_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image35_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image35_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image35_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image35_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image36_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image36_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image36_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image36_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image37_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image37_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image37_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image37_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image38_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image38_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image38_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image38_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image39_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image39_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image39_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image39_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image40_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image40_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image40_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image40_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image41_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image41_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image41_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image41_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image42_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image42_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image42_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image42_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image43_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image43_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image43_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image43_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image44_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image44_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image44_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image44_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image45_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image45_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image45_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image45_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image46_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image46_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image46_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image46_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image47_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image47_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image47_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image47_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image48_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image48_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image48_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image48_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image49_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image49_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image49_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image49_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image50_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image50_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image50_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/image50_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/reklama.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/Ads.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/MyApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/CurrentTasksAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/DoneTaskAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/TabAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/TaskAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmSetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBQueryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBUpdateManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/AddingTaskDialogFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/DatePickerFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/EditTaskDialogFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/TimePickerFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/CurrentTaskFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/DayFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/DoneTaskFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/FifeYearsFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/MonthFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/RulesFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/TaskFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/WeekFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/YearFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/model/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/model/ModelSeparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/model/ModelTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_check_circle_white_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_check_circle_white_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_check_circle_white_36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_check_circle_white_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_add_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_checkbox_blank_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_more_vert_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/baseline_search_white_18dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/baseline_search_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/ic_checkbox_blank_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/baseline_check_circle_white_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/baseline_check_circle_white_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/baseline_check_circle_white_36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/baseline_check_circle_white_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_add_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_checkbox_blank_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_more_vert_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/baseline_check_circle_outline_white_48dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/day.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/fifeyear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/fon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/month.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/round_outline.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/rules.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/search_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/splash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/tab_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/week.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/year.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/baseline_check_circle_white_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/baseline_check_circle_white_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/baseline_check_circle_white_36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/baseline_check_circle_white_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_add_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_checkbox_blank_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_more_vert_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_check_circle_white_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_check_circle_white_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_check_circle_white_36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_check_circle_white_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_add_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_checkbox_blank_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_more_vert_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/baseline_check_circle_white_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/baseline_check_circle_white_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/baseline_check_circle_white_36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/baseline_check_circle_white_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_add_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_checkbox_blank_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_more_vert_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_check_circle_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_search_white_18dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_search_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/splashreminder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_tasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_current_task.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_done_task.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fife_years.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_month.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_week.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_year.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/model_separator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/model_task.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/adapter/AdapterForLevels.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/adapter/AdapterForLevels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/database/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/database/DBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/AdvicesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/AdvicesFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/AskFreandsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/AskFreandsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/CoinsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/CoinsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/LevelFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/LevelFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/ResultFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/ResultFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/StartFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/java/com/sashashtmv/game4in1/fragments/StartFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/coins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/fon_for_game.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/fon_for_game.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/round_done.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/round_done.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/round_outline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/round_outline.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/square.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/square.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/square_box.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable-v24/square_box.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_advices.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_advices.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_ask_freands.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_ask_freands.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_coins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_coins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_level.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_level.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/layout/fragment_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game4in1/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game4in1/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/fragment/CurrentTaskFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/fragment/CurrentTaskFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/fragment/DoneTaskFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/fragment/DoneTaskFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/fragment/TaskFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/java/com/sashashtmv/myReminderEveryDay/fragment/TaskFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/res/layout/model_task.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/res/layout/model_task.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyReminderEveryDay/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/StartFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/StartFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/fon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_start.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_start.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1891887248">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.54" value="1" />
+          <entry key="project.open.time.56" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="6" />
+          <entry key="gradle" value="5" />
+          <entry key="java" value="146" />
+          <entry key="jpg" value="1" />
+          <entry key="png" value="4" />
+          <entry key="tabBackground" value="1" />
+          <entry key="xml" value="40" />
+          <entry key="xml(v24)" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="6" />
+          <entry key="Groovy" value="5" />
+          <entry key="Image" value="5" />
+          <entry key="JAVA" value="146" />
+          <entry key="XML" value="42" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gradle" value="4" />
+          <entry key="java" value="1475" />
+          <entry key="txt" value="53" />
+          <entry key="xml" value="1216" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Groovy" value="4" />
+          <entry key="JAVA" value="1475" />
+          <entry key="PLAIN_TEXT" value="53" />
+          <entry key="XML" value="1216" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1445">
+              <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3943#3944#0" expanded="true" />
+                <element signature="e#4000#4001#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1003">
+              <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3078#3079#0" expanded="true" />
+                <element signature="e#3117#3118#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBQueryManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBUpdateManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/DoneTaskAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1921">
+              <caret line="134" selection-start-line="134" selection-end-line="134" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/DoneTaskFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/TaskFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1598">
+              <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_splash.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable-v24/round_outline.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/model/ModelSeparator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/Utils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmSetter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/MyApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_current_task.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_done_task.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/DoneTaskAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_start.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable-v24/tabBackground" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable-v24/tab_background.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmReceiver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/model/ModelTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBQueryManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/model_task.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/AddingTaskDialogFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/DayFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/TabAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_week.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBUpdateManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/WeekFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/MonthFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_month.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/EditTaskDialogFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/YearFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_year.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_fife_years.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/FifeYearsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/RulesFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/StartFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_rules.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/TaskFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/DoneTaskFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/CurrentTasksAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/CurrentTaskFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/TaskAdapter.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1066" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TaskManager" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="device.picker.selection" value="cf5e23a29904" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sashashtmv.taskmanager" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AndroidStudioProjects\TaskManager" />
+      <recent name="D:\AndroidStudioProjects\TaskManager\app\src\main\assets\fonts" />
+      <recent name="D:\AndroidStudioProjects\TaskManager\app\src\main\res\drawable-v24" />
+      <recent name="D:\AndroidStudioProjects\TaskManager\app\src\main\res\layout" />
+      <recent name="D:\AndroidStudioProjects\TaskManager\app\src\main\res\values" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78023aef-3d65-477b-b193-dc5bd2fb66fb" name="Default Changelist" comment="" />
+      <created>1566395387243</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566395387243</updated>
+    </task>
+    <task id="LOCAL-00001" summary="new21">
+      <created>1566411691757</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566411691757</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1696" height="1066" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Palette " order="1" weight="0.14425428" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19559902" />
+      <window_info id="Structure" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="DB Browser" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info id="Favorites" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.32939914" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32939914" />
+      <window_info anchor="bottom" id="DB Execution Console" order="2" />
+      <window_info anchor="bottom" id="TODO" order="3" />
+      <window_info anchor="bottom" id="Android Profiler" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.32939914" />
+      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.32939914" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Preview" order="5" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Palette " order="1" weight="0.14425428" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19559902" />
+      <window_info id="Structure" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="DB Browser" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info id="Favorites" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="0" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32939914" />
+      <window_info anchor="bottom" id="DB Execution Console" order="2" />
+      <window_info anchor="bottom" id="TODO" order="3" />
+      <window_info anchor="bottom" id="Android Profiler" order="4" />
+      <window_info anchor="bottom" id="Debug" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.32939914" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Preview" order="5" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new21" />
+    <option name="LAST_COMMIT_MESSAGE" value="new21" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/DatePickerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Users/Public/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d956a606eb3e40cd65a2976e979f9ff1/res/values/values.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="2793" column="17" selection-start-line="2793" selection-start-column="17" selection-end-line="2793" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/model_task.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="87" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_week.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/model/ModelTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/TabAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-24/android/app/Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="2354" selection-start-line="2354" selection-end-line="2354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-24/android/app/BackStackRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="710" selection-start-line="710" selection-end-line="710" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-24/android/app/FragmentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="562" selection-start-line="562" selection-end-line="562" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/Public/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/d93f14e2590fca400a5554687a6e7841/jars/classes.jar!/android/support/v4/view/ViewPager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="1090" selection-start-line="1090" selection-end-line="1090" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/Public/.gradle/caches/transforms-1/files-1.1/support-v13-28.0.0.aar/7b8e164db1c90f91718e09b8654d995d/jars/classes.jar!/android/support/v13/app/FragmentStatePagerAdapter.class" />
+    <entry file="jar://C:/Users/Public/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/143f25a7c31c6e08a209dc9fa31d84aa/jars/classes.jar!/android/support/design/widget/HeaderScrollingViewBehavior.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/Public/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/aede2ab372b372646de3ff785a30419e/jars/classes.jar!/android/support/design/widget/CoordinatorLayout.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="631" selection-start-line="631" selection-end-line="631" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-24/android/view/ViewGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="6111" selection-start-line="6111" selection-end-line="6111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-24/android/widget/FrameLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-24/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="19724" selection-start-line="19724" selection-end-line="19724" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/Public/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/7ea59f6874dd355b61e6aea1414e1f9e/jars/classes.jar!/android/support/constraint/ConstraintLayout.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="621" selection-start-line="621" selection-end-line="621" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-24/android/os/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-24/android/os/Looper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="174" selection-start-line="174" selection-end-line="174" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/WeekFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="110" column="37" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/MonthFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="87" column="30" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_month.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/YearFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_year.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/DayFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="112" column="34" selection-start-line="32" selection-start-column="3" selection-end-line="140" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/EditTaskDialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="38" selection-start-line="2" selection-end-line="71" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_fife_years.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/RulesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/StartFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="133" column="74" selection-start-line="133" selection-start-column="74" selection-end-line="133" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_rules.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/FifeYearsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="133" column="119" selection-start-line="133" selection-start-column="119" selection-end-line="133" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="1806" column="15" selection-start-line="1806" selection-start-column="15" selection-end-line="1806" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/Public/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/1c0652331f18b1edbc877433f708fe88/jars/classes.jar!/android/support/v7/widget/RecyclerView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="4373" column="25" selection-start-line="4373" selection-start-column="25" selection-end-line="4373" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/model/ModelSeparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/CurrentTasksAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="166" column="39" selection-start-line="166" selection-start-column="39" selection-end-line="168" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/TaskAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/dialog/AddingTaskDialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="180" column="43" selection-start-line="180" selection-start-column="43" selection-end-line="180" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/CurrentTaskFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2057">
+          <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3078#3079#0" expanded="true" />
+            <element signature="e#3117#3118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBQueryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/database/DBUpdateManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/alarm/AlarmReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/adapter/DoneTaskAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/DoneTaskFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/fragments/TaskFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sashashtmv/taskmanager/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3943#3944#0" expanded="true" />
+            <element signature="e#4000#4001#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

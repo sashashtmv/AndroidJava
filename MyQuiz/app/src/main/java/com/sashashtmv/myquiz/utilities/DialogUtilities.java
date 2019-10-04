@@ -1,23 +1,30 @@
-package info.fandroid.quizapp.quizapplication.utilities;
+package com.sashashtmv.myquiz.utilities;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import info.fandroid.quizapp.quizapplication.R;
-import info.fandroid.quizapp.quizapplication.constants.AppConstants;
+import com.sashashtmv.myquiz.R;
+import com.sashashtmv.myquiz.constants.AppConstants;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
+
 
 public class DialogUtilities extends DialogFragment {
     private Activity mActivity;
 
+    //переменные для текста заголовка, сообщения, надписей на кнопках диалогового окна
+    //viewIdText будет передавать параметр типа диалога, посколько в разных ситуациях будут использованы
+    // разные диалоги - при пропуске вопроса, при предоставлении дополнительного шанса или прекращении тестирования
     private String dialogTitle, dialogText, positiveText, negativeText, viewIdText;
     private TextView txtDialogTitle, txtDialogText;
 
+    //интерфейс слушателя диалога
     public static interface OnCompleteListener {
         public abstract void onComplete(Boolean isOkPressed, String viewIdText);
     }
@@ -36,6 +43,7 @@ public class DialogUtilities extends DialogFragment {
         return fragment;
     }
 
+    //вызывается при привязке диалога к активити
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -49,6 +57,7 @@ public class DialogUtilities extends DialogFragment {
 
     }
 
+    //создаем кастомный диалог
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -58,7 +67,7 @@ public class DialogUtilities extends DialogFragment {
         initView(rootView);
         initFunctionality();
 
-        return new android.support.v7.app.AlertDialog.Builder(mActivity)
+        return new AlertDialog.Builder(mActivity)
                 .setView(rootView)
                 .setPositiveButton(positiveText, new DialogInterface.OnClickListener() {
                     @Override
@@ -78,6 +87,7 @@ public class DialogUtilities extends DialogFragment {
                 .create();
     }
 
+    //получаем аргументы из набора bundle
     public void initVar() {
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -89,11 +99,13 @@ public class DialogUtilities extends DialogFragment {
         }
     }
 
+    //инициализируем текстовые поля макета
     public void initView(View rootView) {
         txtDialogTitle = (TextView) rootView.findViewById(R.id.dialog_title);
         txtDialogText = (TextView) rootView.findViewById(R.id.dialog_text);
     }
 
+    //устанавливаем текст заголовка и сообщения диалогового окна
     public void initFunctionality() {
         txtDialogTitle.setText(dialogTitle);
         txtDialogText.setText(dialogText);

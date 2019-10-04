@@ -1,11 +1,9 @@
-package info.fandroid.quizapp.quizapplication.activity;
+package com.sashashtmv.myquiz.activity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,14 +18,18 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.gms.ads.AdView;
+import com.sashashtmv.myquiz.R;
+import com.sashashtmv.myquiz.adapters.ResultAdapter;
+import com.sashashtmv.myquiz.constants.AppConstants;
+import com.sashashtmv.myquiz.models.quiz.ResultModel;
+import com.sashashtmv.myquiz.utilities.ActivityUtilities;
+import com.sashashtmv.myquiz.utilities.AdsUtilities;
 
 import java.util.ArrayList;
 
-import info.fandroid.quizapp.quizapplication.R;
-import info.fandroid.quizapp.quizapplication.adapters.ResultAdapter;
-import info.fandroid.quizapp.quizapplication.constants.AppConstants;
-import info.fandroid.quizapp.quizapplication.models.quiz.ResultModel;
-import info.fandroid.quizapp.quizapplication.utilities.ActivityUtilities;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ScoreCardActivity extends BaseActivity implements OnChartValueSelectedListener {
 
@@ -55,6 +57,8 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         initListener();
     }
 
+    //инициализирует переменные для контекста и получает из интента количество правильных и неправильных ответов,
+    // количество вопросов в тесте, номер теста и список результатов для отображения
     private void initVar() {
         mActivity = ScoreCardActivity.this;
         mContext = mActivity.getApplicationContext();
@@ -69,6 +73,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         }
     }
 
+    //инициализирует экранные компоненты
     private void initView() {
         setContentView(R.layout.activity_score_card);
 
@@ -90,6 +95,8 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
 
     }
 
+    //получает количество пропущенных вопросов, заполняет поля подписей диаграммы и в зависимости
+    // от результата тестов, отображает мотивирующие тексты пользователю
     public void initFunctionality() {
 
         mSkip = mQuestionsCount - (mScore + mWrongAns);
@@ -116,15 +123,16 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
 
         }
 
+        //для отображения диаграммы
         showPieChart();
 
         mAdapter = new ResultAdapter(mContext, mActivity, mResultList);
         mRecyclerResult.setAdapter(mAdapter);
 
         // show full-screen ads
-        // TODO AdsUtilities.getInstance(mContext).showFullScreenAd();
+        AdsUtilities.getInstance(mContext).showFullScreenAd();
         // show banner ads
-       // TODO AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
+       AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
     }
 
     public void initListener() {
@@ -146,6 +154,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         });
     }
 
+    //строит и отображает диаграмму по результатам теста
     public void showPieChart() {
         mPieChart = (PieChart) findViewById(R.id.piechart);
         mPieChart.setUsePercentValues(true);
@@ -185,6 +194,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
     public void onNothingSelected() {
     }
 
+    //создает стрелку возврата в главную активити
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -196,6 +206,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         return super.onOptionsItemSelected(item);
     }
 
+    //возвращает в главную активити при нажатии системной кнопки назад
     @Override
     public void onBackPressed() {
         ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);

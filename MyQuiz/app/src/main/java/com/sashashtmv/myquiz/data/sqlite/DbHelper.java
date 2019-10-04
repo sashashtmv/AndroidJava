@@ -1,8 +1,10 @@
-package info.fandroid.quizapp.quizapplication.data.sqlite;
+package com.sashashtmv.myquiz.data.sqlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+//вспомагательный класс для инициализации и работы с базой данных
 
 public class DbHelper extends SQLiteOpenHelper {
 

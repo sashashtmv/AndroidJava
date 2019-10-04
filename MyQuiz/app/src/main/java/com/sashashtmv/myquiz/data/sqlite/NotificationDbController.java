@@ -1,13 +1,15 @@
-package info.fandroid.quizapp.quizapplication.data.sqlite;
+package com.sashashtmv.myquiz.data.sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.sashashtmv.myquiz.models.notification.NotificationModel;
+
 import java.util.ArrayList;
 
-import info.fandroid.quizapp.quizapplication.models.notification.NotificationModel;
+
 
 
 public class NotificationDbController {
@@ -16,10 +18,13 @@ public class NotificationDbController {
 
     private static final String mREAD = "read", mUNREAD = "unread";
 
+
+    //получаем доступ к базе данных
     public NotificationDbController(Context context) {
         mDb = DbHelper.getInstance(context).getWritableDatabase();
     }
 
+    //добавляет новую строку данных в базу
     public int insertData(String title, String message, String contentUrl) {
 
         ContentValues values = new ContentValues();
@@ -35,6 +40,7 @@ public class NotificationDbController {
                 values);
     }
 
+    //получает курсор со всеми данными
     public ArrayList<NotificationModel> getAllData() {
 
 
@@ -62,6 +68,7 @@ public class NotificationDbController {
         return fetchData(c);
     }
 
+    //получает только не прочитанные уведомления путем добавления переменной selectionArgs в курсор
     public ArrayList<NotificationModel> getUnreadData() {
 
 
@@ -91,6 +98,7 @@ public class NotificationDbController {
         return fetchData(c);
     }
 
+    //получает курсор с данными и возвращает список данных
     private ArrayList<NotificationModel> fetchData(Cursor c) {
         ArrayList<NotificationModel> ntyDataArray = new ArrayList<>();
 
@@ -115,6 +123,7 @@ public class NotificationDbController {
         return ntyDataArray;
     }
 
+    //обновляет состояние уведомлений после прочтения
     public void updateStatus(int itemId, boolean read) {
 
         String readStatus = mUNREAD;

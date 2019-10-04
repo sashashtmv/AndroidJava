@@ -37,13 +37,13 @@ public class AppUtilities {
     //проверяет наличие приложений для этих соцсетей, установленных на устройстве и в зависимости от этого вызывает разные ссылки
     public static void facebookLink(Activity activity) {
         try {
-            ApplicationInfo applicationInfo = activity.getPackageManager().getApplicationInfo("com.facebook.catana", 0);
+            ApplicationInfo applicationInfo = activity.getPackageManager().getApplicationInfo("com.facebook.katana", 0);
             if (applicationInfo.enabled) {
                 updateLink(activity, "fb://facewebmodal/f?href=" + activity.getString(R.string.facebook_url));
                 return;
             }
         } catch (PackageManager.NameNotFoundException ignored) {
-            updateLink(activity, activity.getString(R.string.youtube_url));
+            updateLink(activity, activity.getString(R.string.facebook_url));
         }
     }
 
@@ -55,7 +55,7 @@ public class AppUtilities {
                 return;
             }
         } catch (PackageManager.NameNotFoundException ignored) {
-            updateLink(activity, activity.getString(R.string.twitter_user_id));
+            updateLink(activity, activity.getString(R.string.twitter_url));
         }
     }
 

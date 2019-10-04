@@ -1,14 +1,10 @@
-package info.fandroid.quizapp.quizapplication.activity;
+package com.sashashtmv.myquiz.activity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
@@ -17,6 +13,24 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.sashashtmv.myquiz.R;
+import com.sashashtmv.myquiz.adapters.QuizAdapter;
+import com.sashashtmv.myquiz.constants.AppConstants;
+import com.sashashtmv.myquiz.data.preference.AppPreference;
+import com.sashashtmv.myquiz.listeners.ListItemClickListener;
+import com.sashashtmv.myquiz.models.quiz.QuizModel;
+import com.sashashtmv.myquiz.models.quiz.ResultModel;
+import com.sashashtmv.myquiz.utilities.ActivityUtilities;
+import com.sashashtmv.myquiz.utilities.AdsUtilities;
+import com.sashashtmv.myquiz.utilities.BeatBox;
+import com.sashashtmv.myquiz.utilities.DialogUtilities;
+import com.sashashtmv.myquiz.utilities.SoundUtilities;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,19 +43,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import info.fandroid.quizapp.quizapplication.R;
-import info.fandroid.quizapp.quizapplication.adapters.QuizAdapter;
-import info.fandroid.quizapp.quizapplication.constants.AppConstants;
-import info.fandroid.quizapp.quizapplication.data.preference.AppPreference;
-import info.fandroid.quizapp.quizapplication.listeners.ListItemClickListener;
-import info.fandroid.quizapp.quizapplication.models.quiz.QuizModel;
-import info.fandroid.quizapp.quizapplication.utilities.ActivityUtilities;
-import info.fandroid.quizapp.quizapplication.utilities.BeatBox;
-import info.fandroid.quizapp.quizapplication.utilities.DialogUtilities;
-import info.fandroid.quizapp.quizapplication.utilities.SoundUtilities;
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
-public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCompleteListener {
+public class QuizActivity extends BaseActivity implements RewardedVideoAdListener, DialogUtilities.OnCompleteListener {
 
     private Activity mActivity;
     private Context mContext;
@@ -53,6 +61,7 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
     private ImageView imgFirstLife, imgSecondLife, imgThirdLife, imgFourthLife, imgFifthLife;
 
     private QuizAdapter mAdapter = null;
+    //списки для вопросов, ответов и цветов фона правильных и не правильных ответов
     private List<QuizModel> mItemList;
     ArrayList<String> mOptionList;
     ArrayList<String> mBackgroundColorList;
@@ -65,6 +74,9 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
     private boolean mIsSkipped = false, mIsCorrect = false;
     private String mQuestionText, mGivenAnsText, mCorrectAnsText, mCategoryId;
 
+    private ArrayList<ResultModel> mResultList;
+    private RewardedVideoAd mRewardedVideoAd;
+
     private BeatBox mBeatBox;
     private List<SoundUtilities> mSounds;
     private boolean isSoundOn;
@@ -75,8 +87,8 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //TODO: initializeRewardedAds();
-        //TODO: loadRewardedVideoAds();
+        initializeRewardedAds();
+        loadRewardedVideoAds();
 
         initVar();
         initView();
@@ -86,6 +98,20 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
 
     }
 
+    public void initializeRewardedAds() {
+        MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.app_ad_id));
+
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+        mRewardedVideoAd.setRewardedVideoAdListener(this);
+    }
+
+    private void loadRewardedVideoAds() {
+        mRewardedVideoAd.loadAd(getResources().getString(R.string.rewarded_ad_unit_id),
+                new AdRequest.Builder().build());
+    }
+
+    //инициализируем переменные контекста, получаем номер теста из интента, создаем списки для работы с ответами, создаем экземпляр класса BeatBox
+    // и получаем список звуков
     private void initVar() {
         mActivity = QuizActivity.this;
         mContext = mActivity.getApplicationContext();
@@ -98,12 +124,14 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
         mItemList = new ArrayList<>();
         mOptionList = new ArrayList<>();
         mBackgroundColorList = new ArrayList<>();
-        //TODO: mResultList = new ArrayList<>();
+        mResultList = new ArrayList<>();
 
         mBeatBox = new BeatBox(mActivity);
         mSounds = mBeatBox.getSounds();
     }
 
+    //получаем макет экрана и инициализируем экранные компоненты, созаем адаптер списка, добавляем тулбар, заголовок, стрелку назад
+    // и индикатор загрузки
     private void initView() {
         setContentView(R.layout.activity_quiz);
 
@@ -131,6 +159,8 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
 
     }
 
+    //показываем индикатор загрузки и проверяем сохраненное значение настройки выключения звука,
+    // устанавливаем картинку для кнопки отключения звука в методе setSpeakerImage в зависимости от значения этой настройки
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void loadData() {
         showLoader();
@@ -141,6 +171,7 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
         loadJson();
     }
 
+    //для смены значка кнопки вкл/откл звука
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void setSpeakerImage() {
         if (isSoundOn) {
@@ -151,6 +182,7 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
     }
 
 
+    //устанавливаем слушатели для кнопок и списков
     public void initListener() {
         btnSpeaker.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -170,12 +202,13 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
                     DialogUtilities dialog = DialogUtilities.newInstance(getString(R.string.skip_text), getString(R.string.skip_prompt), getString(R.string.yes), getString(R.string.no), AppConstants.BUNDLE_KEY_SKIP_OPTION);
                     dialog.show(manager, AppConstants.BUNDLE_KEY_DIALOG_FRAGMENT);
                 } else {
-                    //TODO: updateResultSet();
+                    updateResultSet();
                     setNextQuestion();
                 }
             }
         });
 
+        //слушатель для адаптера списка
         mAdapter.setItemClickListener(new ListItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
@@ -205,13 +238,16 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
                     } else {
                         mBackgroundColorList.set(clickedAnswerIndex, AppConstants.COLOR_GREEN);
                         mScore++;
-                         mIsCorrect = true;
+                        mIsCorrect = true;
                         mBeatBox.play(mSounds.get(AppConstants.BUNDLE_KEY_ZERO_INDEX));
                     }
 
-                     mGivenAnsText = mItemList.get(mQuestionPosition).getAnswers().get(clickedAnswerIndex);
+                    //сохраняется строка выбранного ответа
+                    mGivenAnsText = mItemList.get(mQuestionPosition).getAnswers().get(clickedAnswerIndex);
+                    //сохраняется строка правильного ответа для экрана результатов
                     mCorrectAnsText = mItemList.get(mQuestionPosition).getAnswers().get(mItemList.get(mQuestionPosition).getCorrectAnswer());
 
+                    //ответ считается выбранным и уже не реагирует на нажатие
                     mUserHasPressed = true;
                     mAdapter.notifyDataSetChanged();
                 }
@@ -221,14 +257,13 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
 
     }
 
-
-
-
+    //для уменьшения количества попыток при неправильном ответе
     public void decreaseLifeAndStatus() {
         mLifeCounter--;
         setLifeStatus();
     }
 
+    //восстанавливает попытки для ответов, будем использовать в качестве поощрения для просмотра рекламы
     void increaseLifeAndStatus() {
         if (mLifeCounter < AppConstants.BUNDLE_KEY_MAX_LIFE) {
             mLifeCounter++;
@@ -236,6 +271,7 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
         }
     }
 
+    //управляет на экране видимостью иконок количества попыток
     public void setLifeStatus() {
         switch (mLifeCounter) {
             case 1:
@@ -283,8 +319,7 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
         }
     }
 
-
-
+    //инициирует отображение следующего вопроса на экране вызовом метода updateQuestionsAndAnswers
     public void setNextQuestion() {
         if (isSoundOn) {
             mBeatBox.play(mSounds.get(AppConstants.BUNDLE_KEY_FIRST_INDEX));
@@ -293,15 +328,22 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
         if (mQuestionPosition < mItemList.size() - 1 && mLifeCounter > 0) {
             mQuestionPosition++;
             updateQuestionsAndAnswers();
-        } else if (mQuestionPosition < mItemList.size() - 1 && mLifeCounter == 0) {
+        } //если все попытки израсходованы, отображается диалог получить дополнительную попытку
+        else if (mQuestionPosition < mItemList.size() - 1 && mLifeCounter == 0) {
             FragmentManager manager = getSupportFragmentManager();
             DialogUtilities dialog = DialogUtilities.newInstance(getString(R.string.reward_dialog_title), getString(R.string.reward_dialog_message), getString(R.string.yes), getString(R.string.no), AppConstants.BUNDLE_KEY_REWARD_OPTION);
             dialog.show(manager, AppConstants.BUNDLE_KEY_DIALOG_FRAGMENT);
-        } else {
-            //TODO: invoke ScoreCardActivity
+        }//при отказе будем вызывать экран отображения результатов
+        else {
+            ActivityUtilities.getInstance().invokeScoreCardActivity(mActivity, ScoreCardActivity.class,
+                    mQuestionsCount, mScore, mWrongAns, mSkip, mCategoryId, mResultList, true);
+            AppPreference.getInstance(mActivity).setQuizResult(mCategoryId, mScore);
+
         }
     }
 
+    //очищает список ответов и цветов для их фона, и прокручивает список в начальную позицию, потом заполняет списки ответами и фоновыми цветами,
+    // получает текст вопроса и устанавливает его в поле вопроса, прописывает в поле заголовка текущий номер вопроса из общего количества
     public void updateQuestionsAndAnswers() {
         mOptionList.clear();
         mBackgroundColorList.clear();
@@ -317,12 +359,16 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
         tvQuestionTitle.setText(getString(R.string.quiz_question_title, mQuestionPosition + 1, mQuestionsCount));
     }
 
+    //вызывается, если пользователь пытался покинуть экран тестирования с помощью стрелки в тулбаре или системной кнопки назад, при этом, пользователю отображается диалог
+    // для подтверждения намерения прекратить тестирование
     public void quizActivityClosePrompt() {
         FragmentManager manager = getSupportFragmentManager();
         DialogUtilities dialog = DialogUtilities.newInstance(getString(R.string.exit), getString(R.string.cancel_prompt), getString(R.string.yes), getString(R.string.no), AppConstants.BUNDLE_KEY_CLOSE_OPTION);
         dialog.show(manager, AppConstants.BUNDLE_KEY_DIALOG_FRAGMENT);
     }
 
+    //считывает данные с файла вопросов и отдает их методу parseJson(), который наполняет этими данными списки и делает
+    // первый вызов метода updateQuestionsAndAnswers() для отображения вопроса
     private void loadJson() {
         StringBuffer sb = new StringBuffer();
         BufferedReader br = null;
@@ -383,6 +429,7 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
         }
     }
 
+    //отображает и обрабатывает стрелку назад в тулбаре
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -393,36 +440,111 @@ public class QuizActivity extends BaseActivity implements  DialogUtilities.OnCom
         return super.onOptionsItemSelected(item);
     }
 
+    //обрабатывает нажатие системной кнопки назад
     @Override
     public void onBackPressed() {
         quizActivityClosePrompt();
     }
 
+    //метод интерфейса слушателя OnCompleteListener, обрабатывает взаимодействие пользователя с диалоговыми окнами
     @Override
     public void onComplete(Boolean isOkPressed, String viewIdText) {
         if (isOkPressed) {
+            //вызывает главный экран в диалоге выхода
             if (viewIdText.equals(AppConstants.BUNDLE_KEY_CLOSE_OPTION)) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);
-            } else if (viewIdText.equals(AppConstants.BUNDLE_KEY_SKIP_OPTION)) {
+            }//считает пропущенные вопросы при переходе на следующий вопрос без ответа
+            //создает список пропущенных вопросов с ответами
+            else if (viewIdText.equals(AppConstants.BUNDLE_KEY_SKIP_OPTION)) {
                 mSkip++;
-                //TODO: mIsSkipped = true;
+                //переменная пропуска вопроса
+                mIsSkipped = true;
+
                 mGivenAnsText = getResources().getString(R.string.skipped_text);
                 mCorrectAnsText = mItemList.get(mQuestionPosition).getAnswers().get(mItemList.get(mQuestionPosition).getCorrectAnswer());
-                //TODO: updateResultSet();
+                updateResultSet();
                 setNextQuestion();
-            } else if (viewIdText.equals(AppConstants.BUNDLE_KEY_REWARD_OPTION)) {
-               //TODO:  mRewardedVideoAd.show();
             }
-        } else if (!isOkPressed && viewIdText.equals(AppConstants.BUNDLE_KEY_REWARD_OPTION)) {
-            //TODO: invoke ScoreCardActivity
+            //отображает рекламу, если пользователь выбирает дополнительную попытку, а также отображает экран результатов
+            else if (viewIdText.equals(AppConstants.BUNDLE_KEY_REWARD_OPTION)) {
+                 mRewardedVideoAd.show();
+            }
+        }
+        //сохраняет значение счетчика в случае отказа пользователя смотреть рекламу
+        //отображает экран результата
+        else if (!isOkPressed && viewIdText.equals(AppConstants.BUNDLE_KEY_REWARD_OPTION)) {
+
+            ActivityUtilities.getInstance().invokeScoreCardActivity(mActivity, ScoreCardActivity.class,
+                    mQuestionsCount, mScore, mWrongAns, mSkip, mCategoryId, mResultList, true);
             AppPreference.getInstance(mContext).setQuizResult(mCategoryId, mScore);
             AppPreference.getInstance(mContext).setQuizQuestionsCount(mCategoryId, mQuestionsCount);
         }
     }
 
+    //для наполнения списка результатов
+    public void updateResultSet() {
+        mResultList.add(new ResultModel(mQuestionText, mGivenAnsText, mCorrectAnsText, mIsCorrect, mIsSkipped));
+        mIsCorrect = false;
+        mIsSkipped = false;
+    }
+
+    //для осовобождения ресурсов медиаплеера
     @Override
     protected void onDestroy() {
         super.onDestroy();
         mBeatBox.release();
+    }
+
+    @Override
+    public void onResume() {
+        mRewardedVideoAd.resume(this);
+
+        // load full screen ad
+        AdsUtilities.getInstance(mContext).loadFullScreenAd(mActivity);
+
+        super.onResume();
+    }
+
+    @Override
+    public void onRewardedVideoAdLoaded() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdOpened() {
+
+    }
+
+    @Override
+    public void onRewardedVideoStarted() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdClosed() {
+        loadRewardedVideoAds();
+    }
+
+    //выполняемом после просмотра рекламы, вызываем методы добавления попытки, обновления результата и установки следующего вопрос
+    @Override
+    public void onRewarded(RewardItem rewardItem) {
+        increaseLifeAndStatus();
+        updateResultSet();
+        setNextQuestion();
+    }
+
+    @Override
+    public void onRewardedVideoAdLeftApplication() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdFailedToLoad(int i) {
+
+    }
+
+    @Override
+    public void onRewardedVideoCompleted() {
+
     }
 }

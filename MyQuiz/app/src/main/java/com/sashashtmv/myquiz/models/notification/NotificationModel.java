@@ -1,4 +1,4 @@
-package info.fandroid.quizapp.quizapplication.models.notification;
+package com.sashashtmv.myquiz.models.notification;
 
 public class NotificationModel {
 

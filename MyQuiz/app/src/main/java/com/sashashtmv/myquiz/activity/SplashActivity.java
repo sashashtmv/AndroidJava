@@ -13,8 +13,6 @@ import com.sashashtmv.myquiz.utilities.ActivityUtilities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-//import android.support.v7.app.AppCompatActivity;
-
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView mImageView;
@@ -53,7 +51,7 @@ public class SplashActivity extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
             // по окончании анимации будем запускать главный экран приложения
-                        ActivityUtilities.getInstance().inwokeNewActivity(SplashActivity.this, MainActivity.class, true);
+                        ActivityUtilities.getInstance().invokeNewActivity(SplashActivity.this, MainActivity.class, true);
 
                     }
 

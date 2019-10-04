@@ -1,20 +1,22 @@
-package info.fandroid.quizapp.quizapplication.adapters;
+package com.sashashtmv.myquiz.adapters;
 
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.sashashtmv.myquiz.R;
+import com.sashashtmv.myquiz.listeners.ListItemClickListener;
+import com.sashashtmv.myquiz.models.notification.NotificationModel;
+
 import java.util.ArrayList;
 
-import info.fandroid.quizapp.quizapplication.R;
-import info.fandroid.quizapp.quizapplication.listeners.ListItemClickListener;
-import info.fandroid.quizapp.quizapplication.models.notification.NotificationModel;
+import androidx.recyclerview.widget.RecyclerView;
+
 
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolder> {

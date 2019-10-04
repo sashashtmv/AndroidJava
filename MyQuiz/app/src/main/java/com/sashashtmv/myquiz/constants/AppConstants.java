@@ -1,9 +1,8 @@
 package com.sashashtmv.myquiz.constants;
 
 public class AppConstants {
-    //константы для заголовка и адреса окна, которые будут открываться при переходе по ссылке
-    public static final String BUNDLE_KEY_TITLE = "title";
-    public static final String BUNDLE_KEY_URL = "url";
+    public static final String APP_PREF_NAME = "quiz_app_pref";
+    public static final String KEY_SOUND = "sound";
 
     public static final int BUNDLE_KEY_ZERO_INDEX = 0;
     public static final int BUNDLE_KEY_FIRST_INDEX = 1;
@@ -17,7 +16,10 @@ public class AppConstants {
     public static final String DIRECTORY = "drawable/" + "result_";
 
     public static final String EMPTY_STRING = "";
+    //константы для заголовка и адреса окна, которые будут открываться при переходе по ссылке
+    public static final String BUNDLE_KEY_TITLE = "title";
     public static final String BUNDLE_KEY_MESSAGE = "message";
+    public static final String BUNDLE_KEY_URL = "url";
     public static final long SITE_CACHE_SIZE = 10 * 1024 * 1024;
 
     // inAppBilling constants

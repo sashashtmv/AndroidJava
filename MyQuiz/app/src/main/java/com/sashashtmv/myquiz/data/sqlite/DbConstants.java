@@ -1,6 +1,8 @@
-package info.fandroid.quizapp.quizapplication.data.sqlite;
+package com.sashashtmv.myquiz.data.sqlite;
 
 import android.provider.BaseColumns;
+
+//константы для имени таблицы и полей базы данных, а также выражений для запросов к базе данных
 
 public class DbConstants implements BaseColumns {
 

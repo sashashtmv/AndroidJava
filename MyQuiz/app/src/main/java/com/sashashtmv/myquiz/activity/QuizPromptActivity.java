@@ -1,4 +1,4 @@
-package info.fandroid.quizapp.quizapplication.activity;
+package com.sashashtmv.myquiz.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,10 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import info.fandroid.quizapp.quizapplication.R;
-import info.fandroid.quizapp.quizapplication.constants.AppConstants;
-import info.fandroid.quizapp.quizapplication.data.preference.AppPreference;
-import info.fandroid.quizapp.quizapplication.utilities.ActivityUtilities;
+import com.google.android.gms.ads.AdView;
+import com.sashashtmv.myquiz.R;
+import com.sashashtmv.myquiz.constants.AppConstants;
+import com.sashashtmv.myquiz.data.preference.AppPreference;
+import com.sashashtmv.myquiz.utilities.ActivityUtilities;
+import com.sashashtmv.myquiz.utilities.AdsUtilities;
 
 
 public class QuizPromptActivity extends BaseActivity {
@@ -21,6 +23,7 @@ public class QuizPromptActivity extends BaseActivity {
     private Context mContext;
     private Button mBtnYes, mBtnNo;
     private TextView firstText, thirdtext;
+    //номер теста, предыдущий результат и счетчик вопросов
     private String categoryId, score, questionsCount;
     //private String questionsCount = "";
 
@@ -34,6 +37,7 @@ public class QuizPromptActivity extends BaseActivity {
         initListener();
     }
 
+    //инициализируем переменные. Номер теста получаем из интента, а счетчики из метода getQuizResult, он получает значения из sharedPreferences
     private void initVar() {
         mActivity = QuizPromptActivity.this;
         mContext = mActivity.getApplicationContext();
@@ -46,6 +50,8 @@ public class QuizPromptActivity extends BaseActivity {
         }
     }
 
+    //инициализируем экранные компоненты, а также проверяем, если счетчики вопросов и правильных ответов содержат значения,
+    //используем их в первом текстовом  поле для отображения результатов последнего прохождения теста
     private void initView() {
         setContentView(R.layout.activity_quiz_prompt);
 
@@ -64,6 +70,10 @@ public class QuizPromptActivity extends BaseActivity {
         setToolbarTitle(getString(R.string.quiz_prompt));
         enableUpButton();
 
+        // show full-screen ads
+        AdsUtilities.getInstance(mContext).showFullScreenAd();
+        // show banner ads
+        AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
 
     }
 
@@ -83,6 +93,7 @@ public class QuizPromptActivity extends BaseActivity {
         });
     }
 
+    //определяет стрелку назад в тулбаре
     @Override
         public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -93,6 +104,7 @@ public class QuizPromptActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //определяет системную кнопку назад и добавляет ей аналогичное действие
     @Override
     public void onBackPressed() {
         ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);

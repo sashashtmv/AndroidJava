@@ -6,6 +6,7 @@ import android.os.Parcelable;
 //интерфейс parcelable используется для передачи объектов между активити
 
 public class CategoryModel implements Parcelable {
+
     private String categoryId, categoryName;
 
     public CategoryModel(String categoryId, String categoryName) {

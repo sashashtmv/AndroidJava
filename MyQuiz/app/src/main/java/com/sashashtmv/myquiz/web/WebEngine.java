@@ -13,6 +13,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.sashashtmv.myquiz.constants.AppConstants;
 import com.sashashtmv.myquiz.listeners.WebListener;
 
 public class WebEngine {
@@ -35,8 +36,7 @@ public class WebEngine {
     //устанавливает настройки вебвью, такие , как поддержку джаваскрипт, масштабирование страницы по ширине экрана, управление кешированием, кодировкой текста и др.
     public void initWebView(){
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.getSettings().setLoadWithOverviewMode(true);
-        mWebView.getSettings().setAppCacheMaxSize(1024 * 1024 * 10);
+        mWebView.getSettings().setAppCacheMaxSize(AppConstants.SITE_CACHE_SIZE);
         mWebView.getSettings().setAppCachePath(mContext.getCacheDir().getAbsolutePath());
         mWebView.getSettings().setAllowFileAccess(true);
         mWebView.getSettings().setAppCacheEnabled(true);
@@ -47,7 +47,7 @@ public class WebEngine {
         mWebView.getSettings().setPluginState(WebSettings.PluginState.ON);
 
         //если сетевое соединение недоступно, загружаем страницу из кеша
-        if(!isNetworkAvalaible(mContext)){
+        if(!isNetworkAvailable(mContext)){
             mWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         }
     }
@@ -97,25 +97,34 @@ public class WebEngine {
 
     //определяет всевозможные типы адресов и в зависимости от выбранного типа, использует различные методы открытия ссылки
     public void loadPage(String webUrl){
-        if(isNetworkAvalaible(mContext)){
-            if(webUrl.startsWith("tel:") || webUrl.startsWith("sms:") || webUrl.startsWith("smsto:") || webUrl.startsWith("mailto:") || webUrl.startsWith("geo:")){
+        if (isNetworkAvailable(mContext)) {
+            if (webUrl.startsWith("tel:") ||
+                    webUrl.startsWith("sms:") ||
+                    webUrl.startsWith("smsto:") ||
+                    webUrl.startsWith("mailto:") ||
+                    webUrl.contains("geo:")) {
                 invokeNativeApp(webUrl);
-            }else  if(webUrl.contains("?target=blank")){
+            } else if (webUrl.contains("?target=blank")) {
                 invokeNativeApp(webUrl.replace("?target=blank", ""));
-            }else  if(webUrl.endsWith(".doc") || webUrl.endsWith(".docx") || webUrl.endsWith(".xls") || webUrl.endsWith(".pdf") || webUrl.endsWith(".xlsx") || webUrl.endsWith(".pptx")){
+            } else if (webUrl.endsWith(".doc") ||
+                    webUrl.endsWith(".docx") ||
+                    webUrl.endsWith(".xls") ||
+                    webUrl.endsWith(".xlsx") ||
+                    webUrl.endsWith(".pptx") ||
+                    webUrl.endsWith(".pdf")) {
                 mWebView.loadUrl(GOOGLE_DOCS_VIEWER + webUrl);
                 mWebView.getSettings().setBuiltInZoomControls(true);
-            }else {
-                //если используется стандартный вебадрес, то он открывается через вебвью
+            } else {
                 mWebView.loadUrl(webUrl);
             }
-        }else {
+
+        } else {
             mWebListener.onNetworkError();
         }
     }
 
     //проверяет доступность сетевого соединения
-    private boolean isNetworkAvalaible(Context context){
+    private boolean isNetworkAvailable(Context context){
         ConnectivityManager connectivityManager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
     }

@@ -1,21 +1,23 @@
-package info.fandroid.quizapp.quizapplication.adapters;
+package com.sashashtmv.myquiz.adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.sashashtmv.myquiz.R;
+import com.sashashtmv.myquiz.listeners.ListItemClickListener;
+
 import java.util.ArrayList;
 
-import info.fandroid.quizapp.quizapplication.R;
-import info.fandroid.quizapp.quizapplication.listeners.ListItemClickListener;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 
+//формирует список ответов для каждого вопроса
 public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.ViewHolder> {
 
     private Context mContext;

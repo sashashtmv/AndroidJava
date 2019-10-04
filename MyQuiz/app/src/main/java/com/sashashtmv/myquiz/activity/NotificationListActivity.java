@@ -1,26 +1,30 @@
-package info.fandroid.quizapp.quizapplication.activity;
+package com.sashashtmv.myquiz.activity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.ads.AdView;
+import com.sashashtmv.myquiz.R;
+import com.sashashtmv.myquiz.adapters.NotificationAdapter;
+import com.sashashtmv.myquiz.constants.AppConstants;
+import com.sashashtmv.myquiz.data.sqlite.NotificationDbController;
+import com.sashashtmv.myquiz.listeners.ListItemClickListener;
+import com.sashashtmv.myquiz.models.notification.NotificationModel;
+import com.sashashtmv.myquiz.utilities.ActivityUtilities;
+import com.sashashtmv.myquiz.utilities.AdsUtilities;
+import com.sashashtmv.myquiz.utilities.DialogUtilities;
+
 import java.util.ArrayList;
 
-import info.fandroid.quizapp.quizapplication.R;
-import info.fandroid.quizapp.quizapplication.adapters.NotificationAdapter;
-import info.fandroid.quizapp.quizapplication.constants.AppConstants;
-import info.fandroid.quizapp.quizapplication.data.sqlite.NotificationDbController;
-import info.fandroid.quizapp.quizapplication.listeners.ListItemClickListener;
-import info.fandroid.quizapp.quizapplication.models.notification.NotificationModel;
-import info.fandroid.quizapp.quizapplication.utilities.ActivityUtilities;
-import info.fandroid.quizapp.quizapplication.utilities.DialogUtilities;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 
 
 public class NotificationListActivity extends BaseActivity implements DialogUtilities.OnCompleteListener {
@@ -68,9 +72,10 @@ public class NotificationListActivity extends BaseActivity implements DialogUtil
     private void initFunctionality() {
 
         // show banner ads
-        //TODO: AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
+        AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
     }
 
+    //считываются данные из базы и заполняется список
     private void updateUI() {
         showLoader();
 
@@ -95,6 +100,7 @@ public class NotificationListActivity extends BaseActivity implements DialogUtil
         }
     }
 
+    //обрабатывается нажатие на элемент списка уведомления
     private void initListener() {
         // recycler list item click listener
         mNotificationAdapter.setItemClickListener(new ListItemClickListener() {
@@ -107,12 +113,12 @@ public class NotificationListActivity extends BaseActivity implements DialogUtil
                         mNotificationList.get(position).getUrl(),
                         false);
 
-
             }
         });
 
     }
 
+    //создает меню со стрелкой назад и кнопкой очистки списка уведомлений, которая вызывает метод удаления всех записей из базы
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

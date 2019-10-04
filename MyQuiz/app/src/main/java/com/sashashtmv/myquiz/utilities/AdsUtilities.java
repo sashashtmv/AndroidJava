@@ -1,4 +1,4 @@
-package info.fandroid.quizapp.quizapplication.utilities;
+package com.sashashtmv.myquiz.utilities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,18 +9,23 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.sashashtmv.myquiz.R;
 
-import info.fandroid.quizapp.quizapplication.R;
 
-
+//управляет логикой отображения баннера
 public class AdsUtilities {
 
+    //Здесь объявляем статическую приватную переменную текущего класса, переменную класса InterstitialAd для
+    // межстраничных объявлений и логические переменные для отключения рекламных баннеров.
     private static AdsUtilities mAdsUtilities;
 
     private InterstitialAd mInterstitialAd;
 
     private boolean mDisableBannerAd = false, mDisableInterstitialAd = false;
 
+    //инициализирует библиотечный класс MobileAds, ему передается идентификатор приложения для доступа к рекламным объявлениям.
+    // Конструктор вызывается в статическом методе getInstance для создания экземпляра класса AdsUtilities. Такой подход гарантирует
+    // создание только одного объекта mAdsUtilities для корректной работы с рекламой.
     private AdsUtilities(Context context) {
         MobileAds.initialize(context, context.getResources().getString(R.string.app_ad_id));
     }
@@ -32,6 +37,9 @@ public class AdsUtilities {
         return mAdsUtilities;
     }
 
+    //отображает стандартный баннер. Он проверяет значение переменной mDisableBannerAd и в зависимости от него скрывает баннер или
+    // отправляет запрос на загрузку рекламных объявлений. Если запрос выполнен и объявление загружено, то баннер отображается пользователю,
+    // в противном случае баннер прячется.
     public void showBannerAd(final AdView mAdView) {
         if (mDisableBannerAd) {
             mAdView.setVisibility(View.GONE);
@@ -55,6 +63,8 @@ public class AdsUtilities {
         }
     }
 
+    //загружает межстраничный полноэкранный баннер.
+    //Здесь проверяется значение переменной mDisableInterstitialAd и создается экран отображения баннера.
     public void loadFullScreenAd(Activity activity) {
         if (!mDisableInterstitialAd) {
             mInterstitialAd = new InterstitialAd(activity);
@@ -65,6 +75,7 @@ public class AdsUtilities {
         }
     }
 
+    //отображает окно межстраничного объявления, если не запрещено и если объявление загружено
     public boolean showFullScreenAd() {
         if (!mDisableInterstitialAd) {
             if (mInterstitialAd != null) {
@@ -77,6 +88,7 @@ public class AdsUtilities {
         return false;
     }
 
+    //Методы disableBannerAd() и disableInterstitialAd() отключают отображение баннеров, управляя значениями соответствующих переменных.
     public void disableBannerAd() {
         this.mDisableBannerAd = true;
     }

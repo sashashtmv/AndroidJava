@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.webkit.WebView;
 
+import com.google.android.gms.ads.AdView;
 import com.sashashtmv.myquiz.R;
 import com.sashashtmv.myquiz.constants.AppConstants;
 import com.sashashtmv.myquiz.listeners.WebListener;
+import com.sashashtmv.myquiz.utilities.AdsUtilities;
 import com.sashashtmv.myquiz.web.WebEngine;
 
 import androidx.annotation.Nullable;
@@ -49,7 +51,6 @@ public class CustomUrlActivity extends BaseActivity {
     //Инициализируем макет экрана и экранные компоненты
     private  void  initView(){
         setContentView(R.layout.activity_custom_url);
-
         initWebEngine();
         initLoader();
         initToolbar(true);
@@ -94,6 +95,10 @@ public class CustomUrlActivity extends BaseActivity {
     //инициируем загрузку страницы
     private void initFunctionality(){
         mWebEngine.loadPage(pageUrl);
+        // show full-screen ads
+        AdsUtilities.getInstance(mContext).showFullScreenAd();
+        // show banner ads
+        AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
     }
 
     //переопределим метод для обработки нажатия кнопки в тулбаре для возврата на предыдущий экран

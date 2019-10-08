@@ -1,34 +1,24 @@
 package com.sashashtmv.game4in1.alarm;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.net.Uri;
-import android.support.v4.app.NotificationCompat;
+
+import androidx.core.app.NotificationCompat;
 import android.util.Log;
 
 import com.sashashtmv.game4in1.MainActivity;
 import com.sashashtmv.game4in1.R;
-import com.sashashtmv.game4in1.database.DBHelper;
-import com.sashashtmv.game4in1.fragments.LevelFragment;
-import com.sashashtmv.game4in1.model.ModelLevel;
 import com.sashashtmv.game4in1.model.MyApplication;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
 
-import java.util.List;
-
 import static android.content.ContentValues.TAG;
-import static android.content.Context.MODE_PRIVATE;
 
 
 public class AlarmReceiver extends BroadcastReceiver {

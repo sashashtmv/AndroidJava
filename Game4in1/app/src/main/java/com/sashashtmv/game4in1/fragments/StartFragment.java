@@ -2,36 +2,29 @@ package com.sashashtmv.game4in1.fragments;
 
 
 import android.app.FragmentManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.sashashtmv.game4in1.MainActivity;
 import com.sashashtmv.game4in1.R;
 import com.sashashtmv.game4in1.adapter.AdapterForLevels;
 
 import com.sashashtmv.game4in1.database.DBHelper;
-import com.sashashtmv.game4in1.model.Item;
 import com.sashashtmv.game4in1.model.ModelLevel;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import static android.content.ContentValues.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -89,23 +82,6 @@ public class StartFragment extends Fragment implements AdapterForLevels.ItemList
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
         activity.getSupportActionBar().setTitle("");
-
-        //mFragmentManager = activity.getFragmentManager();
-
-//        int spanCount = 4; // 3 columns
-//        int spacing = 40; // 50px
-//        boolean includeEdge = true;
-//        mLayoutManager = new GridLayoutManager(getActivity(), spanCount);
-//        mRecyclerView = view.findViewById(R.id.rvLevels);
-//        mRecyclerView.setHasFixedSize(true);
-//        mRecyclerView.setLayoutManager(mLayoutManager);
-//
-//        mAdapter = new AdapterForLevels(getActivity(), this);
-//        items = getItems();
-//        mAdapter.addItems(items);
-//        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
-//
-//        mRecyclerView.setAdapter(mAdapter);
 
         PreferenceHelper.getInstance().init(getActivity());
         mPreferenceHelper = PreferenceHelper.getInstance();

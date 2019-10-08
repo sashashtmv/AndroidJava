@@ -1,29 +1,23 @@
 package com.sashashtmv.game4in1.adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.BitmapDrawable;
-import android.support.annotation.NonNull;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.sashashtmv.game4in1.R;
-import com.sashashtmv.game4in1.fragments.StartFragment;
-import com.sashashtmv.game4in1.model.Item;
+
 import com.sashashtmv.game4in1.model.ModelLevel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.LevelViewHolder> {
@@ -48,32 +42,23 @@ public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.Leve
     @Override
     public LevelViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 
-//        switch (viewType) {
-//            case TYPE_TASK:
-//                View v = LayoutInflater.from(viewGroup.getContext())
-//                        .inflate(R.layout.item_level_list, null);
-//
-//                return new LevelViewHolder(v);
-//
-//            default:
-                return new LevelViewHolder(LayoutInflater.from(viewGroup.getContext())
-                        .inflate(R.layout.item_level_list, null));
-//                return null;
-        }
-//    }
+        return new LevelViewHolder(LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.item_level_list, null));
+
+    }
 
     @Override
     public void onBindViewHolder(@NonNull LevelViewHolder viewHolder, int position) {
         ModelLevel level = (ModelLevel) mItemList.get(position);
         //Bitmap bitmap = level.getBitmap1();
-        if(level!=null) {
+        if (level != null) {
             if (level.getStatus() == ModelLevel.STATUS_DONE) {
                 viewHolder.setData(level, position, context);
             } else if (level.getStatus() == ModelLevel.STATUS_AVALABLE) {
                 viewHolder.setAvalable(level, position, context);
 
             } else {
-                viewHolder.setNotAvalable(level, position,context);
+                viewHolder.setNotAvalable(level, position, context);
             }
         }
 
@@ -89,6 +74,7 @@ public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.Leve
     public int getItemViewType(int position) {
         return position;
     }
+
     @Override
     public long getItemId(int position) {
         return position;
@@ -110,7 +96,7 @@ public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.Leve
 
         public void setData(ModelLevel item, int position, Context context) {
             this.item = item;
-            Bitmap bitmap= BitmapFactory.decodeResource(context.getResources(), context.getResources().getIdentifier(item.getBitmap1(), "drawable", context.getPackageName()));
+            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), context.getResources().getIdentifier(item.getBitmap1(), "drawable", context.getPackageName()));
 
             this.baseImage.setImageBitmap(bitmap);
             this.baseImage.setColorFilter(Color.parseColor("#6D9DE2"), PorterDuff.Mode.MULTIPLY);
@@ -125,7 +111,7 @@ public class AdapterForLevels extends RecyclerView.Adapter<AdapterForLevels.Leve
         public void setAvalable(ModelLevel item, int position, Context context) {
             this.item = item;
             this.done.setVisibility(View.GONE);
-            Bitmap bitmap= BitmapFactory.decodeResource(context.getResources(), context.getResources().getIdentifier(item.getBitmap1(), "drawable", context.getPackageName()));
+            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), context.getResources().getIdentifier(item.getBitmap1(), "drawable", context.getPackageName()));
 
             this.baseImage.setImageBitmap(bitmap);
             String str = "" + (position + 1);

@@ -1,20 +1,16 @@
 package com.sashashtmv.game4in1.fragments;
 
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Environment;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,19 +18,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.sashashtmv.game4in1.MainActivity;
 import com.sashashtmv.game4in1.R;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.nio.file.FileStore;
-import java.nio.file.Files;
-import java.util.List;
 
-import static android.support.constraint.Constraints.TAG;
+import static androidx.constraintlayout.Constraints.TAG;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -2,19 +2,14 @@ package com.sashashtmv.game4in1;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import android.util.Log;
 
-import static android.support.constraint.Constraints.TAG;
+import static androidx.constraintlayout.Constraints.TAG;
 
-import android.widget.Toast;
-
-import com.sashashtmv.game4in1.adapter.AdapterForLevels;
 import com.sashashtmv.game4in1.alarm.AlarmHelper;
 import com.sashashtmv.game4in1.database.DBHelper;
 import com.sashashtmv.game4in1.fragments.AdvicesFragment;
@@ -24,13 +19,11 @@ import com.sashashtmv.game4in1.fragments.LevelFragment;
 import com.sashashtmv.game4in1.fragments.ResultFragment;
 import com.sashashtmv.game4in1.fragments.SplashFragment;
 import com.sashashtmv.game4in1.fragments.StartFragment;
-import com.sashashtmv.game4in1.model.Item;
 import com.sashashtmv.game4in1.model.ModelLevel;
 import com.sashashtmv.game4in1.model.MyApplication;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements StartFragment.callback, LevelFragment.callbackResult,

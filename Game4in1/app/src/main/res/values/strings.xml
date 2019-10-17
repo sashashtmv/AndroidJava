@@ -35,7 +35,7 @@
     <string name="_50">+20</string>
 
     <!-- app ad section -->
-    <string name="app_ad_id">123</string>
+    <string name="app_ad_id">ca-app-pub-5136975333469260~7954175745</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
     <string name="rewarded_ad_unit_id">ca-app-pub-3940256099942544/5224354917</string>
@@ -62,4 +62,15 @@
     <string name="dialog_purchase_title">Content locked.</string>
     <string name="dialog_purchase">In order to view this content, you need to unlock the full version by making a one time purchase.\n\nThis will also remove advertisements throughout the app.</string>
     <string name="alert_for_purchase">Доступ к данному тесту закрыт. Приобретите полный доступ в настройках приложения.</string>
+    <string name="standard_offer">Стандартное предложение</string>
+    <string name="describe_standard_offer">Покупка 1000 золотых монет</string>
+    <string name="profitable_proposition">Выгодное предложение</string>
+    <string name="вуыскшиу_profitable_proposition">Покупка 10 000 золотых монет</string>
+    <string name="buying_coins">Покупка монет</string>
+
+    <string name="facebook_app_id">311149912819366</string>
+    <string name="facebook_hash_key">2jmj7l5rSw0yVb/vlWAYkK/YBwk=</string>
+    <string name="settings">Настройки</string>
+    <string name="exit">Exit</string>
+    <string name="hello_world">Hello world</string>
 </resources>

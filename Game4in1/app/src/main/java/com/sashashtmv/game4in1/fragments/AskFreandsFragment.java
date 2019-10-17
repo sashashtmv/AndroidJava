@@ -18,14 +18,15 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdView;
 import com.sashashtmv.game4in1.R;
+import com.sashashtmv.game4in1.utilities.AdsUtilities;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 
-import static androidx.constraintlayout.Constraints.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,6 +83,8 @@ public class AskFreandsFragment extends Fragment {
         if( savedInstanceState != null ) {
             consumedIntent = savedInstanceState.getBoolean(SAVED_INSTANCE_STATE_CONSUMED_INTENT);
         }
+
+        AdsUtilities.getInstance(getActivity()).showBannerAd((AdView) view.findViewById(R.id.adsView));
 
         mViber.setOnClickListener(new View.OnClickListener() {
 
@@ -163,7 +166,7 @@ public class AskFreandsFragment extends Fragment {
 //        if(mFile!=null) {
 ////            Log.e("file=", mfile.getAbsolutePath());
 //            mFile=null;
-//            //Log.e("file=", file.getAbsolutePath());
+            //Log.e("file=", file.getAbsolutePath());
 //        }
     }
 

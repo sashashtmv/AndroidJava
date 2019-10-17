@@ -5,16 +5,16 @@
 
     <PreferenceCategory
 
-        android:title="@string/settings_billing"
+        android:title="@string/buying_coins"
         android:key="billing" >
         <Preference
             android:key="purchase"
-            android:summary="@string/settings_purchase_summary"
-            android:title="@string/settings_purchase"/>
+            android:summary="@string/вуыскшиу_profitable_proposition"
+            android:title="@string/profitable_proposition"/>
         <Preference
             android:key="subscribe"
-            android:summary="@string/settings_subscribe_summary"
-            android:title="@string/settings_subscribe" />
+            android:summary="@string/describe_standard_offer"
+            android:title="@string/standard_offer" />
     </PreferenceCategory>
 
 

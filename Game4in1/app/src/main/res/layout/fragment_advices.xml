@@ -119,5 +119,13 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:background="@color/colorPrimary" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/adsView"
+        layout="@layout/content_banner_ad" />
+</RelativeLayout>
 
 </LinearLayout>

@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.sashashtmv.game4in1.MainActivity;
+import com.sashashtmv.game4in1.activity.MainActivity;
 import com.sashashtmv.game4in1.R;
 
 import java.util.concurrent.TimeUnit;

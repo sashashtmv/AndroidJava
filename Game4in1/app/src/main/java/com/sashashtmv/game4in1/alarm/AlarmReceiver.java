@@ -13,7 +13,7 @@ import android.graphics.Color;
 import androidx.core.app.NotificationCompat;
 import android.util.Log;
 
-import com.sashashtmv.game4in1.MainActivity;
+import com.sashashtmv.game4in1.activity.MainActivity;
 import com.sashashtmv.game4in1.R;
 import com.sashashtmv.game4in1.model.MyApplication;
 import com.sashashtmv.game4in1.model.PreferenceHelper;

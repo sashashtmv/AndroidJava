@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.sashashtmv.game4in1.MainActivity;
+import com.google.android.gms.ads.AdView;
+import com.sashashtmv.game4in1.activity.MainActivity;
 import com.sashashtmv.game4in1.R;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
+import com.sashashtmv.game4in1.utilities.AdsUtilities;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,6 +59,8 @@ public class AdvicesFragment extends android.app.Fragment {
         PreferenceHelper.getInstance().init(getActivity());
         mPreferenceHelper = PreferenceHelper.getInstance();
         countCoins = mPreferenceHelper.getInt("gold");
+
+        AdsUtilities.getInstance(getActivity()).showBannerAd((AdView) view.findViewById(R.id.adsView));
 
         mOneLetter.setOnClickListener(new View.OnClickListener() {
             @Override

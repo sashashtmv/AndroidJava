@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.sashashtmv.game4in1.MainActivity;
+import com.sashashtmv.game4in1.activity.MainActivity;
 import com.sashashtmv.game4in1.R;
 import com.sashashtmv.game4in1.database.DBHelper;
 import com.sashashtmv.game4in1.model.ModelLevel;
@@ -143,7 +143,7 @@ public class LevelFragment extends Fragment {
         void onCreatResult(ModelLevel item);
     }
     public interface callbackCoinsFragment{
-        void onCreatCoinsFragment();
+        void onCreatCoinsFragment(PreferenceHelper preferenceHelper);
     }
     public interface callbackAskFreandsFragment{
         void onCreatAskFreandsFragment();
@@ -267,7 +267,7 @@ public class LevelFragment extends Fragment {
         coinsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mMainActivity.onCreatCoinsFragment();
+                mMainActivity.onCreatCoinsFragment(mPreferenceHelper);
             }
         });
 

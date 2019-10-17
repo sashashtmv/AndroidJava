@@ -1,16 +1,24 @@
-package com.sashashtmv.game4in1;
+package com.sashashtmv.game4in1.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.recyclerview.widget.GridLayoutManager;
+
+import android.preference.PreferenceManager;
 import android.util.Log;
-
-import static androidx.constraintlayout.Constraints.TAG;
-
+//
+//import com.anjlab.android.iab.v3.BillingProcessor;
+//import com.anjlab.android.iab.v3.TransactionDetails;
+import com.sashashtmv.game4in1.R;
 import com.sashashtmv.game4in1.alarm.AlarmHelper;
+import com.sashashtmv.game4in1.constants.AppConstants;
 import com.sashashtmv.game4in1.database.DBHelper;
 import com.sashashtmv.game4in1.fragments.AdvicesFragment;
 import com.sashashtmv.game4in1.fragments.AskFreandsFragment;
@@ -22,26 +30,36 @@ import com.sashashtmv.game4in1.fragments.StartFragment;
 import com.sashashtmv.game4in1.model.ModelLevel;
 import com.sashashtmv.game4in1.model.MyApplication;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
+import com.sashashtmv.game4in1.utilities.AdsUtilities;
+import com.sashashtmv.game4in1.utilities.DialogUtilities;
 
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements StartFragment.callback, LevelFragment.callbackResult,
-        LevelFragment.callbackCoinsFragment, LevelFragment.callbackAskFreandsFragment, LevelFragment.callbackAdvicesFragment {
+        LevelFragment.callbackCoinsFragment, LevelFragment.callbackAskFreandsFragment, LevelFragment.callbackAdvicesFragment, DialogUtilities.OnCompleteListener {
 
     private GridLayoutManager lLayout;
-    FragmentManager mFragmentManager;
+    static FragmentManager mFragmentManager;
     StartFragment startFragment;
     List<ModelLevel> mItems;
     private int countCoins;
     private PreferenceHelper mPreferenceHelper;
     public DBHelper mDBHelper;
     public AlarmHelper mAlarmHelper;
+    private static final String TAG = "MainActivity";
+    private static String PRODUCT_ID_BOUGHT = "item_1_bought";
+    private static String PRODUCT_ID_SUBSCRIBE = "item_1_subscribe";
+
+    CheckSubscribe checks;
+    //BillingProcessor bp;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mContext = getApplicationContext();
         PreferenceHelper.getInstance().init(this);
         mPreferenceHelper = PreferenceHelper.getInstance();
         mPreferenceHelper.putString("From", "");
@@ -56,10 +74,23 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
         Log.i(TAG, "init: run - " + "oncreated");
         mFragmentManager = getFragmentManager();
 
+        boolean purchased = PreferenceManager.getDefaultSharedPreferences(this).getBoolean(PRODUCT_ID_BOUGHT, false);
+        boolean subscribed = PreferenceManager.getDefaultSharedPreferences(this).getBoolean(PRODUCT_ID_SUBSCRIBE, false);
+        if (purchased || subscribed) disableAds();
+
 
         runStartFragment();
         runSplash();
 
+        checks = new CheckSubscribe();
+        checks.execute();
+
+    }
+
+    //для отключения рекламы во всем приложении
+    private void disableAds() {
+        AdsUtilities.getInstance(getApplicationContext()).disableBannerAd();
+        AdsUtilities.getInstance(getApplicationContext()).disableInterstitialAd();
     }
 
     @Override
@@ -76,49 +107,7 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
         getIntent().setAction("");
         getIntent().setData(null);
         getIntent().setFlags(0);
-//        if(getIntent().getFlags() == (Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY)) {
-//            //app is launched from recent apps after it was closed
-//            normalLaunch();
-//        } else {
-//            String intentAction = getIntent().getAction();
-//            String scheme = getIntent().getScheme();
-//            //app is launched via other means
-//            // URL intent scheme, Intent action etc
-//            if("https".equalsIgnoreCase(scheme)) {
-//                // URL intent for browser
-//            } else if("com.example.bb".equalsIgnoreCase(intentAction)) {
-//                // App launched via package name
-//            } else {
-//                // App was launched via Click on App Icon, or other means
-//                normalLaunch();
-//            }
-//        }
-//        String type = mPreferenceHelper.getString("From");
-//
-//        Log.i(TAG, "onResume: run - " + type);
-//        if (type.length() > 0) {
-//            if (mDBHelper == null) {
-//                mDBHelper = new DBHelper(this);
-//            }
-//            switch (type) {
-//                case "notifyFrag":
-//                    mPreferenceHelper.putString("From", "");
-//                    List<ModelLevel> levels = mDBHelper.query().getLevels();
-//                    ModelLevel level = null;
-//                    for (ModelLevel modelLevel : levels) {
-//                        if (modelLevel.getStatus() == ModelLevel.STATUS_AVALABLE) {
-//                            level = modelLevel;
-//                            break;
-//                        }
-//                    }
-//                    Fragment fragment = LevelFragment.newInstance();
-//                    mFragmentManager.beginTransaction().
-//                            replace(R.id.content_frame, fragment).addToBackStack(null).commit();
-//
-//                    ((LevelFragment) fragment).updateLevels(levels, level, mDBHelper);
-//                    break;
-//            }
-//        }
+
         MyApplication.activityResumed();
     }
 
@@ -200,8 +189,8 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
     }
 
     @Override
-    public void onCreatCoinsFragment() {
-        Fragment coinsFragment = CoinsFragment.newInstance();
+    public void onCreatCoinsFragment(PreferenceHelper preferenceHelper) {
+        Fragment coinsFragment = CoinsFragment.newInstance(preferenceHelper);
         mFragmentManager.beginTransaction()
                 .replace(R.id.content_frame, coinsFragment, "coinsFragment")
                 .addToBackStack(null)
@@ -230,6 +219,69 @@ public class MainActivity extends AppCompatActivity implements StartFragment.cal
                 .replace(R.id.content_frame, advicesFragment, "adviceFragment")
                 .addToBackStack(null)
                 .commit();
+    }
+
+//    @Override
+//    public void onProductPurchased(String productId, TransactionDetails details) {
+//
+//    }
+//
+//    @Override
+//    public void onPurchaseHistoryRestored() {
+//
+//        if (bp.isSubscribed(SUBSCRIPTION_ID())) {
+//            setIsSubscribe(true, mContext);
+//            Log.v("TAG", "Subscribe actually restored");
+//
+//        } else {
+//            setIsSubscribe(false, mContext);
+//        }
+//    }
+//
+//    private String SUBSCRIPTION_ID(){
+//        return getResources().getString(R.string.subscription_id);
+//    }
+//    //сохраняет значение подписки в настройках приложения
+//    public void setIsSubscribe(boolean purchased, Context c){
+//        SharedPreferences prefs = PreferenceManager
+//                .getDefaultSharedPreferences(c);
+//
+//        SharedPreferences.Editor editor= prefs.edit();
+//
+//        editor.putBoolean(AppConstants.PRODUCT_ID_SUBSCRIBE, purchased);
+//        editor.apply();
+//    }
+//
+//    @Override
+//    public void onBillingError(int errorCode, Throwable error) {
+//
+//    }
+//
+//    @Override
+//    public void onBillingInitialized() {
+//
+//    }
+
+    @Override
+    public void onComplete(Boolean isOkPressed, String viewIdText) {
+        if (isOkPressed) {
+            if (viewIdText.equals(AppConstants.BUNDLE_KEY_EXIT_OPTION)) {
+                this.finishAffinity();
+            }
+        }
+
+    }
+
+    //в фоне будет выполнять запрос к серверу для проверки покупок и подписок.
+    private class CheckSubscribe extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            String license = getResources().getString(R.string.google_play_license);
+//            bp = new BillingProcessor(mContext, license, MainActivity.this);
+//            bp.loadOwnedPurchasesFromGoogle();
+            return null;
+        }
     }
 
 }

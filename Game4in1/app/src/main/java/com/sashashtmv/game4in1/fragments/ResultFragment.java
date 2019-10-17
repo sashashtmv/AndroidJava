@@ -6,7 +6,9 @@ import android.app.FragmentTransaction;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.app.Fragment;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import com.sashashtmv.game4in1.R;
 import com.sashashtmv.game4in1.model.ModelLevel;
 import com.sashashtmv.game4in1.model.PreferenceHelper;
+import com.sashashtmv.game4in1.utilities.AdsUtilities;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,8 +52,6 @@ public class ResultFragment extends Fragment {
     }
 
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -75,12 +76,15 @@ public class ResultFragment extends Fragment {
         mImage3.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mModelLevel.getBitmap3(), "drawable", getActivity().getPackageName())));
         mImage4.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), getActivity().getResources().getIdentifier(mModelLevel.getBitmap4(), "drawable", getActivity().getPackageName())));
 
+        AdsUtilities.getInstance(getActivity()).loadFullScreenAd(getActivity());
 
         mContinues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                countCoins += 50;
 //                mPreferenceHelper.putInt("gold", countCoins);
+                AdsUtilities.getInstance(getActivity()).showFullScreenAd();
+
                 FragmentManager fragmentManager = getActivity().getFragmentManager();
                 Fragment fragment = getFragmentManager().findFragmentByTag("start fragment");
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -94,5 +98,11 @@ public class ResultFragment extends Fragment {
 
     public void updateResult(ModelLevel item) {
         mModelLevel = item;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
     }
 }

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ApplicationForBuilders</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_for_builders">Приложение для строителей</string>
+    <string name="enter">ВХОД</string>
+    <string name="about_us">О НАС</string>
+    <string name="new_user">НОВЫЙ ПОЛЬЗОВАТЕЛЬ</string>
+    <string name="rule">ПРАВИЛА ПОЛЬЗОВАНИЯ</string>
+</resources>
